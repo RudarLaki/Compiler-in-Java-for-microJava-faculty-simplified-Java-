@@ -1,0 +1,118 @@
+package rs.ac.bg.etf.pp1;
+
+import java_cup.runtime.*;
+import org.apache.log4j.*;
+import rs.ac.bg.etf.pp1.ast.*;
+
+parser code {:
+
+	boolean errorDetected;
+	Logger log = Logger.getLogger(getClass());
+	
+	public void report_fatal_error(String message, Object info) throws java.lang.Exception{
+		done_parsing();
+		report_error(message, info);
+	}
+	
+	public void syntax_error(Symbol cur_token){
+		report_error("\nSintaksna greska", cur_token);
+	}
+	
+	public void unrecovered_syntax_error(Symbol cur_token) throws java.lang.Exception{
+		report_fatal_error("Fatalna greska, parsiranje nemoguce nastaviti", cur_token);
+	}
+	
+	public void report_error(String message, Object info){
+		errorDetected = true;
+		StringBuilder msg = new StringBuilder(message);
+		if(info instanceof Symbol)
+			msg.append(" na liniji ").append(((Symbol)info).left);
+		log.error(msg.toString());
+	}
+:}
+
+init with {:
+	errorDetected = false;
+:}
+
+
+scan with {:
+	Symbol s = this.getScanner().next_token();
+	if(s != null && s.value != null)
+		log.info(s.toString() + " " + s.value.toString());
+	return s;
+:}
+
+terminal PROGRAM, LBRACE, RBRACE, CONST, EQ, COMMA, LBRACKET, RBRACKET, SEMICOLON;
+
+terminal String IDENT;
+terminal Integer BOOL, NUMBER;
+terminal Character CHAR;
+
+nonterminal Program Program;
+nonterminal 
+			ConstVarDeclList ConstVarDeclList;
+nonterminal 
+			ConstDeclList ConstDeclList;
+nonterminal 
+			ConstDeclListComa ConstDeclListComa;
+nonterminal 
+			ConstDecl ConstDecl;
+nonterminal 
+			Constant Constant;
+nonterminal 
+			VarDeclList VarDeclList;
+nonterminal 
+			VarDeclListComa VarDeclListComa;
+nonterminal 
+			VarDecl VarDecl;
+nonterminal 
+			Array Array;
+nonterminal 
+			MethodDeclList MethodDeclList;
+nonterminal 
+			Type Type;
+
+Program ::= (Program) PROGRAM IDENT:I1 ConstVarDeclList:C2 LBRACE MethodDeclList:M3 RBRACE {: RESULT=new Program(I1, C2, M3); RESULT.setLine(I1left); :};
+
+ConstVarDeclList ::= (ConstVarDeclList_Const) ConstVarDeclList:C1 ConstDeclList:C2 {: RESULT=new ConstVarDeclList_Const(C1, C2); RESULT.setLine(C1left); :}
+					 |
+					 (ConstVarDeclList_Var) ConstVarDeclList:C1 VarDeclList:V2 {: RESULT=new ConstVarDeclList_Var(C1, V2); RESULT.setLine(C1left); :}
+					 | {: RESULT=new ConstVarDeclListDerived1(); :}
+					 /*epsilon*/
+					 ;
+
+ConstDeclList ::= (ConstDeclList) CONST Type:T1 ConstDecl:C2 ConstDeclListComa:C3 SEMICOLON {: RESULT=new ConstDeclList(T1, C2, C3); RESULT.setLine(T1left); :};
+
+ConstDeclListComa ::= (ConstDeclListComa) ConstDeclListComa:C1 COMMA  ConstDecl:C2 {: RESULT=new ConstDeclListComa(C1, C2); RESULT.setLine(C1left); :}
+					  | {: RESULT=new ConstDeclListComaDerived1(); :}
+					  /* epsilon */
+					  ;
+
+ConstDecl ::= (ConstDecl) IDENT:I1 EQ Constant:C2 {: RESULT=new ConstDecl(I1, C2); RESULT.setLine(I1left); :};
+
+Constant ::= (Constant_num) NUMBER:N1 {: RESULT=new Constant_num(N1); RESULT.setLine(N1left); :}
+			 |
+			 (Constant_char) CHAR:C1 {: RESULT=new Constant_char(C1); RESULT.setLine(C1left); :}
+			 |
+			 (Constant_bool) BOOL:B1 {: RESULT=new Constant_bool(B1); RESULT.setLine(B1left); :}
+			 ;
+
+VarDeclList ::= (VarDeclList) Type:T1 VarDecl:V2 VarDeclListComa:V3 SEMICOLON {: RESULT=new VarDeclList(T1, V2, V3); RESULT.setLine(T1left); :};
+
+VarDeclListComa ::= (VarDeclListComa) VarDeclListComa:V1 COMMA VarDecl:V2 {: RESULT=new VarDeclListComa(V1, V2); RESULT.setLine(V1left); :}
+					| {: RESULT=new VarDeclListComaDerived1(); :}
+					/* epsilon */
+					;
+
+VarDecl ::= (VarDecl) IDENT:I1 Array:A2 {: RESULT=new VarDecl(I1, A2); RESULT.setLine(I1left); :};
+
+Array ::= (Array) LBRACKET RBRACKET {: RESULT=new Array(); :}
+		  | {: RESULT=new ArrayDerived1(); :}
+		  /* epsilon */
+		  ;
+
+MethodDeclList ::= (MethodDeclList) IDENT:I1 {: RESULT=new MethodDeclList(I1); RESULT.setLine(I1left); :};
+
+Type ::= (Type) IDENT:I1 {: RESULT=new Type(I1); RESULT.setLine(I1left); :};
+
