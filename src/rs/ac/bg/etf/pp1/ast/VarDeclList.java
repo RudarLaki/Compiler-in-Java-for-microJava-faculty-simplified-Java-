@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 23/0/2026 9:13:17
+// 24/0/2026 18:27:39
 
 
 package src/rs/ac/bg/etf/pp1.ast;
@@ -11,15 +11,15 @@ public class VarDeclList implements SyntaxNode {
     private int line;
     private Type Type;
     private VarDecl VarDecl;
-    private VarDeclListComa VarDeclListComa;
+    private VarDeclListRest VarDeclListRest;
 
-    public VarDeclList (Type Type, VarDecl VarDecl, VarDeclListComa VarDeclListComa) {
+    public VarDeclList (Type Type, VarDecl VarDecl, VarDeclListRest VarDeclListRest) {
         this.Type=Type;
         if(Type!=null) Type.setParent(this);
         this.VarDecl=VarDecl;
         if(VarDecl!=null) VarDecl.setParent(this);
-        this.VarDeclListComa=VarDeclListComa;
-        if(VarDeclListComa!=null) VarDeclListComa.setParent(this);
+        this.VarDeclListRest=VarDeclListRest;
+        if(VarDeclListRest!=null) VarDeclListRest.setParent(this);
     }
 
     public Type getType() {
@@ -38,12 +38,12 @@ public class VarDeclList implements SyntaxNode {
         this.VarDecl=VarDecl;
     }
 
-    public VarDeclListComa getVarDeclListComa() {
-        return VarDeclListComa;
+    public VarDeclListRest getVarDeclListRest() {
+        return VarDeclListRest;
     }
 
-    public void setVarDeclListComa(VarDeclListComa VarDeclListComa) {
-        this.VarDeclListComa=VarDeclListComa;
+    public void setVarDeclListRest(VarDeclListRest VarDeclListRest) {
+        this.VarDeclListRest=VarDeclListRest;
     }
 
     public SyntaxNode getParent() {
@@ -69,20 +69,20 @@ public class VarDeclList implements SyntaxNode {
     public void childrenAccept(Visitor visitor) {
         if(Type!=null) Type.accept(visitor);
         if(VarDecl!=null) VarDecl.accept(visitor);
-        if(VarDeclListComa!=null) VarDeclListComa.accept(visitor);
+        if(VarDeclListRest!=null) VarDeclListRest.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
         if(Type!=null) Type.traverseTopDown(visitor);
         if(VarDecl!=null) VarDecl.traverseTopDown(visitor);
-        if(VarDeclListComa!=null) VarDeclListComa.traverseTopDown(visitor);
+        if(VarDeclListRest!=null) VarDeclListRest.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
         if(Type!=null) Type.traverseBottomUp(visitor);
         if(VarDecl!=null) VarDecl.traverseBottomUp(visitor);
-        if(VarDeclListComa!=null) VarDeclListComa.traverseBottomUp(visitor);
+        if(VarDeclListRest!=null) VarDeclListRest.traverseBottomUp(visitor);
         accept(visitor);
     }
 
@@ -103,8 +103,8 @@ public class VarDeclList implements SyntaxNode {
             buffer.append(tab+"  null");
         buffer.append("\n");
 
-        if(VarDeclListComa!=null)
-            buffer.append(VarDeclListComa.toString("  "+tab));
+        if(VarDeclListRest!=null)
+            buffer.append(VarDeclListRest.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");

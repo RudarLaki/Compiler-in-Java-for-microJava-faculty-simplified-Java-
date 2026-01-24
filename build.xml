@@ -16,7 +16,7 @@
     	</java>
     </target>
 	
-	<target name= "parserGen" depends= "lexerGen">
+	<target name= "parserGen" depends= "flexerGen">
 		<java jar= "lib/cup_v10k.jar" fork= "true">
 			<arg value= "-destdir"/>
 			<arg value= "src/rs/ac/bg/etf/pp1"/>

@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 23/0/2026 9:13:17
+// 24/0/2026 18:27:39
 
 
 package src/rs/ac/bg/etf/pp1.ast;
@@ -11,15 +11,15 @@ public class ConstDeclList implements SyntaxNode {
     private int line;
     private Type Type;
     private ConstDecl ConstDecl;
-    private ConstDeclListComa ConstDeclListComa;
+    private ConstDeclListRest ConstDeclListRest;
 
-    public ConstDeclList (Type Type, ConstDecl ConstDecl, ConstDeclListComa ConstDeclListComa) {
+    public ConstDeclList (Type Type, ConstDecl ConstDecl, ConstDeclListRest ConstDeclListRest) {
         this.Type=Type;
         if(Type!=null) Type.setParent(this);
         this.ConstDecl=ConstDecl;
         if(ConstDecl!=null) ConstDecl.setParent(this);
-        this.ConstDeclListComa=ConstDeclListComa;
-        if(ConstDeclListComa!=null) ConstDeclListComa.setParent(this);
+        this.ConstDeclListRest=ConstDeclListRest;
+        if(ConstDeclListRest!=null) ConstDeclListRest.setParent(this);
     }
 
     public Type getType() {
@@ -38,12 +38,12 @@ public class ConstDeclList implements SyntaxNode {
         this.ConstDecl=ConstDecl;
     }
 
-    public ConstDeclListComa getConstDeclListComa() {
-        return ConstDeclListComa;
+    public ConstDeclListRest getConstDeclListRest() {
+        return ConstDeclListRest;
     }
 
-    public void setConstDeclListComa(ConstDeclListComa ConstDeclListComa) {
-        this.ConstDeclListComa=ConstDeclListComa;
+    public void setConstDeclListRest(ConstDeclListRest ConstDeclListRest) {
+        this.ConstDeclListRest=ConstDeclListRest;
     }
 
     public SyntaxNode getParent() {
@@ -69,20 +69,20 @@ public class ConstDeclList implements SyntaxNode {
     public void childrenAccept(Visitor visitor) {
         if(Type!=null) Type.accept(visitor);
         if(ConstDecl!=null) ConstDecl.accept(visitor);
-        if(ConstDeclListComa!=null) ConstDeclListComa.accept(visitor);
+        if(ConstDeclListRest!=null) ConstDeclListRest.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
         if(Type!=null) Type.traverseTopDown(visitor);
         if(ConstDecl!=null) ConstDecl.traverseTopDown(visitor);
-        if(ConstDeclListComa!=null) ConstDeclListComa.traverseTopDown(visitor);
+        if(ConstDeclListRest!=null) ConstDeclListRest.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
         if(Type!=null) Type.traverseBottomUp(visitor);
         if(ConstDecl!=null) ConstDecl.traverseBottomUp(visitor);
-        if(ConstDeclListComa!=null) ConstDeclListComa.traverseBottomUp(visitor);
+        if(ConstDeclListRest!=null) ConstDeclListRest.traverseBottomUp(visitor);
         accept(visitor);
     }
 
@@ -103,8 +103,8 @@ public class ConstDeclList implements SyntaxNode {
             buffer.append(tab+"  null");
         buffer.append("\n");
 
-        if(ConstDeclListComa!=null)
-            buffer.append(ConstDeclListComa.toString("  "+tab));
+        if(ConstDeclListRest!=null)
+            buffer.append(ConstDeclListRest.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");

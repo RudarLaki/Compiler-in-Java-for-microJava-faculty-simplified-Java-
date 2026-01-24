@@ -43,47 +43,147 @@ scan with {:
 	return s;
 :}
 
-terminal PROGRAM, 
-		 LBRACE, 
-		 RBRACE, 
-		 CONST, 
-		 EQ, 
-		 COMMA, 
-		 LBRACKET, 
-		 RBRACKET, 
-		 SEMICOLON;
+terminal PROGRAM,
+		 BREAK,
+		 ENUM,
+		 CLASS,
+		 ABSTRACT,
+		 ELSE,
+		 CONST,
+		 IF,
+		 NEW,
+		 PRINT,
+		 READ,
+		 RETURN,
+		 VOID,
+		 EXTENDS,
+		 CONTINUE,
+		 FOR,
+		 LENGTH,
+		 SWITCH,
+		 CASE,
+		 PLUS,
+		 MINUS,
+		 MUL,
+		 DIV,
+		 MOD,
+		 EQ,
+		 NEQ,
+		 GREATER,
+		 GREATER_EQUAL,
+		 LESS,
+		 LESS_EQUAL,
+		 AND,
+		 OR,
+		 ASSIGN,
+		 INC,
+		 DEC,
+		 SEMICOLON,
+		 COLON,
+		 COMMA,
+		 DOT,
+		 LPAREN,
+		 RPAREN,
+		 LBRACKET,
+		 RBRACKET,
+		 LBRACE,
+		 RBRACE,
+		 QUESTION_MARK;
+
+
 
 terminal String IDENT;
 terminal Integer BOOL, NUMBER;
 terminal Character CHAR;
 
-nonterminal Program, 
-			ConstVarDeclList, 
-			ConstDeclList, 
-			ConstDeclListComa, 
-			ConstDecl, 
-			Constant, 
-			VarDeclList, 
-			VarDeclListComa, 
-			VarDecl, 
-			Array, 
-			MethodDeclList, 
-			Type;
+nonterminal Program,
+			DeclList,
+			MethodDeclList,
+			ConstDeclList,
+			VarDeclList,
+			Enum,
+			
+			VarDecl,
+			VarDeclListRest,
+			Type,
+			
+			EnumItemsList,
+			EnumItemsRest,
+			EnumItem,
+			
+			ConstDecl,
+			ConstDeclListRest,
+			Constant,
+			Prefix,
+			
+			ParamsList,
+			ParamsListRest,
+			Param,
+			Statement,
+			
+			Condition,
+			DesignatorStatement,
+			MatchedStatement,
+			UnmatchedStatement,
+			ReturnExpression,
+			PrintExpression,
+			Expression,
+			SwitchCases,
+			ForExpression,
+			StatementList,
+			EpsilonDesignatorStatement,
+			
+			Designator,
+			DesignatorList,
+			DesignatorOp,
+			ActParsList,
+			ActParsRest,
+			ConditionRest,
+			CondTerm,
+			CondFactRest,
+			CondFact,
+			
+			TermList,
+			Term,
+			FactorList,
+			Factor,
+			
+			Addop,
+			Mulop,
+			Assignop,
+			Relop;
+			
 
-Program ::= (Program) PROGRAM IDENT ConstVarDeclList LBRACE MethodDeclList RBRACE;
+Program ::= (Program) PROGRAM IDENT DeclList LBRACE MethodDeclList RBRACE;
 
-ConstVarDeclList ::= (ConstVarDeclList_Const) ConstVarDeclList ConstDeclList
-					 |
-					 (ConstVarDeclList_Var) ConstVarDeclList VarDeclList
-					 |
-					 /*epsilon*/
-					 ;
+DeclList ::= (ConstDeclList) ConstDeclList DeclList
+			 |
+			 (VarDeclList) VarDeclList DeclList
+			 |
+			 (EnumDeclList) Enum DeclList
+			 |					 
+			 (DeclList_e) /*epsilon*/
+			 ;
 
-ConstDeclList ::= (ConstDeclList) CONST Type ConstDecl ConstDeclListComa SEMICOLON;
 
-ConstDeclListComa ::= (ConstDeclListComa) ConstDeclListComa COMMA  ConstDecl
+VarDeclList ::= (VarDeclList) Type VarDecl VarDeclListRest SEMICOLON;
+
+VarDeclListRest ::= (VarDeclListRest_comma) COMMA VarDecl VarDeclListRest
+					|
+					(VarDeclListRest_e) /* epsilon */
+					;
+
+VarDecl ::= (IdentVarDecl) IDENT
+			|
+			(ArrayVarDecl) IDENT LBRACKET RBRACKET
+			;
+			
+
+ConstDeclList ::= (ConstDeclList) CONST Type ConstDecl ConstDeclListRest SEMICOLON;
+
+ConstDeclListRest ::= (ConstDeclListRest_comma) COMMA  ConstDecl ConstDeclListRest
 					  |
-					  /* epsilon */
+					  (ConstDeclListRest_e) /* epsilon */
 					  ;
 
 ConstDecl ::= (ConstDecl) IDENT EQ Constant;
@@ -95,21 +195,218 @@ Constant ::= (Constant_num) NUMBER
 			 (Constant_bool) BOOL
 			 ;
 
-VarDeclList ::= (VarDeclList) Type VarDecl VarDeclListComa SEMICOLON;
 
-VarDeclListComa ::= (VarDeclListComa) VarDeclListComa COMMA VarDecl
-					|
-					/* epsilon */
-					;
+Enum ::= (Enum) ENUM IDENT LBRACE EnumItemsList RBRACE;
 
-VarDecl ::= (VarDecl) IDENT Array;
+EnumItemsList ::= (EnumItemsList) EnumItem EnumItemsRest;
 
-Array ::= (Array) LBRACKET RBRACKET
+EnumItemsRest ::= (EnumItemsRest_comma) COMMA EnumItem EnumItemsRest
+				  |
+				  (EnumItemsRest_e) /* epsilon */
+				  ;
+
+EnumItem ::= (IdentEnumItem) IDENT 
+			 |
+			 (AssignEnumItem) IDENT EQ NUMBER
+			 ;
+
+
+MethodDeclList ::= (MethodDeclList) Prefix IDENT LPAREN ParamsList RPAREN VarDeclList LBRACE Statement RBRACE;
+
+Prefix ::= (TypePrefix) Type
+		   |
+		   (VoidPrefix) VOID
+		   ;
+		   
+ParamsList ::= (ParamsList_param) Param ParamsListRest
+			   |
+			   (ParamsList_e)/* epsilon */ 
+			   ;
+
+ParamsListRest ::= (ParamsListRest_param) COMMA Param ParamsListRest
+				   |
+				   (ParamsListRest_e) /* epsilon */
+				   ;
+				   
+Param ::= (IdentParam) Type IDENT
 		  |
-		  /* epsilon */
-		  ;
-
-MethodDeclList ::= (MethodDeclList) IDENT;
+		  (ArrayParam) Type IDENT LBRACKET RBRACKET;
 
 Type ::= (Type) IDENT;
 
+Statement ::= (MatchedStatement) MatchedStatement
+			  |
+			  (UnmatchedStatement) UnmatchedStatement
+			  ;
+			   
+MatchedStatement ::=  (DesignatorStatement) DesignatorStatement SEMICOLON
+					  |
+					  (IfElseStatement) IF LPAREN Condition RPAREN MatchedStatement ELSE MatchedStatement
+					  |
+					  (BreakStatement) BREAK SEMICOLON
+					  |
+					  (ContinueStatement) CONTINUE SEMICOLON
+					  |
+					  (ReturnStatement) RETURN ReturnExpression SEMICOLON
+					  |
+					  (ReadStatement) READ LPAREN Designator RPAREN SEMICOLON
+					  |
+					  (PrintStatement) PRINT LPAREN PrintExpression RPAREN SEMICOLON
+					  |
+					  (SwitchStatement) SWITCH LPAREN Expression RPAREN LBRACE SwitchCases RBRACE
+					  |
+					  (ForStatement) FOR LPAREN ForExpression RPAREN MatchedStatement
+					  |
+					  (RecStatement) LBRACE StatementList RBRACE
+					  ;
+
+UnmatchedStatement ::= (IfElseStatement_non_else) IF LPAREN Condition RPAREN Statement
+					   |
+					   (IfElseStatement_else) IF LPAREN Condition RPAREN MatchedStatement ELSE UnmatchedStatement
+					   ;
+
+ReturnExpression ::= (ReturnExpression_expr) Expression
+					 |
+					 (ReturnExpression_non_expr) /* epsilon */ 
+					 ;
+
+PrintExpression ::= (PrintExpression_num) Expression COMMA NUMBER
+					|
+					(PrintExpression_non_num) Expression
+					;
+					
+SwitchCases ::= (SwitchCases_s) CASE NUMBER COLON StatementList SwitchCases
+				|
+				(SwitchCases_e) /* epsilon */
+				;
+				
+
+StatementList ::= (StatementList_sl) Statement StatementList
+				  |
+				  (StatementList_e) /* epsilon */
+				  ;
+
+ForExpression ::= (ConditionedForExpression) EpsilonDesignatorStatement SEMICOLON Condition SEMICOLON EpsilonDesignatorStatement
+				  |
+				  (NonConditionedForExpression) EpsilonDesignatorStatement SEMICOLON SEMICOLON EpsilonDesignatorStatement
+				  ;
+
+
+EpsilonDesignatorStatement ::= (EpsilonDesignatorStatement_ds) DesignatorStatement
+							   |
+							   (EpsilonDesignatorStatement_e) /* epsilon */
+							   ;
+
+DesignatorStatement ::= (ExprDesignatorStatement) Designator Assignop Expression
+						|
+						(ParamsDesignatorStatement) Designator LPAREN ActParsList RPAREN
+						|
+						(NoParamsDesignatorStatement) Designator LPAREN RPAREN
+						|
+						(IncDesignatorStatement) Designator INC
+						|
+						(DecDesignatorStatement) Designator DEC
+						;
+
+ActParsList ::= (ActParsList) Expression ActParsRest;		
+
+ActParsRest ::= (ActParsRest_array) COMMA Expression ActParsRest
+				|
+				(ActParsRest_e) /* epsilon */
+				;
+
+Condition ::= (Condition) CondTerm ConditionRest;
+
+ConditionRest ::= (ConditionRest_array) OR CondTerm ConditionRest
+				  |
+				  (ConditionRest_e) /* epsilon */
+				  ;
+
+CondTerm ::= (CondTerm) CondFact CondFactRest;
+
+CondFactRest ::= (CondFactRest_array) AND CondFact CondFactRest
+				 |
+				 (CondFactRest_e) /* epsilon */
+				 ;
+
+CondFact ::= (NonRelopCondFact) Expression
+			 |
+			 (RelopCondFact) Expression Relop Expression
+			 ;
+
+
+Designator ::= (Designator) IDENT DesignatorList;
+
+DesignatorList ::= (DesignatorList_array) DesignatorOp DesignatorList
+				   |
+				   (DesignatorList_e) /* epsilon */
+				   ;
+
+DesignatorOp ::= (IdentDesignatorOp) DOT IDENT
+				 |
+				 (LengthDesignatorOp) DOT LENGTH
+				 |
+				 (ExpDesignatorOp) LBRACKET Expression RBRACKET
+				 ; 
+
+Assignop ::= (AssignOp) ASSIGN;
+
+Relop ::= (EqRelop) EQ
+		  |
+		  (NeqRelop) NEQ
+		  |
+		  (GreaterRelop) GREATER
+		  |
+		  (GrEqRelop) GREATER_EQUAL
+		  |
+		  (SmallerRelop) LESS
+		  |
+		  (SmEqRelop) LESS_EQUAL
+		  ;
+		  
+Addop ::= (PlusAddop) PLUS
+		  |
+		  (MinusAddop) MINUS
+		  ;
+
+Mulop ::= (MulMulop) MUL
+		  |
+		  (DivMulop) DIV
+		  |
+		  (ModMulop) MOD
+		  ;
+		  
+Expression ::= (MinusTermExpression) MINUS Term TermList
+			   |
+			   (TermExpression) Term TermList
+			
+			   ;
+
+TermList ::= (TermList_array) Addop Term TermList
+			 |
+			 (TermList_e) /* epsilon */
+			 ;
+
+Term ::= (Term) Factor FactorList;
+
+FactorList ::= (FactorList_array) Mulop Factor FactorList
+			   |
+			   (FactorList_e) /* epsilon */
+			   ;
+			   
+Factor ::= (NonParamFactor) Designator
+		   |
+		   (ParamFactor_empty) Designator LPAREN RPAREN
+		   |
+		   (ParamFactor_non_empty) Designator LPAREN ActParsList RPAREN
+		   |
+		   (NumberParamFactor) NUMBER
+		   |
+		   (CharParamFactor) CHAR
+		   |
+		   (BoolParamFactor) BOOL
+		   |
+		   (NewParamFactor) NEW Type LBRACKET Expression RBRACKET
+		   |
+		   (ExpParamFactor) LPAREN Expression RPAREN
+		   ;
