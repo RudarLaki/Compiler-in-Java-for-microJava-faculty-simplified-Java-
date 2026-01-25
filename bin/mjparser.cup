@@ -91,7 +91,6 @@ terminal PROGRAM,
 		 QUESTION_MARK;
 
 
-
 terminal String IDENT;
 terminal Integer BOOL, NUMBER;
 terminal Character CHAR;
@@ -128,6 +127,8 @@ nonterminal Program,
 			ReturnExpression,
 			PrintExpression,
 			Expression,
+			NonTernaryExpression,
+			TernaryExpression,
 			SwitchCases,
 			ForExpression,
 			StatementList,
@@ -152,7 +153,7 @@ nonterminal Program,
 			Mulop,
 			Assignop,
 			Relop;
-			
+
 
 Program ::= (Program) PROGRAM IDENT DeclList LBRACE MethodDeclList RBRACE;
 
@@ -177,7 +178,7 @@ VarDecl ::= (IdentVarDecl) IDENT
 			|
 			(ArrayVarDecl) IDENT LBRACKET RBRACKET
 			;
-			
+
 
 ConstDeclList ::= (ConstDeclList) CONST Type ConstDecl ConstDeclListRest SEMICOLON;
 
@@ -217,7 +218,7 @@ Prefix ::= (TypePrefix) Type
 		   |
 		   (VoidPrefix) VOID
 		   ;
-		   
+
 ParamsList ::= (ParamsList_param) Param ParamsListRest
 			   |
 			   (ParamsList_e)/* epsilon */ 
@@ -227,7 +228,7 @@ ParamsListRest ::= (ParamsListRest_param) COMMA Param ParamsListRest
 				   |
 				   (ParamsListRest_e) /* epsilon */
 				   ;
-				   
+
 Param ::= (IdentParam) Type IDENT
 		  |
 		  (ArrayParam) Type IDENT LBRACKET RBRACKET;
@@ -238,7 +239,7 @@ Statement ::= (MatchedStatement) MatchedStatement
 			  |
 			  (UnmatchedStatement) UnmatchedStatement
 			  ;
-			   
+
 MatchedStatement ::=  (DesignatorStatement) DesignatorStatement SEMICOLON
 					  |
 					  (IfElseStatement) IF LPAREN Condition RPAREN MatchedStatement ELSE MatchedStatement
@@ -274,12 +275,12 @@ PrintExpression ::= (PrintExpression_num) Expression COMMA NUMBER
 					|
 					(PrintExpression_non_num) Expression
 					;
-					
+
 SwitchCases ::= (SwitchCases_s) CASE NUMBER COLON StatementList SwitchCases
 				|
 				(SwitchCases_e) /* epsilon */
 				;
-				
+
 
 StatementList ::= (StatementList_sl) Statement StatementList
 				  |
@@ -329,9 +330,9 @@ CondFactRest ::= (CondFactRest_array) AND CondFact CondFactRest
 				 (CondFactRest_e) /* epsilon */
 				 ;
 
-CondFact ::= (NonRelopCondFact) Expression
+CondFact ::= (NonRelopCondFact) NonTernaryExpression
 			 |
-			 (RelopCondFact) Expression Relop Expression
+			 (RelopCondFact) NonTernaryExpression Relop NonTernaryExpression
 			 ;
 
 
@@ -363,7 +364,7 @@ Relop ::= (EqRelop) EQ
 		  |
 		  (SmEqRelop) LESS_EQUAL
 		  ;
-		  
+
 Addop ::= (PlusAddop) PLUS
 		  |
 		  (MinusAddop) MINUS
@@ -375,12 +376,18 @@ Mulop ::= (MulMulop) MUL
 		  |
 		  (ModMulop) MOD
 		  ;
-		  
-Expression ::= (MinusTermExpression) MINUS Term TermList
+
+Expression ::= (NonTernaryExpression) NonTernaryExpression
 			   |
-			   (TermExpression) Term TermList
-			
+			   (TernaryExpression) TernaryExpression
 			   ;
+
+NonTernaryExpression ::= (MinusTermExpression) MINUS Term TermList
+					     |
+					     (TermExpression) Term TermList
+					     ;
+
+TernaryExpression ::= (TernaryExpression) Condition QUESTION_MARK Expression COLON Expression;
 
 TermList ::= (TermList_array) Addop Term TermList
 			 |
@@ -393,7 +400,7 @@ FactorList ::= (FactorList_array) Mulop Factor FactorList
 			   |
 			   (FactorList_e) /* epsilon */
 			   ;
-			   
+
 Factor ::= (NonParamFactor) Designator
 		   |
 		   (ParamFactor_empty) Designator LPAREN RPAREN

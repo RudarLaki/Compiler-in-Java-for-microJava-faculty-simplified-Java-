@@ -1,11 +1,11 @@
 // generated with ast extension for cup
 // version 0.8
-// 24/0/2026 18:27:39
+// 25/0/2026 18:11:19
 
 
 package src/rs/ac/bg/etf/pp1.ast;
 
-public class TermExpression extends Expression {
+public class TermExpression extends NonTernaryExpression {
 
     private Term Term;
     private TermList TermList;

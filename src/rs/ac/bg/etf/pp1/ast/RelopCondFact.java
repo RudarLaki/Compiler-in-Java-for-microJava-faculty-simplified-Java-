@@ -1,31 +1,31 @@
 // generated with ast extension for cup
 // version 0.8
-// 24/0/2026 18:27:39
+// 25/0/2026 18:11:18
 
 
 package src/rs/ac/bg/etf/pp1.ast;
 
 public class RelopCondFact extends CondFact {
 
-    private Expression Expression;
+    private NonTernaryExpression NonTernaryExpression;
     private Relop Relop;
-    private Expression Expression1;
+    private NonTernaryExpression NonTernaryExpression1;
 
-    public RelopCondFact (Expression Expression, Relop Relop, Expression Expression1) {
-        this.Expression=Expression;
-        if(Expression!=null) Expression.setParent(this);
+    public RelopCondFact (NonTernaryExpression NonTernaryExpression, Relop Relop, NonTernaryExpression NonTernaryExpression1) {
+        this.NonTernaryExpression=NonTernaryExpression;
+        if(NonTernaryExpression!=null) NonTernaryExpression.setParent(this);
         this.Relop=Relop;
         if(Relop!=null) Relop.setParent(this);
-        this.Expression1=Expression1;
-        if(Expression1!=null) Expression1.setParent(this);
+        this.NonTernaryExpression1=NonTernaryExpression1;
+        if(NonTernaryExpression1!=null) NonTernaryExpression1.setParent(this);
     }
 
-    public Expression getExpression() {
-        return Expression;
+    public NonTernaryExpression getNonTernaryExpression() {
+        return NonTernaryExpression;
     }
 
-    public void setExpression(Expression Expression) {
-        this.Expression=Expression;
+    public void setNonTernaryExpression(NonTernaryExpression NonTernaryExpression) {
+        this.NonTernaryExpression=NonTernaryExpression;
     }
 
     public Relop getRelop() {
@@ -36,12 +36,12 @@ public class RelopCondFact extends CondFact {
         this.Relop=Relop;
     }
 
-    public Expression getExpression1() {
-        return Expression1;
+    public NonTernaryExpression getNonTernaryExpression1() {
+        return NonTernaryExpression1;
     }
 
-    public void setExpression1(Expression Expression1) {
-        this.Expression1=Expression1;
+    public void setNonTernaryExpression1(NonTernaryExpression NonTernaryExpression1) {
+        this.NonTernaryExpression1=NonTernaryExpression1;
     }
 
     public void accept(Visitor visitor) {
@@ -49,22 +49,22 @@ public class RelopCondFact extends CondFact {
     }
 
     public void childrenAccept(Visitor visitor) {
-        if(Expression!=null) Expression.accept(visitor);
+        if(NonTernaryExpression!=null) NonTernaryExpression.accept(visitor);
         if(Relop!=null) Relop.accept(visitor);
-        if(Expression1!=null) Expression1.accept(visitor);
+        if(NonTernaryExpression1!=null) NonTernaryExpression1.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
-        if(Expression!=null) Expression.traverseTopDown(visitor);
+        if(NonTernaryExpression!=null) NonTernaryExpression.traverseTopDown(visitor);
         if(Relop!=null) Relop.traverseTopDown(visitor);
-        if(Expression1!=null) Expression1.traverseTopDown(visitor);
+        if(NonTernaryExpression1!=null) NonTernaryExpression1.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
-        if(Expression!=null) Expression.traverseBottomUp(visitor);
+        if(NonTernaryExpression!=null) NonTernaryExpression.traverseBottomUp(visitor);
         if(Relop!=null) Relop.traverseBottomUp(visitor);
-        if(Expression1!=null) Expression1.traverseBottomUp(visitor);
+        if(NonTernaryExpression1!=null) NonTernaryExpression1.traverseBottomUp(visitor);
         accept(visitor);
     }
 
@@ -73,8 +73,8 @@ public class RelopCondFact extends CondFact {
         buffer.append(tab);
         buffer.append("RelopCondFact(\n");
 
-        if(Expression!=null)
-            buffer.append(Expression.toString("  "+tab));
+        if(NonTernaryExpression!=null)
+            buffer.append(NonTernaryExpression.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");
@@ -85,8 +85,8 @@ public class RelopCondFact extends CondFact {
             buffer.append(tab+"  null");
         buffer.append("\n");
 
-        if(Expression1!=null)
-            buffer.append(Expression1.toString("  "+tab));
+        if(NonTernaryExpression1!=null)
+            buffer.append(NonTernaryExpression1.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");

@@ -1,32 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="PP_projekat" default="compile" basedir=".">
-	<target name="delete">
-		<delete>
-			<fileset dir="src/rs/ac/bg/etf/pp1">
-				<exclude name= "util/Log4JUtils.java"/>
-			</fileset>
-		</delete>
-	</target>
-	
-    <target name="flexerGen" depends= "delete">
-        <java jar ="lib/JFlex.jar" fork= "true">
-        	<arg value= "-d"/>
-        	<arg value= "./src/rs/ac/bg/etf/pp1"/>
-        	<arg value= "spec/mjflexer.flex"/>
-    	</java>
+
+    <property name="log.dir" location="${basedir}/logs"/>
+    <property name="log.file" location="${log.dir}/compiler.log"/>
+    <property name="cup.log" location="${log.dir}/cup_output.log"/>
+    
+    <!-- MAIN ENTRY POINT -->
+    <target name="compile" depends="parserGen">
+        <echo message="=== COMPILATION COMPLETE ==="/>
+        <echo message="JavaCUP logs: ${cup.log}"/>
+        <echo message="Compiler logs: ${log.file}"/>
+    </target>
+    
+    <target name="init">
+        <!-- Create logs directory -->
+        <mkdir dir="${log.dir}"/>
+        <echo message="Log file will be at: ${log.file}"/>
+        <echo message="JavaCUP log will be at: ${cup.log}"/>
+        
+        <!-- Clean old logs -->
+        <delete file="${log.file}" failonerror="false"/>
+        <delete file="${cup.log}" failonerror="false"/>
+    </target>
+    
+    <target name="delete" depends="init">
+        <echo message="=== DELETING OLD FILES ===" file="${log.file}" append="true"/>
+        <delete>
+            <fileset dir="src/rs/ac/bg/etf/pp1">
+                <exclude name="util/Log4JUtils.java"/>
+            </fileset>
+        </delete>
     </target>
 	
-	<target name= "parserGen" depends= "flexerGen">
-		<java jar= "lib/cup_v10k.jar" fork= "true">
-			<arg value= "-destdir"/>
-			<arg value= "src/rs/ac/bg/etf/pp1"/>
-			<arg value= "-ast"/>
-			<arg value= "src/rs/ac/bg/etf/pp1.ast"/>
-			<arg value= "-parser"/>
-			<arg value= "MJParser"/>
-			<!-- <arg value= "-dump_states"/> -->
-			<arg value= "-buildtree"/>
-			<arg value= "spec/mjparser.cup"/>
-		</java>
-	</target>
+    <target name="flexerGen" depends="delete">
+        <echo message="=== GENERATING LEXER WITH JFLEX ===" file="${log.file}" append="true"/>
+        <java jar="lib/JFlex.jar" fork="true" output="${log.file}" append="true">
+            <arg value="-d"/>
+            <arg value="./src/rs/ac/bg/etf/pp1"/>
+            <arg value="spec/mjflexer.flex"/>
+        </java>
+    </target>
+	
+    <target name="parserGen" depends="flexerGen">
+        <echo message="=== GENERATING PARSER WITH JavaCUP ===" file="${log.file}" append="true"/>
+        
+        <!-- JavaCUP output to separate file -->
+        <java jar="lib/cup_v10k.jar" fork="true" output="${cup.log}" append="false">
+            <arg value="-destdir"/>
+            <arg value="src/rs/ac/bg/etf/pp1"/>
+            <arg value="-ast"/>
+            <arg value="src/rs/ac/bg/etf/pp1.ast"/>
+            <arg value="-parser"/>
+            <arg value="MJParser"/>
+            <arg value="-dump_states"/>
+            <arg value="-dump_grammar"/>
+            <arg value="-dump_tables"/>  <!-- Added for more details -->
+            <arg value="-dump"/>         <!-- Added for full output -->
+            <arg value="-progress"/>
+            <arg value="-time"/>
+            <arg value="-buildtree"/>
+            <arg value="spec/mjparser.cup"/>
+        </java>
+        
+        <!-- Append JavaCUP output to main log -->
+        <echo message="=== JavaCUP OUTPUT ===" file="${log.file}" append="true"/>
+        <concat destfile="${log.file}" append="true">
+            <fileset file="${cup.log}"/>
+        </concat>
+        
+        <!-- Extract conflicts to make them easy to find -->
+        <echo message="${line.separator}=== PARSER CONFLICTS SUMMARY ===" file="${log.file}" append="true"/>
+        
+        <!-- Linux/Mac: grep for conflicts -->
+        <exec executable="grep" osfamily="unix" output="${log.file}" append="true" 
+              failonerror="false">
+            <arg value="-n"/>
+            <arg value="-B2"/>
+            <arg value="-A10"/>
+            <arg value="Conflict"/>
+            <arg value="${cup.log}"/>
+        </exec>
+
+    </target>
+    
+    <!-- TARGET TO SHOW LOG LOCATIONS -->
+    <target name="showLogs">
+        <echo message="=== LOG FILE LOCATIONS ==="/>
+        <echo message="Main log: ${log.file}"/>
+        <echo message="JavaCUP log: ${cup.log}"/>
+        <echo message=""/>
+        
+        <exec executable="powershell" osfamily="windows">
+            <arg value="-Command"/>
+            <arg value="Get-Content ${cup.log}"/>
+        </exec>
+    </target>
+
 </project>

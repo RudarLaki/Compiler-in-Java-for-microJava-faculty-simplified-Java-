@@ -91,7 +91,6 @@ terminal PROGRAM,
 		 QUESTION_MARK;
 
 
-
 terminal String IDENT;
 terminal Integer BOOL, NUMBER;
 terminal Character CHAR;
@@ -155,6 +154,10 @@ nonterminal
 nonterminal
 			Expression Expression;
 nonterminal
+			NonTernaryExpression NonTernaryExpression;
+nonterminal
+			TernaryExpression TernaryExpression;
+nonterminal
 			SwitchCases SwitchCases;
 nonterminal
 			ForExpression ForExpression;
@@ -199,7 +202,7 @@ nonterminal
 			Assignop Assignop;
 nonterminal
 			Relop Relop;
-			
+
 
 Program ::= (Program) PROGRAM IDENT:I1 DeclList:D2 LBRACE MethodDeclList:M3 RBRACE {: RESULT=new Program(I1, D2, M3); RESULT.setLine(I1left); :};
 
@@ -224,7 +227,7 @@ VarDecl ::= (IdentVarDecl) IDENT:I1 {: RESULT=new IdentVarDecl(I1); RESULT.setLi
 			|
 			(ArrayVarDecl) IDENT:I1 LBRACKET RBRACKET {: RESULT=new ArrayVarDecl(I1); RESULT.setLine(I1left); :}
 			;
-			
+
 
 ConstDeclList ::= (ConstDeclList) CONST Type:T1 ConstDecl:C2 ConstDeclListRest:C3 SEMICOLON {: RESULT=new ConstDeclList(T1, C2, C3); RESULT.setLine(T1left); :};
 
@@ -264,7 +267,7 @@ Prefix ::= (TypePrefix) Type:T1 {: RESULT=new TypePrefix(T1); RESULT.setLine(T1l
 		   |
 		   (VoidPrefix) VOID {: RESULT=new VoidPrefix(); :}
 		   ;
-		   
+
 ParamsList ::= (ParamsList_param) Param:P1 ParamsListRest:P2 {: RESULT=new ParamsList_param(P1, P2); RESULT.setLine(P1left); :}
 			   |
 			   (ParamsList_e) {: RESULT=new ParamsList_e(); :}/* epsilon */ 
@@ -274,7 +277,7 @@ ParamsListRest ::= (ParamsListRest_param) COMMA Param:P1 ParamsListRest:P2 {: RE
 				   |
 				   (ParamsListRest_e) {: RESULT=new ParamsListRest_e(); :} /* epsilon */
 				   ;
-				   
+
 Param ::= (IdentParam) Type:T1 IDENT:I2 {: RESULT=new IdentParam(T1, I2); RESULT.setLine(T1left); :}
 		  |
 		  (ArrayParam) Type:T1 IDENT:I2 LBRACKET RBRACKET {: RESULT=new ArrayParam(T1, I2); RESULT.setLine(T1left); :};
@@ -285,7 +288,7 @@ Statement ::= (MatchedStatement) MatchedStatement:M1 {: RESULT=new MatchedStatem
 			  |
 			  (UnmatchedStatement) UnmatchedStatement:U1 {: RESULT=new UnmatchedStatement(U1); RESULT.setLine(U1left); :}
 			  ;
-			   
+
 MatchedStatement ::=  (DesignatorStatement) DesignatorStatement:D1 SEMICOLON {: RESULT=new DesignatorStatement(D1); RESULT.setLine(D1left); :}
 					  |
 					  (IfElseStatement) IF LPAREN Condition:C1 RPAREN MatchedStatement:M2 ELSE MatchedStatement:M3 {: RESULT=new IfElseStatement(C1, M2, M3); RESULT.setLine(C1left); :}
@@ -321,12 +324,12 @@ PrintExpression ::= (PrintExpression_num) Expression:E1 COMMA NUMBER:N2 {: RESUL
 					|
 					(PrintExpression_non_num) Expression:E1 {: RESULT=new PrintExpression_non_num(E1); RESULT.setLine(E1left); :}
 					;
-					
+
 SwitchCases ::= (SwitchCases_s) CASE NUMBER:N1 COLON StatementList:S2 SwitchCases:S3 {: RESULT=new SwitchCases_s(N1, S2, S3); RESULT.setLine(N1left); :}
 				|
 				(SwitchCases_e) {: RESULT=new SwitchCases_e(); :} /* epsilon */
 				;
-				
+
 
 StatementList ::= (StatementList_sl) Statement:S1 StatementList:S2 {: RESULT=new StatementList_sl(S1, S2); RESULT.setLine(S1left); :}
 				  |
@@ -376,9 +379,9 @@ CondFactRest ::= (CondFactRest_array) AND CondFact:C1 CondFactRest:C2 {: RESULT=
 				 (CondFactRest_e) {: RESULT=new CondFactRest_e(); :} /* epsilon */
 				 ;
 
-CondFact ::= (NonRelopCondFact) Expression:E1 {: RESULT=new NonRelopCondFact(E1); RESULT.setLine(E1left); :}
+CondFact ::= (NonRelopCondFact) NonTernaryExpression:N1 {: RESULT=new NonRelopCondFact(N1); RESULT.setLine(N1left); :}
 			 |
-			 (RelopCondFact) Expression:E1 Relop:R2 Expression:E3 {: RESULT=new RelopCondFact(E1, R2, E3); RESULT.setLine(E1left); :}
+			 (RelopCondFact) NonTernaryExpression:N1 Relop:R2 NonTernaryExpression:N3 {: RESULT=new RelopCondFact(N1, R2, N3); RESULT.setLine(N1left); :}
 			 ;
 
 
@@ -410,7 +413,7 @@ Relop ::= (EqRelop) EQ {: RESULT=new EqRelop(); :}
 		  |
 		  (SmEqRelop) LESS_EQUAL {: RESULT=new SmEqRelop(); :}
 		  ;
-		  
+
 Addop ::= (PlusAddop) PLUS {: RESULT=new PlusAddop(); :}
 		  |
 		  (MinusAddop) MINUS {: RESULT=new MinusAddop(); :}
@@ -422,12 +425,18 @@ Mulop ::= (MulMulop) MUL {: RESULT=new MulMulop(); :}
 		  |
 		  (ModMulop) MOD {: RESULT=new ModMulop(); :}
 		  ;
-		  
-Expression ::= (MinusTermExpression) MINUS Term:T1 TermList:T2 {: RESULT=new MinusTermExpression(T1, T2); RESULT.setLine(T1left); :}
+
+Expression ::= (NonTernaryExpression) NonTernaryExpression:N1 {: RESULT=new NonTernaryExpression(N1); RESULT.setLine(N1left); :}
 			   |
-			   (TermExpression) Term:T1 TermList:T2 {: RESULT=new TermExpression(T1, T2); RESULT.setLine(T1left); :}
-			
+			   (TernaryExpression) TernaryExpression:T1 {: RESULT=new TernaryExpression(T1); RESULT.setLine(T1left); :}
 			   ;
+
+NonTernaryExpression ::= (MinusTermExpression) MINUS Term:T1 TermList:T2 {: RESULT=new MinusTermExpression(T1, T2); RESULT.setLine(T1left); :}
+					     |
+					     (TermExpression) Term:T1 TermList:T2 {: RESULT=new TermExpression(T1, T2); RESULT.setLine(T1left); :}
+					     ;
+
+TernaryExpression ::= (TernaryExpression) Condition:C1 QUESTION_MARK Expression:E2 COLON Expression:E3 {: RESULT=new TernaryExpression(C1, E2, E3); RESULT.setLine(C1left); :};
 
 TermList ::= (TermList_array) Addop:A1 Term:T2 TermList:T3 {: RESULT=new TermList_array(A1, T2, T3); RESULT.setLine(A1left); :}
 			 |
@@ -440,7 +449,7 @@ FactorList ::= (FactorList_array) Mulop:M1 Factor:F2 FactorList:F3 {: RESULT=new
 			   |
 			   (FactorList_e) {: RESULT=new FactorList_e(); :} /* epsilon */
 			   ;
-			   
+
 Factor ::= (NonParamFactor) Designator:D1 {: RESULT=new NonParamFactor(D1); RESULT.setLine(D1left); :}
 		   |
 		   (ParamFactor_empty) Designator:D1 LPAREN RPAREN {: RESULT=new ParamFactor_empty(D1); RESULT.setLine(D1left); :}

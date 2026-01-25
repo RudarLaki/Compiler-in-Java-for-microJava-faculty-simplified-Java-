@@ -1,25 +1,25 @@
 // generated with ast extension for cup
 // version 0.8
-// 24/0/2026 18:27:39
+// 25/0/2026 18:11:18
 
 
 package src/rs/ac/bg/etf/pp1.ast;
 
 public class NonRelopCondFact extends CondFact {
 
-    private Expression Expression;
+    private NonTernaryExpression NonTernaryExpression;
 
-    public NonRelopCondFact (Expression Expression) {
-        this.Expression=Expression;
-        if(Expression!=null) Expression.setParent(this);
+    public NonRelopCondFact (NonTernaryExpression NonTernaryExpression) {
+        this.NonTernaryExpression=NonTernaryExpression;
+        if(NonTernaryExpression!=null) NonTernaryExpression.setParent(this);
     }
 
-    public Expression getExpression() {
-        return Expression;
+    public NonTernaryExpression getNonTernaryExpression() {
+        return NonTernaryExpression;
     }
 
-    public void setExpression(Expression Expression) {
-        this.Expression=Expression;
+    public void setNonTernaryExpression(NonTernaryExpression NonTernaryExpression) {
+        this.NonTernaryExpression=NonTernaryExpression;
     }
 
     public void accept(Visitor visitor) {
@@ -27,16 +27,16 @@ public class NonRelopCondFact extends CondFact {
     }
 
     public void childrenAccept(Visitor visitor) {
-        if(Expression!=null) Expression.accept(visitor);
+        if(NonTernaryExpression!=null) NonTernaryExpression.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
-        if(Expression!=null) Expression.traverseTopDown(visitor);
+        if(NonTernaryExpression!=null) NonTernaryExpression.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
-        if(Expression!=null) Expression.traverseBottomUp(visitor);
+        if(NonTernaryExpression!=null) NonTernaryExpression.traverseBottomUp(visitor);
         accept(visitor);
     }
 
@@ -45,8 +45,8 @@ public class NonRelopCondFact extends CondFact {
         buffer.append(tab);
         buffer.append("NonRelopCondFact(\n");
 
-        if(Expression!=null)
-            buffer.append(Expression.toString("  "+tab));
+        if(NonTernaryExpression!=null)
+            buffer.append(NonTernaryExpression.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");
