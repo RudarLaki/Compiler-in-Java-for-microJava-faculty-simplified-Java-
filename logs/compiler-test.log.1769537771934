@@ -1,0 +1,13 @@
+2026-01-27 19:15:53,623 INFO  rs.ac.bg.etf.pp1.MJParserTest - Compiling source file: D:\Eclipse\PP\PP_projekat\test\program.mj
+2026-01-27 19:15:53,684 INFO  rs.ac.bg.etf.pp1.MJParser - #2 program
+2026-01-27 19:15:53,684 INFO  rs.ac.bg.etf.pp1.MJParser - #48 TestConflict
+2026-01-27 19:15:53,684 INFO  rs.ac.bg.etf.pp1.MJParser - #8 const
+2026-01-27 19:15:53,684 INFO  rs.ac.bg.etf.pp1.MJParser - #48 int
+2026-01-27 19:15:53,685 INFO  rs.ac.bg.etf.pp1.MJParser - #48 xzuajuzaj
+2026-01-27 19:15:53,686 INFO  rs.ac.bg.etf.pp1.MJParser - #45 {
+2026-01-27 19:15:53,686 ERROR rs.ac.bg.etf.pp1.MJParser - 
+Sintaksna greska na liniji 3
+2026-01-27 19:15:53,686 ERROR rs.ac.bg.etf.pp1.MJParser - Fatalna greska, parsiranje nemoguce nastaviti na liniji 3
+2026-01-27 19:15:53,688 ERROR rs.ac.bg.etf.pp1.MJParserTest - Compilation error
+java.lang.ClassCastException: class rs.ac.bg.etf.pp1.ast.Type cannot be cast to class rs.ac.bg.etf.pp1.ast.Program (rs.ac.bg.etf.pp1.ast.Type and rs.ac.bg.etf.pp1.ast.Program are in unnamed module of loader 'app')
+	at rs.ac.bg.etf.pp1.MJParserTest.main(MJParserTest.java:30)

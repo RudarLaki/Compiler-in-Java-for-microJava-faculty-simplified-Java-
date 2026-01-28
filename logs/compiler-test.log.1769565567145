@@ -1,0 +1,31 @@
+2026-01-28 02:58:59,620 INFO  rs.ac.bg.etf.pp1.MJParserTest - Compiling source file: D:\Eclipse\PP\PP_projekat\test\program.mj
+2026-01-28 02:58:59,720 INFO  rs.ac.bg.etf.pp1.MJParser - #2 program
+2026-01-28 02:58:59,720 INFO  rs.ac.bg.etf.pp1.MJParser - #48 p
+2026-01-28 02:58:59,721 INFO  rs.ac.bg.etf.pp1.MJParser - #8 const
+2026-01-28 02:58:59,721 INFO  rs.ac.bg.etf.pp1.MJParser - #48 int
+2026-01-28 02:58:59,721 INFO  rs.ac.bg.etf.pp1.MJParser - #48 tableSize
+2026-01-28 02:58:59,722 INFO  rs.ac.bg.etf.pp1.MJParser - #34 =
+2026-01-28 02:58:59,723 INFO  rs.ac.bg.etf.pp1.MJParser - #50 10
+2026-01-28 02:58:59,723 INFO  rs.ac.bg.etf.pp1.MJParser - #37 ;
+2026-01-28 02:58:59,725 INFO  rs.ac.bg.etf.pp1.MJParser - #4 enum
+2026-01-28 02:58:59,737 INFO  rs.ac.bg.etf.pp1.MJParser - #48 Broj
+2026-01-28 02:58:59,737 INFO  rs.ac.bg.etf.pp1.MJParser - #45 {
+2026-01-28 02:58:59,738 INFO  rs.ac.bg.etf.pp1.MJParser - #48 NULA
+2026-01-28 02:58:59,738 INFO  rs.ac.bg.etf.pp1.MJParser - #39 ,
+2026-01-28 02:58:59,738 INFO  rs.ac.bg.etf.pp1.MJParser - #48 JEDAN
+2026-01-28 02:58:59,739 INFO  rs.ac.bg.etf.pp1.MJParser - #39 ,
+2026-01-28 02:58:59,739 INFO  rs.ac.bg.etf.pp1.MJParser - #48 TRI
+2026-01-28 02:58:59,739 INFO  rs.ac.bg.etf.pp1.MJParser - #34 =
+2026-01-28 02:58:59,739 INFO  rs.ac.bg.etf.pp1.MJParser - #50 3
+2026-01-28 02:58:59,739 INFO  rs.ac.bg.etf.pp1.MJParser - #39 ,
+2026-01-28 02:58:59,740 INFO  rs.ac.bg.etf.pp1.MJParser - #48 PET
+2026-01-28 02:58:59,740 INFO  rs.ac.bg.etf.pp1.MJParser - #34 =
+2026-01-28 02:58:59,740 INFO  rs.ac.bg.etf.pp1.MJParser - #50 5
+2026-01-28 02:58:59,740 INFO  rs.ac.bg.etf.pp1.MJParser - #46 }
+2026-01-28 02:58:59,743 INFO  rs.ac.bg.etf.pp1.MJParser - #6 abstract
+2026-01-28 02:58:59,744 ERROR rs.ac.bg.etf.pp1.MJParser - 
+Sintaksna greska na liniji 4
+2026-01-28 02:58:59,744 ERROR rs.ac.bg.etf.pp1.MJParser - Fatalna greska, parsiranje nemoguce nastaviti na liniji 4
+2026-01-28 02:58:59,748 ERROR rs.ac.bg.etf.pp1.MJParserTest - Compilation error
+java.lang.ClassCastException: class rs.ac.bg.etf.pp1.ast.EnumItemsList cannot be cast to class rs.ac.bg.etf.pp1.ast.Program (rs.ac.bg.etf.pp1.ast.EnumItemsList and rs.ac.bg.etf.pp1.ast.Program are in unnamed module of loader 'app')
+	at rs.ac.bg.etf.pp1.MJParserTest.main(MJParserTest.java:31)

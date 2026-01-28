@@ -1,9 +1,9 @@
 // generated with ast extension for cup
 // version 0.8
-// 25/0/2026 18:11:19
+// 28/0/2026 3:38:26
 
 
-package src/rs/ac/bg/etf/pp1.ast;
+package rs.ac.bg.etf.pp1.ast;
 
 public interface Visitor { 
 
@@ -12,7 +12,6 @@ public interface Visitor {
     public void visit(MatchedStatement MatchedStatement);
     public void visit(Constant Constant);
     public void visit(Relop Relop);
-    public void visit(Assignop Assignop);
     public void visit(TermList TermList);
     public void visit(ParamsList ParamsList);
     public void visit(Prefix Prefix);
@@ -22,6 +21,7 @@ public interface Visitor {
     public void visit(ConstDeclListRest ConstDeclListRest);
     public void visit(CondFactRest CondFactRest);
     public void visit(Factor Factor);
+    public void visit(VarDiffDecl VarDiffDecl);
     public void visit(DeclList DeclList);
     public void visit(DesignatorOp DesignatorOp);
     public void visit(PrintExpression PrintExpression);
@@ -30,6 +30,7 @@ public interface Visitor {
     public void visit(ReturnExpression ReturnExpression);
     public void visit(VarDeclListRest VarDeclListRest);
     public void visit(EnumItem EnumItem);
+    public void visit(VarDeclList VarDeclList);
     public void visit(SwitchCases SwitchCases);
     public void visit(DesignatorList DesignatorList);
     public void visit(DesignatorStatement DesignatorStatement);
@@ -42,6 +43,7 @@ public interface Visitor {
     public void visit(VarDecl VarDecl);
     public void visit(NonTernaryExpression NonTernaryExpression);
     public void visit(CondFact CondFact);
+    public void visit(MethodDeclList MethodDeclList);
     public void visit(Param Param);
     public void visit(ExpParamFactor ExpParamFactor);
     public void visit(NewParamFactor NewParamFactor);
@@ -59,8 +61,8 @@ public interface Visitor {
     public void visit(TernaryExpression TernaryExpression);
     public void visit(TermExpression TermExpression);
     public void visit(MinusTermExpression MinusTermExpression);
-    public void visit(TernaryExpression TernaryExpression);
-    public void visit(NonTernaryExpression NonTernaryExpression);
+    public void visit(TerExpression TerExpression);
+    public void visit(NonTerExpression NonTerExpression);
     public void visit(ModMulop ModMulop);
     public void visit(DivMulop DivMulop);
     public void visit(MulMulop MulMulop);
@@ -72,7 +74,7 @@ public interface Visitor {
     public void visit(GreaterRelop GreaterRelop);
     public void visit(NeqRelop NeqRelop);
     public void visit(EqRelop EqRelop);
-    public void visit(AssignOp AssignOp);
+    public void visit(Assignop Assignop);
     public void visit(ExpDesignatorOp ExpDesignatorOp);
     public void visit(LengthDesignatorOp LengthDesignatorOp);
     public void visit(IdentDesignatorOp IdentDesignatorOp);
@@ -118,9 +120,9 @@ public interface Visitor {
     public void visit(ContinueStatement ContinueStatement);
     public void visit(BreakStatement BreakStatement);
     public void visit(IfElseStatement IfElseStatement);
-    public void visit(DesignatorStatement DesignatorStatement);
-    public void visit(UnmatchedStatement UnmatchedStatement);
-    public void visit(MatchedStatement MatchedStatement);
+    public void visit(DesigStatement DesigStatement);
+    public void visit(UnmatchStatement UnmatchStatement);
+    public void visit(MatchStatement MatchStatement);
     public void visit(Type Type);
     public void visit(ArrayParam ArrayParam);
     public void visit(IdentParam IdentParam);
@@ -130,13 +132,14 @@ public interface Visitor {
     public void visit(ParamsList_param ParamsList_param);
     public void visit(VoidPrefix VoidPrefix);
     public void visit(TypePrefix TypePrefix);
-    public void visit(MethodDeclList MethodDeclList);
+    public void visit(MethodDeclList_e MethodDeclList_e);
+    public void visit(MethodDeclList_vdl MethodDeclList_vdl);
     public void visit(AssignEnumItem AssignEnumItem);
     public void visit(IdentEnumItem IdentEnumItem);
     public void visit(EnumItemsRest_e EnumItemsRest_e);
     public void visit(EnumItemsRest_comma EnumItemsRest_comma);
     public void visit(EnumItemsList EnumItemsList);
-    public void visit(Enum Enum);
+    public void visit(EnumDecl EnumDecl);
     public void visit(Constant_bool Constant_bool);
     public void visit(Constant_char Constant_char);
     public void visit(Constant_num Constant_num);
@@ -148,11 +151,13 @@ public interface Visitor {
     public void visit(IdentVarDecl IdentVarDecl);
     public void visit(VarDeclListRest_e VarDeclListRest_e);
     public void visit(VarDeclListRest_comma VarDeclListRest_comma);
-    public void visit(VarDeclList VarDeclList);
+    public void visit(VarDeclList_array VarDeclList_array);
+    public void visit(VarDiffDecl_e VarDiffDecl_e);
+    public void visit(VarDiffDecl_list VarDiffDecl_list);
     public void visit(DeclList_e DeclList_e);
-    public void visit(EnumDeclList EnumDeclList);
-    public void visit(VarDeclList VarDeclList);
-    public void visit(ConstDeclList ConstDeclList);
+    public void visit(DeclList_enum DeclList_enum);
+    public void visit(DeclList_var DeclList_var);
+    public void visit(DeclList_const DeclList_const);
     public void visit(Program Program);
 
 }

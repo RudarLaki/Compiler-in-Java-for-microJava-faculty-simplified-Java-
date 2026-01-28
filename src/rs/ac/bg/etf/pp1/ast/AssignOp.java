@@ -1,15 +1,16 @@
 // generated with ast extension for cup
 // version 0.8
-// 25/0/2026 18:11:19
+// 28/0/2026 3:38:26
 
 
-package src/rs/ac/bg/etf/pp1.ast;
+package rs.ac.bg.etf.pp1.ast;
 
-public abstract class Assignop implements SyntaxNode {
+public class Assignop implements SyntaxNode {
 
     private SyntaxNode parent;
-
     private int line;
+    public Assignop () {
+    }
 
     public SyntaxNode getParent() {
         return parent;
@@ -27,11 +28,28 @@ public abstract class Assignop implements SyntaxNode {
         this.line=line;
     }
 
-    public abstract void accept(Visitor visitor);
-    public abstract void childrenAccept(Visitor visitor);
-    public abstract void traverseTopDown(Visitor visitor);
-    public abstract void traverseBottomUp(Visitor visitor);
+    public void accept(Visitor visitor) {
+        visitor.visit(this);
+    }
 
-    public String toString() { return toString(""); }
-    public abstract String toString(String tab);
+    public void childrenAccept(Visitor visitor) {
+    }
+
+    public void traverseTopDown(Visitor visitor) {
+        accept(visitor);
+    }
+
+    public void traverseBottomUp(Visitor visitor) {
+        accept(visitor);
+    }
+
+    public String toString(String tab) {
+        StringBuffer buffer=new StringBuffer();
+        buffer.append(tab);
+        buffer.append("Assignop(\n");
+
+        buffer.append(tab);
+        buffer.append(") [Assignop]");
+        return buffer.toString();
+    }
 }

@@ -1,0 +1,9 @@
+2026-01-27 19:35:15,936 INFO  rs.ac.bg.etf.pp1.MJParserTest - Compiling source file: D:\Eclipse\PP\PP_projekat\test\program.mj
+2026-01-27 19:35:15,949 INFO  rs.ac.bg.etf.pp1.MJParser - #2 program
+2026-01-27 19:35:15,951 INFO  rs.ac.bg.etf.pp1.MJParser - #48 TestConflict
+2026-01-27 19:35:15,951 ERROR rs.ac.bg.etf.pp1.MJParser - 
+Sintaksna greska na liniji 1
+2026-01-27 19:35:15,951 ERROR rs.ac.bg.etf.pp1.MJParser - Fatalna greska, parsiranje se ne moze nastaviti na liniji 1
+2026-01-27 19:35:15,952 ERROR rs.ac.bg.etf.pp1.MJParserTest - Compilation error
+java.lang.NullPointerException: Cannot read field "value" because "s" is null
+	at rs.ac.bg.etf.pp1.MJParserTest.main(MJParserTest.java:30)

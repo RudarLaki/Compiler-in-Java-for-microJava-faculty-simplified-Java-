@@ -100,8 +100,9 @@ nonterminal Program,
 			MethodDeclList,
 			ConstDeclList,
 			VarDeclList,
-			Enum,
+			EnumDecl,
 			
+			VarDiffDecl,
 			VarDecl,
 			VarDeclListRest,
 			Type,
@@ -157,17 +158,21 @@ nonterminal Program,
 
 Program ::= (Program) PROGRAM IDENT DeclList LBRACE MethodDeclList RBRACE;
 
-DeclList ::= (ConstDeclList) ConstDeclList DeclList
+DeclList ::= (DeclList_const) ConstDeclList DeclList
 			 |
-			 (VarDeclList) VarDeclList DeclList
+			 (DeclList_var) VarDeclList DeclList
 			 |
-			 (EnumDeclList) Enum DeclList
+			 (DeclList_enum) EnumDecl DeclList
 			 |					 
 			 (DeclList_e) /*epsilon*/
 			 ;
 
+VarDiffDecl ::= (VarDiffDecl_list) VarDeclList VarDiffDecl
+				|
+				(VarDiffDecl_e) /* epsilon */
+				; 
 
-VarDeclList ::= (VarDeclList) Type VarDecl VarDeclListRest SEMICOLON;
+VarDeclList ::= (VarDeclList_array) Type VarDecl VarDeclListRest SEMICOLON;
 
 VarDeclListRest ::= (VarDeclListRest_comma) COMMA VarDecl VarDeclListRest
 					|
@@ -187,7 +192,7 @@ ConstDeclListRest ::= (ConstDeclListRest_comma) COMMA  ConstDecl ConstDeclListRe
 					  (ConstDeclListRest_e) /* epsilon */
 					  ;
 
-ConstDecl ::= (ConstDecl) IDENT EQ Constant;
+ConstDecl ::= (ConstDecl) IDENT ASSIGN Constant;
 
 Constant ::= (Constant_num) NUMBER
 			 |
@@ -197,7 +202,7 @@ Constant ::= (Constant_num) NUMBER
 			 ;
 
 
-Enum ::= (Enum) ENUM IDENT LBRACE EnumItemsList RBRACE;
+EnumDecl ::= (EnumDecl) ENUM IDENT LBRACE EnumItemsList RBRACE;
 
 EnumItemsList ::= (EnumItemsList) EnumItem EnumItemsRest;
 
@@ -208,11 +213,13 @@ EnumItemsRest ::= (EnumItemsRest_comma) COMMA EnumItem EnumItemsRest
 
 EnumItem ::= (IdentEnumItem) IDENT 
 			 |
-			 (AssignEnumItem) IDENT EQ NUMBER
+			 (AssignEnumItem) IDENT ASSIGN NUMBER
 			 ;
 
-
-MethodDeclList ::= (MethodDeclList) Prefix IDENT LPAREN ParamsList RPAREN VarDeclList LBRACE Statement RBRACE;
+MethodDeclList ::= (MethodDeclList_vdl) Prefix IDENT LPAREN ParamsList RPAREN VarDiffDecl LBRACE StatementList RBRACE MethodDeclList
+				   |
+				   (MethodDeclList_e) /* epsilon */
+				   ;
 
 Prefix ::= (TypePrefix) Type
 		   |
@@ -235,12 +242,12 @@ Param ::= (IdentParam) Type IDENT
 
 Type ::= (Type) IDENT;
 
-Statement ::= (MatchedStatement) MatchedStatement
+Statement ::= (MatchStatement) MatchedStatement
 			  |
-			  (UnmatchedStatement) UnmatchedStatement
+			  (UnmatchStatement) UnmatchedStatement
 			  ;
 
-MatchedStatement ::=  (DesignatorStatement) DesignatorStatement SEMICOLON
+MatchedStatement ::=  (DesigStatement) DesignatorStatement SEMICOLON
 					  |
 					  (IfElseStatement) IF LPAREN Condition RPAREN MatchedStatement ELSE MatchedStatement
 					  |
@@ -350,7 +357,7 @@ DesignatorOp ::= (IdentDesignatorOp) DOT IDENT
 				 (ExpDesignatorOp) LBRACKET Expression RBRACKET
 				 ; 
 
-Assignop ::= (AssignOp) ASSIGN;
+Assignop ::= (Assignop) ASSIGN;
 
 Relop ::= (EqRelop) EQ
 		  |
@@ -377,9 +384,9 @@ Mulop ::= (MulMulop) MUL
 		  (ModMulop) MOD
 		  ;
 
-Expression ::= (NonTernaryExpression) NonTernaryExpression
+Expression ::= (NonTerExpression) NonTernaryExpression
 			   |
-			   (TernaryExpression) TernaryExpression
+			   (TerExpression) TernaryExpression
 			   ;
 
 NonTernaryExpression ::= (MinusTermExpression) MINUS Term TermList

@@ -105,9 +105,11 @@ nonterminal
 nonterminal
 			VarDeclList VarDeclList;
 nonterminal
-			Enum Enum;
+			EnumDecl EnumDecl;
 nonterminal
 			
+			VarDiffDecl VarDiffDecl;
+nonterminal
 			VarDecl VarDecl;
 nonterminal
 			VarDeclListRest VarDeclListRest;
@@ -155,6 +157,8 @@ nonterminal
 			Expression Expression;
 nonterminal
 			NonTernaryExpression NonTernaryExpression;
+nonterminal
+			TernaryExpression TernaryExpression;
 nonterminal
 			SwitchCases SwitchCases;
 nonterminal
@@ -204,17 +208,21 @@ nonterminal
 
 Program ::= (Program) PROGRAM IDENT:I1 DeclList:D2 LBRACE MethodDeclList:M3 RBRACE {: RESULT=new Program(I1, D2, M3); RESULT.setLine(I1left); :};
 
-DeclList ::= (ConstDeclList) ConstDeclList:C1 DeclList:D2 {: RESULT=new ConstDeclList(C1, D2); RESULT.setLine(C1left); :}
+DeclList ::= (DeclList_const) ConstDeclList:C1 DeclList:D2 {: RESULT=new DeclList_const(C1, D2); RESULT.setLine(C1left); :}
 			 |
-			 (VarDeclList) VarDeclList:V1 DeclList:D2 {: RESULT=new VarDeclList(V1, D2); RESULT.setLine(V1left); :}
+			 (DeclList_var) VarDeclList:V1 DeclList:D2 {: RESULT=new DeclList_var(V1, D2); RESULT.setLine(V1left); :}
 			 |
-			 (EnumDeclList) Enum:E1 DeclList:D2 {: RESULT=new EnumDeclList(E1, D2); RESULT.setLine(E1left); :}
+			 (DeclList_enum) EnumDecl:E1 DeclList:D2 {: RESULT=new DeclList_enum(E1, D2); RESULT.setLine(E1left); :}
 			 |					 
 			 (DeclList_e) {: RESULT=new DeclList_e(); :} /*epsilon*/
 			 ;
 
+VarDiffDecl ::= (VarDiffDecl_list) VarDeclList:V1 VarDiffDecl:V2 {: RESULT=new VarDiffDecl_list(V1, V2); RESULT.setLine(V1left); :}
+				|
+				(VarDiffDecl_e) {: RESULT=new VarDiffDecl_e(); :} /* epsilon */
+				; 
 
-VarDeclList ::= (VarDeclList) Type:T1 VarDecl:V2 VarDeclListRest:V3 SEMICOLON {: RESULT=new VarDeclList(T1, V2, V3); RESULT.setLine(T1left); :};
+VarDeclList ::= (VarDeclList_array) Type:T1 VarDecl:V2 VarDeclListRest:V3 SEMICOLON {: RESULT=new VarDeclList_array(T1, V2, V3); RESULT.setLine(T1left); :};
 
 VarDeclListRest ::= (VarDeclListRest_comma) COMMA VarDecl:V1 VarDeclListRest:V2 {: RESULT=new VarDeclListRest_comma(V1, V2); RESULT.setLine(V1left); :}
 					|
@@ -234,7 +242,7 @@ ConstDeclListRest ::= (ConstDeclListRest_comma) COMMA  ConstDecl:C1 ConstDeclLis
 					  (ConstDeclListRest_e) {: RESULT=new ConstDeclListRest_e(); :} /* epsilon */
 					  ;
 
-ConstDecl ::= (ConstDecl) IDENT:I1 EQ Constant:C2 {: RESULT=new ConstDecl(I1, C2); RESULT.setLine(I1left); :};
+ConstDecl ::= (ConstDecl) IDENT:I1 ASSIGN Constant:C2 {: RESULT=new ConstDecl(I1, C2); RESULT.setLine(I1left); :};
 
 Constant ::= (Constant_num) NUMBER:N1 {: RESULT=new Constant_num(N1); RESULT.setLine(N1left); :}
 			 |
@@ -244,7 +252,7 @@ Constant ::= (Constant_num) NUMBER:N1 {: RESULT=new Constant_num(N1); RESULT.set
 			 ;
 
 
-Enum ::= (Enum) ENUM IDENT:I1 LBRACE EnumItemsList:E2 RBRACE {: RESULT=new Enum(I1, E2); RESULT.setLine(I1left); :};
+EnumDecl ::= (EnumDecl) ENUM IDENT:I1 LBRACE EnumItemsList:E2 RBRACE {: RESULT=new EnumDecl(I1, E2); RESULT.setLine(I1left); :};
 
 EnumItemsList ::= (EnumItemsList) EnumItem:E1 EnumItemsRest:E2 {: RESULT=new EnumItemsList(E1, E2); RESULT.setLine(E1left); :};
 
@@ -255,11 +263,13 @@ EnumItemsRest ::= (EnumItemsRest_comma) COMMA EnumItem:E1 EnumItemsRest:E2 {: RE
 
 EnumItem ::= (IdentEnumItem) IDENT:I1 {: RESULT=new IdentEnumItem(I1); RESULT.setLine(I1left); :} 
 			 |
-			 (AssignEnumItem) IDENT:I1 EQ NUMBER:N2 {: RESULT=new AssignEnumItem(I1, N2); RESULT.setLine(I1left); :}
+			 (AssignEnumItem) IDENT:I1 ASSIGN NUMBER:N2 {: RESULT=new AssignEnumItem(I1, N2); RESULT.setLine(I1left); :}
 			 ;
 
-
-MethodDeclList ::= (MethodDeclList) Prefix:P1 IDENT:I2 LPAREN ParamsList:P3 RPAREN VarDeclList:V4 LBRACE Statement:S5 RBRACE {: RESULT=new MethodDeclList(P1, I2, P3, V4, S5); RESULT.setLine(P1left); :};
+MethodDeclList ::= (MethodDeclList_vdl) Prefix:P1 IDENT:I2 LPAREN ParamsList:P3 RPAREN VarDiffDecl:V4 LBRACE StatementList:S5 RBRACE MethodDeclList:M6 {: RESULT=new MethodDeclList_vdl(P1, I2, P3, V4, S5, M6); RESULT.setLine(P1left); :}
+				   |
+				   (MethodDeclList_e) {: RESULT=new MethodDeclList_e(); :} /* epsilon */
+				   ;
 
 Prefix ::= (TypePrefix) Type:T1 {: RESULT=new TypePrefix(T1); RESULT.setLine(T1left); :}
 		   |
@@ -282,12 +292,12 @@ Param ::= (IdentParam) Type:T1 IDENT:I2 {: RESULT=new IdentParam(T1, I2); RESULT
 
 Type ::= (Type) IDENT:I1 {: RESULT=new Type(I1); RESULT.setLine(I1left); :};
 
-Statement ::= (MatchedStatement) MatchedStatement:M1 {: RESULT=new MatchedStatement(M1); RESULT.setLine(M1left); :}
+Statement ::= (MatchStatement) MatchedStatement:M1 {: RESULT=new MatchStatement(M1); RESULT.setLine(M1left); :}
 			  |
-			  (UnmatchedStatement) UnmatchedStatement:U1 {: RESULT=new UnmatchedStatement(U1); RESULT.setLine(U1left); :}
+			  (UnmatchStatement) UnmatchedStatement:U1 {: RESULT=new UnmatchStatement(U1); RESULT.setLine(U1left); :}
 			  ;
 
-MatchedStatement ::=  (DesignatorStatement) DesignatorStatement:D1 SEMICOLON {: RESULT=new DesignatorStatement(D1); RESULT.setLine(D1left); :}
+MatchedStatement ::=  (DesigStatement) DesignatorStatement:D1 SEMICOLON {: RESULT=new DesigStatement(D1); RESULT.setLine(D1left); :}
 					  |
 					  (IfElseStatement) IF LPAREN Condition:C1 RPAREN MatchedStatement:M2 ELSE MatchedStatement:M3 {: RESULT=new IfElseStatement(C1, M2, M3); RESULT.setLine(C1left); :}
 					  |
@@ -397,7 +407,7 @@ DesignatorOp ::= (IdentDesignatorOp) DOT IDENT:I1 {: RESULT=new IdentDesignatorO
 				 (ExpDesignatorOp) LBRACKET Expression:E1 RBRACKET {: RESULT=new ExpDesignatorOp(E1); RESULT.setLine(E1left); :}
 				 ; 
 
-Assignop ::= (AssignOp) ASSIGN {: RESULT=new AssignOp(); :};
+Assignop ::= (Assignop) ASSIGN {: RESULT=new Assignop(); :};
 
 Relop ::= (EqRelop) EQ {: RESULT=new EqRelop(); :}
 		  |
@@ -424,15 +434,17 @@ Mulop ::= (MulMulop) MUL {: RESULT=new MulMulop(); :}
 		  (ModMulop) MOD {: RESULT=new ModMulop(); :}
 		  ;
 
-Expression ::= (NonTernaryExpression) NonTernaryExpression:N1 {: RESULT=new NonTernaryExpression(N1); RESULT.setLine(N1left); :}
+Expression ::= (NonTerExpression) NonTernaryExpression:N1 {: RESULT=new NonTerExpression(N1); RESULT.setLine(N1left); :}
 			   |
-			   (TernaryExpression) Condition:C1 QUESTION_MARK Expression:E2 COLON Expression:E3 {: RESULT=new TernaryExpression(C1, E2, E3); RESULT.setLine(C1left); :}
+			   (TerExpression) TernaryExpression:T1 {: RESULT=new TerExpression(T1); RESULT.setLine(T1left); :}
 			   ;
 
 NonTernaryExpression ::= (MinusTermExpression) MINUS Term:T1 TermList:T2 {: RESULT=new MinusTermExpression(T1, T2); RESULT.setLine(T1left); :}
 					     |
 					     (TermExpression) Term:T1 TermList:T2 {: RESULT=new TermExpression(T1, T2); RESULT.setLine(T1left); :}
 					     ;
+
+TernaryExpression ::= (TernaryExpression) Condition:C1 QUESTION_MARK Expression:E2 COLON Expression:E3 {: RESULT=new TernaryExpression(C1, E2, E3); RESULT.setLine(C1left); :};
 
 TermList ::= (TermList_array) Addop:A1 Term:T2 TermList:T3 {: RESULT=new TermList_array(A1, T2, T3); RESULT.setLine(A1left); :}
 			 |

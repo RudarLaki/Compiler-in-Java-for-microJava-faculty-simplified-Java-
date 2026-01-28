@@ -1,0 +1,40 @@
+2026-01-27 20:16:27,974 INFO  rs.ac.bg.etf.pp1.MJParserTest - Compiling source file: D:\Eclipse\PP\PP_projekat\test\program.mj
+2026-01-27 20:16:28,142 INFO  rs.ac.bg.etf.pp1.MJParser - #2 program
+2026-01-27 20:16:28,143 INFO  rs.ac.bg.etf.pp1.MJParser - #48 TestConflict
+2026-01-27 20:16:28,143 INFO  rs.ac.bg.etf.pp1.MJParser - #48 int
+2026-01-27 20:16:28,144 INFO  rs.ac.bg.etf.pp1.MJParser - #48 x
+2026-01-27 20:16:28,146 INFO  rs.ac.bg.etf.pp1.MJParser - #39 ,
+2026-01-27 20:16:28,147 INFO  rs.ac.bg.etf.pp1.MJParser - #48 y
+2026-01-27 20:16:28,147 INFO  rs.ac.bg.etf.pp1.MJParser - #39 ,
+2026-01-27 20:16:28,148 INFO  rs.ac.bg.etf.pp1.MJParser - #48 z
+2026-01-27 20:16:28,148 INFO  rs.ac.bg.etf.pp1.MJParser - #37 ;
+2026-01-27 20:16:28,162 INFO  rs.ac.bg.etf.pp1.MJParser - #48 bool
+2026-01-27 20:16:28,163 INFO  rs.ac.bg.etf.pp1.MJParser - #48 a
+2026-01-27 20:16:28,163 INFO  rs.ac.bg.etf.pp1.MJParser - #39 ,
+2026-01-27 20:16:28,163 INFO  rs.ac.bg.etf.pp1.MJParser - #48 b
+2026-01-27 20:16:28,163 INFO  rs.ac.bg.etf.pp1.MJParser - #39 ,
+2026-01-27 20:16:28,164 INFO  rs.ac.bg.etf.pp1.MJParser - #48 c
+2026-01-27 20:16:28,164 INFO  rs.ac.bg.etf.pp1.MJParser - #37 ;
+2026-01-27 20:16:28,165 INFO  rs.ac.bg.etf.pp1.MJParser - #45 {
+2026-01-27 20:16:28,167 INFO  rs.ac.bg.etf.pp1.MJParser - #14 void
+2026-01-27 20:16:28,167 INFO  rs.ac.bg.etf.pp1.MJParser - #48 testCondition
+2026-01-27 20:16:28,170 INFO  rs.ac.bg.etf.pp1.MJParser - #41 (
+2026-01-27 20:16:28,170 INFO  rs.ac.bg.etf.pp1.MJParser - #42 )
+2026-01-27 20:16:28,173 INFO  rs.ac.bg.etf.pp1.MJParser - #45 {
+2026-01-27 20:16:28,174 INFO  rs.ac.bg.etf.pp1.MJParser - #48 x
+2026-01-27 20:16:28,174 INFO  rs.ac.bg.etf.pp1.MJParser - #34 =
+2026-01-27 20:16:28,180 INFO  rs.ac.bg.etf.pp1.MJParser - #48 a
+2026-01-27 20:16:28,182 INFO  rs.ac.bg.etf.pp1.MJParser - #33 ||
+2026-01-27 20:16:28,198 INFO  rs.ac.bg.etf.pp1.MJParser - #48 b
+2026-01-27 20:16:28,198 INFO  rs.ac.bg.etf.pp1.MJParser - #47 ?
+2026-01-27 20:16:28,205 INFO  rs.ac.bg.etf.pp1.MJParser - #50 10
+2026-01-27 20:16:28,205 INFO  rs.ac.bg.etf.pp1.MJParser - #38 :
+2026-01-27 20:16:28,206 INFO  rs.ac.bg.etf.pp1.MJParser - #50 20
+2026-01-27 20:16:28,207 INFO  rs.ac.bg.etf.pp1.MJParser - #37 ;
+2026-01-27 20:16:28,210 INFO  rs.ac.bg.etf.pp1.MJParser - #9 if
+2026-01-27 20:16:28,211 ERROR rs.ac.bg.etf.pp1.MJParser - 
+Sintaksna greska na liniji 15
+2026-01-27 20:16:28,212 ERROR rs.ac.bg.etf.pp1.MJParser - Fatalna greska, parsiranje nemoguce nastaviti na liniji 15
+2026-01-27 20:16:28,216 ERROR rs.ac.bg.etf.pp1.MJParserTest - Compilation error
+java.lang.ClassCastException: class rs.ac.bg.etf.pp1.ast.MatchStatement cannot be cast to class rs.ac.bg.etf.pp1.ast.Program (rs.ac.bg.etf.pp1.ast.MatchStatement and rs.ac.bg.etf.pp1.ast.Program are in unnamed module of loader 'app')
+	at rs.ac.bg.etf.pp1.MJParserTest.main(MJParserTest.java:31)

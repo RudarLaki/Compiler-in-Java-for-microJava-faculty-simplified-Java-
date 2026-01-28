@@ -1,9 +1,9 @@
 // generated with ast extension for cup
 // version 0.8
-// 25/0/2026 18:11:19
+// 28/0/2026 3:38:26
 
 
-package src/rs/ac/bg/etf/pp1.ast;
+package rs.ac.bg.etf.pp1.ast;
 
 public class ModMulop extends Mulop {
 
