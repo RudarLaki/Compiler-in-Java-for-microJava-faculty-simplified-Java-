@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 28/0/2026 3:38:26
+// 5/1/2026 23:51:26
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -124,16 +124,17 @@ public interface Visitor {
     public void visit(UnmatchStatement UnmatchStatement);
     public void visit(MatchStatement MatchStatement);
     public void visit(Type Type);
-    public void visit(ArrayParam ArrayParam);
-    public void visit(IdentParam IdentParam);
     public void visit(ParamsListRest_e ParamsListRest_e);
     public void visit(ParamsListRest_param ParamsListRest_param);
     public void visit(ParamsList_e ParamsList_e);
     public void visit(ParamsList_param ParamsList_param);
+    public void visit(MethodName MethodName);
     public void visit(VoidPrefix VoidPrefix);
     public void visit(TypePrefix TypePrefix);
+    public void visit(MethodDecl MethodDecl);
     public void visit(MethodDeclList_e MethodDeclList_e);
-    public void visit(MethodDeclList_vdl MethodDeclList_vdl);
+    public void visit(MethodDeclList_array MethodDeclList_array);
+    public void visit(EnumName EnumName);
     public void visit(AssignEnumItem AssignEnumItem);
     public void visit(IdentEnumItem IdentEnumItem);
     public void visit(EnumItemsRest_e EnumItemsRest_e);
@@ -158,6 +159,7 @@ public interface Visitor {
     public void visit(DeclList_enum DeclList_enum);
     public void visit(DeclList_var DeclList_var);
     public void visit(DeclList_const DeclList_const);
+    public void visit(ProgramName ProgramName);
     public void visit(Program Program);
 
 }

@@ -8,7 +8,7 @@ parser code {:
 
 	boolean errorDetected;
 	Logger log = Logger.getLogger(getClass());
-	
+
 	public void report_fatal_error(String message, Object info) throws java.lang.Exception{
 		done_parsing();
 		report_error(message, info);
@@ -46,8 +46,6 @@ scan with {:
 terminal PROGRAM,
 		 BREAK,
 		 ENUM,
-		 CLASS,
-		 ABSTRACT,
 		 ELSE,
 		 CONST,
 		 IF,
@@ -56,7 +54,6 @@ terminal PROGRAM,
 		 READ,
 		 RETURN,
 		 VOID,
-		 EXTENDS,
 		 CONTINUE,
 		 FOR,
 		 LENGTH,
@@ -96,6 +93,8 @@ terminal Integer BOOL, NUMBER;
 terminal Character CHAR;
 
 nonterminal Program,
+			ProgramName,
+			
 			DeclList,
 			MethodDeclList,
 			ConstDeclList,
@@ -110,12 +109,15 @@ nonterminal Program,
 			EnumItemsList,
 			EnumItemsRest,
 			EnumItem,
+			EnumName,
 			
 			ConstDecl,
 			ConstDeclListRest,
 			Constant,
-			Prefix,
 			
+			Prefix,
+			MethodDecl,
+			MethodName,
 			ParamsList,
 			ParamsListRest,
 			Param,
@@ -154,9 +156,12 @@ nonterminal Program,
 			Mulop,
 			Assignop,
 			Relop;
+			
+			
 
+Program ::= (Program) PROGRAM ProgramName DeclList LBRACE MethodDeclList RBRACE;
 
-Program ::= (Program) PROGRAM IDENT DeclList LBRACE MethodDeclList RBRACE;
+ProgramName ::= (ProgramName) IDENT;
 
 DeclList ::= (DeclList_const) ConstDeclList DeclList
 			 |
@@ -202,7 +207,7 @@ Constant ::= (Constant_num) NUMBER
 			 ;
 
 
-EnumDecl ::= (EnumDecl) ENUM IDENT LBRACE EnumItemsList RBRACE;
+EnumDecl ::= (EnumDecl) ENUM EnumName LBRACE EnumItemsList RBRACE;
 
 EnumItemsList ::= (EnumItemsList) EnumItem EnumItemsRest;
 
@@ -215,30 +220,33 @@ EnumItem ::= (IdentEnumItem) IDENT
 			 |
 			 (AssignEnumItem) IDENT ASSIGN NUMBER
 			 ;
+			 
+EnumName ::= (EnumName) IDENT;
 
-MethodDeclList ::= (MethodDeclList_vdl) Prefix IDENT LPAREN ParamsList RPAREN VarDiffDecl LBRACE StatementList RBRACE MethodDeclList
+
+MethodDeclList ::= (MethodDeclList_array) MethodDecl MethodDeclList
 				   |
 				   (MethodDeclList_e) /* epsilon */
 				   ;
+
+MethodDecl ::= (MethodDecl) Prefix MethodName LPAREN ParamsList RPAREN VarDiffDecl LBRACE StatementList RBRACE;
 
 Prefix ::= (TypePrefix) Type
 		   |
 		   (VoidPrefix) VOID
 		   ;
 
-ParamsList ::= (ParamsList_param) Param ParamsListRest
+MethodName ::= (MethodName) IDENT;
+
+ParamsList ::= (ParamsList_param) Type VarDecl ParamsListRest
 			   |
 			   (ParamsList_e)/* epsilon */ 
 			   ;
 
-ParamsListRest ::= (ParamsListRest_param) COMMA Param ParamsListRest
+ParamsListRest ::= (ParamsListRest_param) COMMA Type VarDecl ParamsListRest
 				   |
 				   (ParamsListRest_e) /* epsilon */
 				   ;
-
-Param ::= (IdentParam) Type IDENT
-		  |
-		  (ArrayParam) Type IDENT LBRACKET RBRACKET;
 
 Type ::= (Type) IDENT;
 

@@ -10,6 +10,10 @@ import org.apache.log4j.xml.DOMConfigurator;
 import java_cup.runtime.Symbol;
 import rs.ac.bg.etf.pp1.ast.Program;
 import rs.ac.bg.etf.pp1.util.Log4JUtils;
+import rs.etf.pp1.symboltable.Tab;
+import rs.etf.pp1.symboltable.concepts.Obj;
+import rs.etf.pp1.symboltable.concepts.Struct;
+import rs.ac.bg.etf.pp1.SemanticAnalyzer;
 
 public class MJParserTest {
     static {
@@ -26,11 +30,31 @@ public class MJParserTest {
             br = new BufferedReader(new FileReader(sourceCode));
             Yylex lexer = new Yylex(br);
             MJParser p = new MJParser(lexer);
-            Symbol s = p.parse(); // formiranje AST
-            System.out.println(s);
+            /* Formiranje ast */
+            Symbol s = p.parse();
+            /* ispis ast */
+            System.out.println();
             Program prog = (Program) (s.value);
             log.info(prog.toString(""));
             log.info("-------------------------------------------");
+            
+            /* Inicijalizacija tabele simbola */
+            Struct boolType = new Struct(Struct.Bool);
+            Tab.init();
+            Obj boolObj = Tab.insert(Obj.Type, "bool", boolType);
+            boolObj.setAdr(-1);
+            boolObj.setLevel(-1);
+            
+            /* Semanticka analiza */
+            SemanticAnalyzer sa = new SemanticAnalyzer();
+            prog.traverseBottomUp(sa);
+            /* Ispis tabele simbola */
+            Tab.dump();
+            if(!p.errorDetected && sa.passed())
+            		log.info("parsiranje uspesno zavrseno!");
+            else
+            	log.error("parsiranje NIJE uspesno");
+            
         } catch (Exception e) {
             log.error("Compilation error", e);
         } finally {

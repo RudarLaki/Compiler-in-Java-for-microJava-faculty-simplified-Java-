@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 28/0/2026 3:38:26
+// 5/1/2026 23:51:26
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -9,21 +9,22 @@ public class EnumDecl implements SyntaxNode {
 
     private SyntaxNode parent;
     private int line;
-    private String I1;
+    private EnumName EnumName;
     private EnumItemsList EnumItemsList;
 
-    public EnumDecl (String I1, EnumItemsList EnumItemsList) {
-        this.I1=I1;
+    public EnumDecl (EnumName EnumName, EnumItemsList EnumItemsList) {
+        this.EnumName=EnumName;
+        if(EnumName!=null) EnumName.setParent(this);
         this.EnumItemsList=EnumItemsList;
         if(EnumItemsList!=null) EnumItemsList.setParent(this);
     }
 
-    public String getI1() {
-        return I1;
+    public EnumName getEnumName() {
+        return EnumName;
     }
 
-    public void setI1(String I1) {
-        this.I1=I1;
+    public void setEnumName(EnumName EnumName) {
+        this.EnumName=EnumName;
     }
 
     public EnumItemsList getEnumItemsList() {
@@ -55,15 +56,18 @@ public class EnumDecl implements SyntaxNode {
     }
 
     public void childrenAccept(Visitor visitor) {
+        if(EnumName!=null) EnumName.accept(visitor);
         if(EnumItemsList!=null) EnumItemsList.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
+        if(EnumName!=null) EnumName.traverseTopDown(visitor);
         if(EnumItemsList!=null) EnumItemsList.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
+        if(EnumName!=null) EnumName.traverseBottomUp(visitor);
         if(EnumItemsList!=null) EnumItemsList.traverseBottomUp(visitor);
         accept(visitor);
     }
@@ -73,7 +77,10 @@ public class EnumDecl implements SyntaxNode {
         buffer.append(tab);
         buffer.append("EnumDecl(\n");
 
-        buffer.append(" "+tab+I1);
+        if(EnumName!=null)
+            buffer.append(EnumName.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
         buffer.append("\n");
 
         if(EnumItemsList!=null)

@@ -8,7 +8,7 @@ parser code {:
 
 	boolean errorDetected;
 	Logger log = Logger.getLogger(getClass());
-	
+
 	public void report_fatal_error(String message, Object info) throws java.lang.Exception{
 		done_parsing();
 		report_error(message, info);
@@ -46,8 +46,6 @@ scan with {:
 terminal PROGRAM,
 		 BREAK,
 		 ENUM,
-		 CLASS,
-		 ABSTRACT,
 		 ELSE,
 		 CONST,
 		 IF,
@@ -56,7 +54,6 @@ terminal PROGRAM,
 		 READ,
 		 RETURN,
 		 VOID,
-		 EXTENDS,
 		 CONTINUE,
 		 FOR,
 		 LENGTH,
@@ -97,6 +94,9 @@ terminal Character CHAR;
 
 nonterminal Program Program;
 nonterminal
+			ProgramName ProgramName;
+nonterminal
+			
 			DeclList DeclList;
 nonterminal
 			MethodDeclList MethodDeclList;
@@ -123,6 +123,8 @@ nonterminal
 nonterminal
 			EnumItem EnumItem;
 nonterminal
+			EnumName EnumName;
+nonterminal
 			
 			ConstDecl ConstDecl;
 nonterminal
@@ -130,9 +132,13 @@ nonterminal
 nonterminal
 			Constant Constant;
 nonterminal
+			
 			Prefix Prefix;
 nonterminal
-			
+			MethodDecl MethodDecl;
+nonterminal
+			MethodName MethodName;
+nonterminal
 			ParamsList ParamsList;
 nonterminal
 			ParamsListRest ParamsListRest;
@@ -204,9 +210,12 @@ nonterminal
 			Assignop Assignop;
 nonterminal
 			Relop Relop;
+			
+			
 
+Program ::= (Program) PROGRAM ProgramName:P1 DeclList:D2 LBRACE MethodDeclList:M3 RBRACE {: RESULT=new Program(P1, D2, M3); RESULT.setLine(P1left); :};
 
-Program ::= (Program) PROGRAM IDENT:I1 DeclList:D2 LBRACE MethodDeclList:M3 RBRACE {: RESULT=new Program(I1, D2, M3); RESULT.setLine(I1left); :};
+ProgramName ::= (ProgramName) IDENT:I1 {: RESULT=new ProgramName(I1); RESULT.setLine(I1left); :};
 
 DeclList ::= (DeclList_const) ConstDeclList:C1 DeclList:D2 {: RESULT=new DeclList_const(C1, D2); RESULT.setLine(C1left); :}
 			 |
@@ -252,7 +261,7 @@ Constant ::= (Constant_num) NUMBER:N1 {: RESULT=new Constant_num(N1); RESULT.set
 			 ;
 
 
-EnumDecl ::= (EnumDecl) ENUM IDENT:I1 LBRACE EnumItemsList:E2 RBRACE {: RESULT=new EnumDecl(I1, E2); RESULT.setLine(I1left); :};
+EnumDecl ::= (EnumDecl) ENUM EnumName:E1 LBRACE EnumItemsList:E2 RBRACE {: RESULT=new EnumDecl(E1, E2); RESULT.setLine(E1left); :};
 
 EnumItemsList ::= (EnumItemsList) EnumItem:E1 EnumItemsRest:E2 {: RESULT=new EnumItemsList(E1, E2); RESULT.setLine(E1left); :};
 
@@ -265,30 +274,33 @@ EnumItem ::= (IdentEnumItem) IDENT:I1 {: RESULT=new IdentEnumItem(I1); RESULT.se
 			 |
 			 (AssignEnumItem) IDENT:I1 ASSIGN NUMBER:N2 {: RESULT=new AssignEnumItem(I1, N2); RESULT.setLine(I1left); :}
 			 ;
+			 
+EnumName ::= (EnumName) IDENT:I1 {: RESULT=new EnumName(I1); RESULT.setLine(I1left); :};
 
-MethodDeclList ::= (MethodDeclList_vdl) Prefix:P1 IDENT:I2 LPAREN ParamsList:P3 RPAREN VarDiffDecl:V4 LBRACE StatementList:S5 RBRACE MethodDeclList:M6 {: RESULT=new MethodDeclList_vdl(P1, I2, P3, V4, S5, M6); RESULT.setLine(P1left); :}
+
+MethodDeclList ::= (MethodDeclList_array) MethodDecl:M1 MethodDeclList:M2 {: RESULT=new MethodDeclList_array(M1, M2); RESULT.setLine(M1left); :}
 				   |
 				   (MethodDeclList_e) {: RESULT=new MethodDeclList_e(); :} /* epsilon */
 				   ;
+
+MethodDecl ::= (MethodDecl) Prefix:P1 MethodName:M2 LPAREN ParamsList:P3 RPAREN VarDiffDecl:V4 LBRACE StatementList:S5 RBRACE {: RESULT=new MethodDecl(P1, M2, P3, V4, S5); RESULT.setLine(P1left); :};
 
 Prefix ::= (TypePrefix) Type:T1 {: RESULT=new TypePrefix(T1); RESULT.setLine(T1left); :}
 		   |
 		   (VoidPrefix) VOID {: RESULT=new VoidPrefix(); :}
 		   ;
 
-ParamsList ::= (ParamsList_param) Param:P1 ParamsListRest:P2 {: RESULT=new ParamsList_param(P1, P2); RESULT.setLine(P1left); :}
+MethodName ::= (MethodName) IDENT:I1 {: RESULT=new MethodName(I1); RESULT.setLine(I1left); :};
+
+ParamsList ::= (ParamsList_param) Type:T1 VarDecl:V2 ParamsListRest:P3 {: RESULT=new ParamsList_param(T1, V2, P3); RESULT.setLine(T1left); :}
 			   |
 			   (ParamsList_e) {: RESULT=new ParamsList_e(); :}/* epsilon */ 
 			   ;
 
-ParamsListRest ::= (ParamsListRest_param) COMMA Param:P1 ParamsListRest:P2 {: RESULT=new ParamsListRest_param(P1, P2); RESULT.setLine(P1left); :}
+ParamsListRest ::= (ParamsListRest_param) COMMA Type:T1 VarDecl:V2 ParamsListRest:P3 {: RESULT=new ParamsListRest_param(T1, V2, P3); RESULT.setLine(T1left); :}
 				   |
 				   (ParamsListRest_e) {: RESULT=new ParamsListRest_e(); :} /* epsilon */
 				   ;
-
-Param ::= (IdentParam) Type:T1 IDENT:I2 {: RESULT=new IdentParam(T1, I2); RESULT.setLine(T1left); :}
-		  |
-		  (ArrayParam) Type:T1 IDENT:I2 LBRACKET RBRACKET {: RESULT=new ArrayParam(T1, I2); RESULT.setLine(T1left); :};
 
 Type ::= (Type) IDENT:I1 {: RESULT=new Type(I1); RESULT.setLine(I1left); :};
 

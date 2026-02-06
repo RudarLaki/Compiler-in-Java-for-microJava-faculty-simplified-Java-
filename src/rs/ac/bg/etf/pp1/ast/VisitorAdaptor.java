@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 28/0/2026 3:38:26
+// 5/1/2026 23:51:26
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -124,16 +124,17 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(UnmatchStatement UnmatchStatement) { visit(); }
     public void visit(MatchStatement MatchStatement) { visit(); }
     public void visit(Type Type) { visit(); }
-    public void visit(ArrayParam ArrayParam) { visit(); }
-    public void visit(IdentParam IdentParam) { visit(); }
     public void visit(ParamsListRest_e ParamsListRest_e) { visit(); }
     public void visit(ParamsListRest_param ParamsListRest_param) { visit(); }
     public void visit(ParamsList_e ParamsList_e) { visit(); }
     public void visit(ParamsList_param ParamsList_param) { visit(); }
+    public void visit(MethodName MethodName) { visit(); }
     public void visit(VoidPrefix VoidPrefix) { visit(); }
     public void visit(TypePrefix TypePrefix) { visit(); }
+    public void visit(MethodDecl MethodDecl) { visit(); }
     public void visit(MethodDeclList_e MethodDeclList_e) { visit(); }
-    public void visit(MethodDeclList_vdl MethodDeclList_vdl) { visit(); }
+    public void visit(MethodDeclList_array MethodDeclList_array) { visit(); }
+    public void visit(EnumName EnumName) { visit(); }
     public void visit(AssignEnumItem AssignEnumItem) { visit(); }
     public void visit(IdentEnumItem IdentEnumItem) { visit(); }
     public void visit(EnumItemsRest_e EnumItemsRest_e) { visit(); }
@@ -158,6 +159,7 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(DeclList_enum DeclList_enum) { visit(); }
     public void visit(DeclList_var DeclList_var) { visit(); }
     public void visit(DeclList_const DeclList_const) { visit(); }
+    public void visit(ProgramName ProgramName) { visit(); }
     public void visit(Program Program) { visit(); }
 
 
