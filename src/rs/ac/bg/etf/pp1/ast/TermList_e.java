@@ -1,13 +1,25 @@
 // generated with ast extension for cup
 // version 0.8
-// 5/1/2026 23:51:26
+// 9/1/2026 18:57:41
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class TermList_e extends TermList {
 
-    public TermList_e () {
+    private Term Term;
+
+    public TermList_e (Term Term) {
+        this.Term=Term;
+        if(Term!=null) Term.setParent(this);
+    }
+
+    public Term getTerm() {
+        return Term;
+    }
+
+    public void setTerm(Term Term) {
+        this.Term=Term;
     }
 
     public void accept(Visitor visitor) {
@@ -15,13 +27,16 @@ public class TermList_e extends TermList {
     }
 
     public void childrenAccept(Visitor visitor) {
+        if(Term!=null) Term.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
+        if(Term!=null) Term.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
+        if(Term!=null) Term.traverseBottomUp(visitor);
         accept(visitor);
     }
 
@@ -29,6 +44,12 @@ public class TermList_e extends TermList {
         StringBuffer buffer=new StringBuffer();
         buffer.append(tab);
         buffer.append("TermList_e(\n");
+
+        if(Term!=null)
+            buffer.append(Term.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
+        buffer.append("\n");
 
         buffer.append(tab);
         buffer.append(") [TermList_e]");

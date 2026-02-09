@@ -1,244 +1,427 @@
-2026-02-05 23:54:48,376 INFO  rs.ac.bg.etf.pp1.MJParserTest - Compiling source file: D:\Eclipse\PP\PP_projekat\test\program.mj
-2026-02-05 23:54:48,521 INFO  rs.ac.bg.etf.pp1.MJParser - #2 program
-2026-02-05 23:54:48,521 INFO  rs.ac.bg.etf.pp1.MJParser - #45 BigTest
-2026-02-05 23:54:48,522 INFO  rs.ac.bg.etf.pp1.MJParser - #6 const
-2026-02-05 23:54:48,524 INFO  rs.ac.bg.etf.pp1.MJParser - #45 int
-2026-02-05 23:54:48,524 INFO  rs.ac.bg.etf.pp1.MJParser - #45 MAX
-2026-02-05 23:54:48,527 INFO  rs.ac.bg.etf.pp1.MJParser - #31 =
-2026-02-05 23:54:48,527 INFO  rs.ac.bg.etf.pp1.MJParser - #47 100
-2026-02-05 23:54:48,528 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
-2026-02-05 23:54:48,532 INFO  rs.ac.bg.etf.pp1.MJParser - #6 const
-2026-02-05 23:54:48,545 INFO  rs.ac.bg.etf.pp1.MJParser - #45 char
-2026-02-05 23:54:48,546 INFO  rs.ac.bg.etf.pp1.MJParser - #45 NL
-2026-02-05 23:54:48,546 INFO  rs.ac.bg.etf.pp1.MJParser - #31 =
-2026-02-05 23:54:48,546 INFO  rs.ac.bg.etf.pp1.MJParser - #48 \
-2026-02-05 23:54:48,546 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
-2026-02-05 23:54:48,547 INFO  rs.ac.bg.etf.pp1.MJParser - #6 const
-2026-02-05 23:54:48,547 INFO  rs.ac.bg.etf.pp1.MJParser - #45 bool
-2026-02-05 23:54:48,547 INFO  rs.ac.bg.etf.pp1.MJParser - #45 FLAG
-2026-02-05 23:54:48,547 INFO  rs.ac.bg.etf.pp1.MJParser - #31 =
-2026-02-05 23:54:48,548 INFO  rs.ac.bg.etf.pp1.MJParser - #46 1
-2026-02-05 23:54:48,548 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
-2026-02-05 23:54:48,548 INFO  rs.ac.bg.etf.pp1.MJParser - #45 int
-2026-02-05 23:54:48,548 INFO  rs.ac.bg.etf.pp1.MJParser - #45 g1
-2026-02-05 23:54:48,548 INFO  rs.ac.bg.etf.pp1.MJParser - #36 ,
-2026-02-05 23:54:48,549 INFO  rs.ac.bg.etf.pp1.MJParser - #45 g2
-2026-02-05 23:54:48,549 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
-2026-02-05 23:54:48,551 INFO  rs.ac.bg.etf.pp1.MJParser - #45 int
-2026-02-05 23:54:48,551 INFO  rs.ac.bg.etf.pp1.MJParser - #45 arrGlobal
-2026-02-05 23:54:48,553 INFO  rs.ac.bg.etf.pp1.MJParser - #40 [
-2026-02-05 23:54:48,553 INFO  rs.ac.bg.etf.pp1.MJParser - #41 ]
-2026-02-05 23:54:48,553 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
-2026-02-05 23:54:48,553 INFO  rs.ac.bg.etf.pp1.MJParser - #4 enum
-2026-02-05 23:54:48,553 INFO  rs.ac.bg.etf.pp1.MJParser - #45 Color
-2026-02-05 23:54:48,554 INFO  rs.ac.bg.etf.pp1.MJParser - #42 {
-2026-02-05 23:54:48,557 INFO  rs.ac.bg.etf.pp1.MJParser - #45 RED
-2026-02-05 23:54:48,557 INFO  rs.ac.bg.etf.pp1.MJParser - #36 ,
-2026-02-05 23:54:48,557 INFO  rs.ac.bg.etf.pp1.MJParser - #45 GREEN
-2026-02-05 23:54:48,557 INFO  rs.ac.bg.etf.pp1.MJParser - #43 }
-2026-02-05 23:54:48,564 INFO  rs.ac.bg.etf.pp1.MJParser - #4 enum
-2026-02-05 23:54:48,567 INFO  rs.ac.bg.etf.pp1.MJParser - #45 Light
-2026-02-05 23:54:48,568 INFO  rs.ac.bg.etf.pp1.MJParser - #42 {
-2026-02-05 23:54:48,568 INFO  rs.ac.bg.etf.pp1.MJParser - #45 RED
-2026-02-05 23:54:48,568 INFO  rs.ac.bg.etf.pp1.MJParser - #36 ,
-2026-02-05 23:54:48,568 INFO  rs.ac.bg.etf.pp1.MJParser - #45 YELLOW
-2026-02-05 23:54:48,569 INFO  rs.ac.bg.etf.pp1.MJParser - #36 ,
-2026-02-05 23:54:48,569 INFO  rs.ac.bg.etf.pp1.MJParser - #45 BLUE
-2026-02-05 23:54:48,569 INFO  rs.ac.bg.etf.pp1.MJParser - #31 =
-2026-02-05 23:54:48,569 INFO  rs.ac.bg.etf.pp1.MJParser - #47 5
-2026-02-05 23:54:48,569 INFO  rs.ac.bg.etf.pp1.MJParser - #36 ,
-2026-02-05 23:54:48,570 INFO  rs.ac.bg.etf.pp1.MJParser - #45 DARK
-2026-02-05 23:54:48,570 INFO  rs.ac.bg.etf.pp1.MJParser - #31 =
-2026-02-05 23:54:48,570 INFO  rs.ac.bg.etf.pp1.MJParser - #47 8
-2026-02-05 23:54:48,570 INFO  rs.ac.bg.etf.pp1.MJParser - #36 ,
-2026-02-05 23:54:48,571 INFO  rs.ac.bg.etf.pp1.MJParser - #45 SEVEN
-2026-02-05 23:54:48,571 INFO  rs.ac.bg.etf.pp1.MJParser - #43 }
-2026-02-05 23:54:48,571 INFO  rs.ac.bg.etf.pp1.MJParser - #42 {
-2026-02-05 23:54:48,574 INFO  rs.ac.bg.etf.pp1.MJParser - #12 void
-2026-02-05 23:54:48,574 INFO  rs.ac.bg.etf.pp1.MJParser - #45 main
-2026-02-05 23:54:48,576 INFO  rs.ac.bg.etf.pp1.MJParser - #38 (
-2026-02-05 23:54:48,578 INFO  rs.ac.bg.etf.pp1.MJParser - #39 )
-2026-02-05 23:54:48,581 INFO  rs.ac.bg.etf.pp1.MJParser - #45 int
-2026-02-05 23:54:48,582 INFO  rs.ac.bg.etf.pp1.MJParser - #45 a
-2026-02-05 23:54:48,582 INFO  rs.ac.bg.etf.pp1.MJParser - #36 ,
-2026-02-05 23:54:48,582 INFO  rs.ac.bg.etf.pp1.MJParser - #45 b
-2026-02-05 23:54:48,582 INFO  rs.ac.bg.etf.pp1.MJParser - #36 ,
-2026-02-05 23:54:48,583 INFO  rs.ac.bg.etf.pp1.MJParser - #45 c
-2026-02-05 23:54:48,583 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
-2026-02-05 23:54:48,583 INFO  rs.ac.bg.etf.pp1.MJParser - #45 bool
-2026-02-05 23:54:48,583 INFO  rs.ac.bg.etf.pp1.MJParser - #45 d
-2026-02-05 23:54:48,583 INFO  rs.ac.bg.etf.pp1.MJParser - #36 ,
-2026-02-05 23:54:48,583 INFO  rs.ac.bg.etf.pp1.MJParser - #45 e
-2026-02-05 23:54:48,584 INFO  rs.ac.bg.etf.pp1.MJParser - #36 ,
-2026-02-05 23:54:48,584 INFO  rs.ac.bg.etf.pp1.MJParser - #45 f
-2026-02-05 23:54:48,584 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
-2026-02-05 23:54:48,584 INFO  rs.ac.bg.etf.pp1.MJParser - #42 {
-2026-02-05 23:54:48,586 INFO  rs.ac.bg.etf.pp1.MJParser - #45 i
-2026-02-05 23:54:48,586 INFO  rs.ac.bg.etf.pp1.MJParser - #31 =
-2026-02-05 23:54:48,590 INFO  rs.ac.bg.etf.pp1.MJParser - #47 0
-2026-02-05 23:54:48,592 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
-2026-02-05 23:54:48,599 INFO  rs.ac.bg.etf.pp1.MJParser - #45 sum
-2026-02-05 23:54:48,600 INFO  rs.ac.bg.etf.pp1.MJParser - #31 =
-2026-02-05 23:54:48,600 INFO  rs.ac.bg.etf.pp1.MJParser - #47 0
-2026-02-05 23:54:48,600 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
-2026-02-05 23:54:48,600 INFO  rs.ac.bg.etf.pp1.MJParser - #45 arrLocal
-2026-02-05 23:54:48,601 INFO  rs.ac.bg.etf.pp1.MJParser - #31 =
-2026-02-05 23:54:48,601 INFO  rs.ac.bg.etf.pp1.MJParser - #8 new
-2026-02-05 23:54:48,601 INFO  rs.ac.bg.etf.pp1.MJParser - #45 int
-2026-02-05 23:54:48,601 INFO  rs.ac.bg.etf.pp1.MJParser - #40 [
-2026-02-05 23:54:48,601 INFO  rs.ac.bg.etf.pp1.MJParser - #47 10
-2026-02-05 23:54:48,602 INFO  rs.ac.bg.etf.pp1.MJParser - #41 ]
-2026-02-05 23:54:48,602 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
-2026-02-05 23:54:48,602 INFO  rs.ac.bg.etf.pp1.MJParser - #9 print
-2026-02-05 23:54:48,602 INFO  rs.ac.bg.etf.pp1.MJParser - #38 (
-2026-02-05 23:54:48,602 INFO  rs.ac.bg.etf.pp1.MJParser - #45 sum
-2026-02-05 23:54:48,603 INFO  rs.ac.bg.etf.pp1.MJParser - #39 )
-2026-02-05 23:54:48,603 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
-2026-02-05 23:54:48,603 INFO  rs.ac.bg.etf.pp1.MJParser - #9 print
-2026-02-05 23:54:48,604 INFO  rs.ac.bg.etf.pp1.MJParser - #38 (
-2026-02-05 23:54:48,604 INFO  rs.ac.bg.etf.pp1.MJParser - #45 NL
-2026-02-05 23:54:48,604 INFO  rs.ac.bg.etf.pp1.MJParser - #39 )
-2026-02-05 23:54:48,604 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
-2026-02-05 23:54:48,604 INFO  rs.ac.bg.etf.pp1.MJParser - #43 }
-2026-02-05 23:54:48,607 INFO  rs.ac.bg.etf.pp1.MJParser - #45 int
-2026-02-05 23:54:48,610 INFO  rs.ac.bg.etf.pp1.MJParser - #45 add
-2026-02-05 23:54:48,610 INFO  rs.ac.bg.etf.pp1.MJParser - #38 (
-2026-02-05 23:54:48,611 INFO  rs.ac.bg.etf.pp1.MJParser - #45 int
-2026-02-05 23:54:48,611 INFO  rs.ac.bg.etf.pp1.MJParser - #45 a
-2026-02-05 23:54:48,611 INFO  rs.ac.bg.etf.pp1.MJParser - #36 ,
-2026-02-05 23:54:48,612 INFO  rs.ac.bg.etf.pp1.MJParser - #45 int
-2026-02-05 23:54:48,612 INFO  rs.ac.bg.etf.pp1.MJParser - #45 b
-2026-02-05 23:54:48,612 INFO  rs.ac.bg.etf.pp1.MJParser - #36 ,
-2026-02-05 23:54:48,612 INFO  rs.ac.bg.etf.pp1.MJParser - #45 int
-2026-02-05 23:54:48,613 INFO  rs.ac.bg.etf.pp1.MJParser - #45 c
-2026-02-05 23:54:48,613 INFO  rs.ac.bg.etf.pp1.MJParser - #36 ,
-2026-02-05 23:54:48,613 INFO  rs.ac.bg.etf.pp1.MJParser - #45 int
-2026-02-05 23:54:48,613 INFO  rs.ac.bg.etf.pp1.MJParser - #45 d
-2026-02-05 23:54:48,613 INFO  rs.ac.bg.etf.pp1.MJParser - #36 ,
-2026-02-05 23:54:48,614 INFO  rs.ac.bg.etf.pp1.MJParser - #45 int
-2026-02-05 23:54:48,614 INFO  rs.ac.bg.etf.pp1.MJParser - #45 e
-2026-02-05 23:54:48,614 INFO  rs.ac.bg.etf.pp1.MJParser - #39 )
-2026-02-05 23:54:48,617 INFO  rs.ac.bg.etf.pp1.MJParser - #45 int
-2026-02-05 23:54:48,618 INFO  rs.ac.bg.etf.pp1.MJParser - #45 result
-2026-02-05 23:54:48,618 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
-2026-02-05 23:54:48,618 INFO  rs.ac.bg.etf.pp1.MJParser - #42 {
-2026-02-05 23:54:48,619 INFO  rs.ac.bg.etf.pp1.MJParser - #45 result
-2026-02-05 23:54:48,619 INFO  rs.ac.bg.etf.pp1.MJParser - #31 =
-2026-02-05 23:54:48,619 INFO  rs.ac.bg.etf.pp1.MJParser - #45 a
-2026-02-05 23:54:48,619 INFO  rs.ac.bg.etf.pp1.MJParser - #18 +
-2026-02-05 23:54:48,620 INFO  rs.ac.bg.etf.pp1.MJParser - #45 b
-2026-02-05 23:54:48,627 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
-2026-02-05 23:54:48,628 INFO  rs.ac.bg.etf.pp1.MJParser - #11 return
-2026-02-05 23:54:48,628 INFO  rs.ac.bg.etf.pp1.MJParser - #45 result
-2026-02-05 23:54:48,628 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
-2026-02-05 23:54:48,629 INFO  rs.ac.bg.etf.pp1.MJParser - #43 }
-2026-02-05 23:54:48,630 INFO  rs.ac.bg.etf.pp1.MJParser - #45 int
-2026-02-05 23:54:48,630 INFO  rs.ac.bg.etf.pp1.MJParser - #45 sumArray
-2026-02-05 23:54:48,630 INFO  rs.ac.bg.etf.pp1.MJParser - #38 (
-2026-02-05 23:54:48,630 INFO  rs.ac.bg.etf.pp1.MJParser - #45 int
-2026-02-05 23:54:48,630 INFO  rs.ac.bg.etf.pp1.MJParser - #45 a
-2026-02-05 23:54:48,631 INFO  rs.ac.bg.etf.pp1.MJParser - #40 [
-2026-02-05 23:54:48,631 INFO  rs.ac.bg.etf.pp1.MJParser - #41 ]
-2026-02-05 23:54:48,631 INFO  rs.ac.bg.etf.pp1.MJParser - #36 ,
-2026-02-05 23:54:48,631 INFO  rs.ac.bg.etf.pp1.MJParser - #45 int
-2026-02-05 23:54:48,631 INFO  rs.ac.bg.etf.pp1.MJParser - #45 n
-2026-02-05 23:54:48,631 INFO  rs.ac.bg.etf.pp1.MJParser - #39 )
-2026-02-05 23:54:48,631 INFO  rs.ac.bg.etf.pp1.MJParser - #45 int
-2026-02-05 23:54:48,631 INFO  rs.ac.bg.etf.pp1.MJParser - #45 i
-2026-02-05 23:54:48,631 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
-2026-02-05 23:54:48,631 INFO  rs.ac.bg.etf.pp1.MJParser - #45 int
-2026-02-05 23:54:48,632 INFO  rs.ac.bg.etf.pp1.MJParser - #45 s
-2026-02-05 23:54:48,632 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
-2026-02-05 23:54:48,632 INFO  rs.ac.bg.etf.pp1.MJParser - #42 {
-2026-02-05 23:54:48,632 INFO  rs.ac.bg.etf.pp1.MJParser - #45 i
-2026-02-05 23:54:48,632 INFO  rs.ac.bg.etf.pp1.MJParser - #31 =
-2026-02-05 23:54:48,632 INFO  rs.ac.bg.etf.pp1.MJParser - #47 0
-2026-02-05 23:54:48,632 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
-2026-02-05 23:54:48,633 INFO  rs.ac.bg.etf.pp1.MJParser - #45 s
-2026-02-05 23:54:48,633 INFO  rs.ac.bg.etf.pp1.MJParser - #31 =
-2026-02-05 23:54:48,633 INFO  rs.ac.bg.etf.pp1.MJParser - #47 0
-2026-02-05 23:54:48,633 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
-2026-02-05 23:54:48,633 INFO  rs.ac.bg.etf.pp1.MJParser - #11 return
-2026-02-05 23:54:48,633 INFO  rs.ac.bg.etf.pp1.MJParser - #45 s
-2026-02-05 23:54:48,633 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
-2026-02-05 23:54:48,634 INFO  rs.ac.bg.etf.pp1.MJParser - #43 }
-2026-02-05 23:54:48,634 INFO  rs.ac.bg.etf.pp1.MJParser - #12 void
-2026-02-05 23:54:48,634 INFO  rs.ac.bg.etf.pp1.MJParser - #45 shadowTest
-2026-02-05 23:54:48,634 INFO  rs.ac.bg.etf.pp1.MJParser - #38 (
-2026-02-05 23:54:48,634 INFO  rs.ac.bg.etf.pp1.MJParser - #45 int
-2026-02-05 23:54:48,634 INFO  rs.ac.bg.etf.pp1.MJParser - #45 g1
-2026-02-05 23:54:48,634 INFO  rs.ac.bg.etf.pp1.MJParser - #39 )
-2026-02-05 23:54:48,634 INFO  rs.ac.bg.etf.pp1.MJParser - #45 int
-2026-02-05 23:54:48,636 INFO  rs.ac.bg.etf.pp1.MJParser - #45 g2
-2026-02-05 23:54:48,636 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
-2026-02-05 23:54:48,636 INFO  rs.ac.bg.etf.pp1.MJParser - #45 int
-2026-02-05 23:54:48,636 INFO  rs.ac.bg.etf.pp1.MJParser - #45 arrGlobal
-2026-02-05 23:54:48,636 INFO  rs.ac.bg.etf.pp1.MJParser - #40 [
-2026-02-05 23:54:48,636 INFO  rs.ac.bg.etf.pp1.MJParser - #41 ]
-2026-02-05 23:54:48,636 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
-2026-02-05 23:54:48,636 INFO  rs.ac.bg.etf.pp1.MJParser - #42 {
-2026-02-05 23:54:48,636 INFO  rs.ac.bg.etf.pp1.MJParser - #45 g2
-2026-02-05 23:54:48,637 INFO  rs.ac.bg.etf.pp1.MJParser - #31 =
-2026-02-05 23:54:48,637 INFO  rs.ac.bg.etf.pp1.MJParser - #45 g1
-2026-02-05 23:54:48,637 INFO  rs.ac.bg.etf.pp1.MJParser - #18 +
-2026-02-05 23:54:48,637 INFO  rs.ac.bg.etf.pp1.MJParser - #47 10
-2026-02-05 23:54:48,637 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
-2026-02-05 23:54:48,637 INFO  rs.ac.bg.etf.pp1.MJParser - #45 arrGlobal
-2026-02-05 23:54:48,637 INFO  rs.ac.bg.etf.pp1.MJParser - #31 =
-2026-02-05 23:54:48,637 INFO  rs.ac.bg.etf.pp1.MJParser - #8 new
-2026-02-05 23:54:48,638 INFO  rs.ac.bg.etf.pp1.MJParser - #45 int
-2026-02-05 23:54:48,638 INFO  rs.ac.bg.etf.pp1.MJParser - #40 [
-2026-02-05 23:54:48,638 INFO  rs.ac.bg.etf.pp1.MJParser - #47 5
-2026-02-05 23:54:48,638 INFO  rs.ac.bg.etf.pp1.MJParser - #41 ]
-2026-02-05 23:54:48,638 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
-2026-02-05 23:54:48,638 INFO  rs.ac.bg.etf.pp1.MJParser - #45 arrGlobal
-2026-02-05 23:54:48,638 INFO  rs.ac.bg.etf.pp1.MJParser - #40 [
-2026-02-05 23:54:48,639 INFO  rs.ac.bg.etf.pp1.MJParser - #47 0
-2026-02-05 23:54:48,639 INFO  rs.ac.bg.etf.pp1.MJParser - #41 ]
-2026-02-05 23:54:48,639 INFO  rs.ac.bg.etf.pp1.MJParser - #31 =
-2026-02-05 23:54:48,639 INFO  rs.ac.bg.etf.pp1.MJParser - #45 g2
-2026-02-05 23:54:48,639 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
-2026-02-05 23:54:48,640 INFO  rs.ac.bg.etf.pp1.MJParser - #9 print
-2026-02-05 23:54:48,640 INFO  rs.ac.bg.etf.pp1.MJParser - #38 (
-2026-02-05 23:54:48,640 INFO  rs.ac.bg.etf.pp1.MJParser - #45 arrGlobal
-2026-02-05 23:54:48,640 INFO  rs.ac.bg.etf.pp1.MJParser - #40 [
-2026-02-05 23:54:48,640 INFO  rs.ac.bg.etf.pp1.MJParser - #47 0
-2026-02-05 23:54:48,640 INFO  rs.ac.bg.etf.pp1.MJParser - #41 ]
-2026-02-05 23:54:48,640 INFO  rs.ac.bg.etf.pp1.MJParser - #39 )
-2026-02-05 23:54:48,642 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
-2026-02-05 23:54:48,642 INFO  rs.ac.bg.etf.pp1.MJParser - #43 }
-2026-02-05 23:54:48,642 INFO  rs.ac.bg.etf.pp1.MJParser - #45 int
-2026-02-05 23:54:48,642 INFO  rs.ac.bg.etf.pp1.MJParser - #45 boundedAdd
-2026-02-05 23:54:48,643 INFO  rs.ac.bg.etf.pp1.MJParser - #38 (
-2026-02-05 23:54:48,643 INFO  rs.ac.bg.etf.pp1.MJParser - #45 int
-2026-02-05 23:54:48,643 INFO  rs.ac.bg.etf.pp1.MJParser - #45 x
-2026-02-05 23:54:48,643 INFO  rs.ac.bg.etf.pp1.MJParser - #39 )
-2026-02-05 23:54:48,643 INFO  rs.ac.bg.etf.pp1.MJParser - #42 {
-2026-02-05 23:54:48,643 INFO  rs.ac.bg.etf.pp1.MJParser - #7 if
-2026-02-05 23:54:48,644 INFO  rs.ac.bg.etf.pp1.MJParser - #38 (
-2026-02-05 23:54:48,644 INFO  rs.ac.bg.etf.pp1.MJParser - #45 x
-2026-02-05 23:54:48,644 INFO  rs.ac.bg.etf.pp1.MJParser - #18 +
-2026-02-05 23:54:48,644 INFO  rs.ac.bg.etf.pp1.MJParser - #47 1
-2026-02-05 23:54:48,644 INFO  rs.ac.bg.etf.pp1.MJParser - #25 >
-2026-02-05 23:54:48,644 INFO  rs.ac.bg.etf.pp1.MJParser - #45 MAX
-2026-02-05 23:54:48,648 INFO  rs.ac.bg.etf.pp1.MJParser - #39 )
-2026-02-05 23:54:48,654 INFO  rs.ac.bg.etf.pp1.MJParser - #42 {
-2026-02-05 23:54:48,654 INFO  rs.ac.bg.etf.pp1.MJParser - #11 return
-2026-02-05 23:54:48,655 INFO  rs.ac.bg.etf.pp1.MJParser - #45 MAX
-2026-02-05 23:54:48,655 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
-2026-02-05 23:54:48,655 INFO  rs.ac.bg.etf.pp1.MJParser - #43 }
-2026-02-05 23:54:48,655 INFO  rs.ac.bg.etf.pp1.MJParser - #11 return
-2026-02-05 23:54:48,656 INFO  rs.ac.bg.etf.pp1.MJParser - #45 x
-2026-02-05 23:54:48,656 INFO  rs.ac.bg.etf.pp1.MJParser - #18 +
-2026-02-05 23:54:48,656 INFO  rs.ac.bg.etf.pp1.MJParser - #47 1
-2026-02-05 23:54:48,656 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
-2026-02-05 23:54:48,656 INFO  rs.ac.bg.etf.pp1.MJParser - #43 }
-2026-02-05 23:54:48,657 INFO  rs.ac.bg.etf.pp1.MJParser - #43 }
-2026-02-05 23:54:48,659 INFO  rs.ac.bg.etf.pp1.MJParser - #0 
-2026-02-05 23:54:48,662 INFO  rs.ac.bg.etf.pp1.MJParser - #0 
-2026-02-05 23:54:48,667 INFO  rs.ac.bg.etf.pp1.MJParserTest - Program(
+2026-02-09 19:24:22,095 INFO  rs.ac.bg.etf.pp1.MJParserTest - Compiling source file: D:\Eclipse\PP\PP_projekat\test\program.mj
+2026-02-09 19:24:22,149 INFO  rs.ac.bg.etf.pp1.MJParser - #2 program
+2026-02-09 19:24:22,149 INFO  rs.ac.bg.etf.pp1.MJParser - #45 TestProgram
+2026-02-09 19:24:22,149 INFO  rs.ac.bg.etf.pp1.MJParser - #3 const
+2026-02-09 19:24:22,150 INFO  rs.ac.bg.etf.pp1.MJParser - #45 int
+2026-02-09 19:24:22,150 INFO  rs.ac.bg.etf.pp1.MJParser - #45 MAX
+2026-02-09 19:24:22,151 INFO  rs.ac.bg.etf.pp1.MJParser - #23 =
+2026-02-09 19:24:22,151 INFO  rs.ac.bg.etf.pp1.MJParser - #47 100
+2026-02-09 19:24:22,151 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
+2026-02-09 19:24:22,152 INFO  rs.ac.bg.etf.pp1.MJParser - #3 const
+2026-02-09 19:24:22,153 INFO  rs.ac.bg.etf.pp1.MJParser - #45 char
+2026-02-09 19:24:22,153 INFO  rs.ac.bg.etf.pp1.MJParser - #45 LETTER
+2026-02-09 19:24:22,153 INFO  rs.ac.bg.etf.pp1.MJParser - #23 =
+2026-02-09 19:24:22,153 INFO  rs.ac.bg.etf.pp1.MJParser - #48 x
+2026-02-09 19:24:22,153 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
+2026-02-09 19:24:22,153 INFO  rs.ac.bg.etf.pp1.MJParser - #45 int
+2026-02-09 19:24:22,153 INFO  rs.ac.bg.etf.pp1.MJParser - #45 globalNum
+2026-02-09 19:24:22,153 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
+2026-02-09 19:24:22,155 INFO  rs.ac.bg.etf.pp1.MJParser - #45 int
+2026-02-09 19:24:22,155 INFO  rs.ac.bg.etf.pp1.MJParser - #45 array
+2026-02-09 19:24:22,156 INFO  rs.ac.bg.etf.pp1.MJParser - #40 [
+2026-02-09 19:24:22,156 INFO  rs.ac.bg.etf.pp1.MJParser - #41 ]
+2026-02-09 19:24:22,156 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
+2026-02-09 19:24:22,156 INFO  rs.ac.bg.etf.pp1.MJParser - #4 enum
+2026-02-09 19:24:22,156 INFO  rs.ac.bg.etf.pp1.MJParser - #45 Color
+2026-02-09 19:24:22,156 INFO  rs.ac.bg.etf.pp1.MJParser - #42 {
+2026-02-09 19:24:22,157 INFO  rs.ac.bg.etf.pp1.MJParser - #45 RED
+2026-02-09 19:24:22,158 INFO  rs.ac.bg.etf.pp1.MJParser - #23 =
+2026-02-09 19:24:22,158 INFO  rs.ac.bg.etf.pp1.MJParser - #47 1
+2026-02-09 19:24:22,158 INFO  rs.ac.bg.etf.pp1.MJParser - #36 ,
+2026-02-09 19:24:22,158 INFO  rs.ac.bg.etf.pp1.MJParser - #45 GREEN
+2026-02-09 19:24:22,158 INFO  rs.ac.bg.etf.pp1.MJParser - #36 ,
+2026-02-09 19:24:22,158 INFO  rs.ac.bg.etf.pp1.MJParser - #45 BLUE
+2026-02-09 19:24:22,158 INFO  rs.ac.bg.etf.pp1.MJParser - #23 =
+2026-02-09 19:24:22,158 INFO  rs.ac.bg.etf.pp1.MJParser - #47 5
+2026-02-09 19:24:22,158 INFO  rs.ac.bg.etf.pp1.MJParser - #36 ,
+2026-02-09 19:24:22,158 INFO  rs.ac.bg.etf.pp1.MJParser - #45 YELLOW
+2026-02-09 19:24:22,158 INFO  rs.ac.bg.etf.pp1.MJParser - #43 }
+2026-02-09 19:24:22,160 INFO  rs.ac.bg.etf.pp1.MJParser - #42 {
+2026-02-09 19:24:22,161 INFO  rs.ac.bg.etf.pp1.MJParser - #45 int
+2026-02-09 19:24:22,161 INFO  rs.ac.bg.etf.pp1.MJParser - #45 noParams
+2026-02-09 19:24:22,161 INFO  rs.ac.bg.etf.pp1.MJParser - #38 (
+2026-02-09 19:24:22,162 INFO  rs.ac.bg.etf.pp1.MJParser - #39 )
+2026-02-09 19:24:22,163 INFO  rs.ac.bg.etf.pp1.MJParser - #42 {
+2026-02-09 19:24:22,163 INFO  rs.ac.bg.etf.pp1.MJParser - #8 return
+2026-02-09 19:24:22,163 INFO  rs.ac.bg.etf.pp1.MJParser - #47 42
+2026-02-09 19:24:22,165 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
+2026-02-09 19:24:22,167 INFO  rs.ac.bg.etf.pp1.MJParser - #43 }
+2026-02-09 19:24:22,168 INFO  rs.ac.bg.etf.pp1.MJParser - #45 int
+2026-02-09 19:24:22,169 INFO  rs.ac.bg.etf.pp1.MJParser - #45 withParams
+2026-02-09 19:24:22,169 INFO  rs.ac.bg.etf.pp1.MJParser - #38 (
+2026-02-09 19:24:22,169 INFO  rs.ac.bg.etf.pp1.MJParser - #45 int
+2026-02-09 19:24:22,169 INFO  rs.ac.bg.etf.pp1.MJParser - #45 a
+2026-02-09 19:24:22,169 INFO  rs.ac.bg.etf.pp1.MJParser - #36 ,
+2026-02-09 19:24:22,169 INFO  rs.ac.bg.etf.pp1.MJParser - #45 int
+2026-02-09 19:24:22,169 INFO  rs.ac.bg.etf.pp1.MJParser - #45 b
+2026-02-09 19:24:22,169 INFO  rs.ac.bg.etf.pp1.MJParser - #39 )
+2026-02-09 19:24:22,170 INFO  rs.ac.bg.etf.pp1.MJParser - #42 {
+2026-02-09 19:24:22,170 INFO  rs.ac.bg.etf.pp1.MJParser - #8 return
+2026-02-09 19:24:22,170 INFO  rs.ac.bg.etf.pp1.MJParser - #45 a
+2026-02-09 19:24:22,170 INFO  rs.ac.bg.etf.pp1.MJParser - #18 +
+2026-02-09 19:24:22,170 INFO  rs.ac.bg.etf.pp1.MJParser - #45 b
+2026-02-09 19:24:22,171 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
+2026-02-09 19:24:22,171 INFO  rs.ac.bg.etf.pp1.MJParser - #43 }
+2026-02-09 19:24:22,171 INFO  rs.ac.bg.etf.pp1.MJParser - #9 void
+2026-02-09 19:24:22,171 INFO  rs.ac.bg.etf.pp1.MJParser - #45 testSwitch
+2026-02-09 19:24:22,172 INFO  rs.ac.bg.etf.pp1.MJParser - #38 (
+2026-02-09 19:24:22,172 INFO  rs.ac.bg.etf.pp1.MJParser - #45 int
+2026-02-09 19:24:22,172 INFO  rs.ac.bg.etf.pp1.MJParser - #45 val
+2026-02-09 19:24:22,172 INFO  rs.ac.bg.etf.pp1.MJParser - #39 )
+2026-02-09 19:24:22,172 INFO  rs.ac.bg.etf.pp1.MJParser - #42 {
+2026-02-09 19:24:22,172 INFO  rs.ac.bg.etf.pp1.MJParser - #16 switch
+2026-02-09 19:24:22,172 INFO  rs.ac.bg.etf.pp1.MJParser - #38 (
+2026-02-09 19:24:22,174 INFO  rs.ac.bg.etf.pp1.MJParser - #45 val
+2026-02-09 19:24:22,174 INFO  rs.ac.bg.etf.pp1.MJParser - #39 )
+2026-02-09 19:24:22,174 INFO  rs.ac.bg.etf.pp1.MJParser - #42 {
+2026-02-09 19:24:22,174 INFO  rs.ac.bg.etf.pp1.MJParser - #17 case
+2026-02-09 19:24:22,174 INFO  rs.ac.bg.etf.pp1.MJParser - #47 1
+2026-02-09 19:24:22,174 INFO  rs.ac.bg.etf.pp1.MJParser - #35 :
+2026-02-09 19:24:22,174 INFO  rs.ac.bg.etf.pp1.MJParser - #6 print
+2026-02-09 19:24:22,174 INFO  rs.ac.bg.etf.pp1.MJParser - #38 (
+2026-02-09 19:24:22,174 INFO  rs.ac.bg.etf.pp1.MJParser - #47 10
+2026-02-09 19:24:22,174 INFO  rs.ac.bg.etf.pp1.MJParser - #39 )
+2026-02-09 19:24:22,174 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
+2026-02-09 19:24:22,174 INFO  rs.ac.bg.etf.pp1.MJParser - #17 case
+2026-02-09 19:24:22,174 INFO  rs.ac.bg.etf.pp1.MJParser - #47 2
+2026-02-09 19:24:22,174 INFO  rs.ac.bg.etf.pp1.MJParser - #35 :
+2026-02-09 19:24:22,174 INFO  rs.ac.bg.etf.pp1.MJParser - #6 print
+2026-02-09 19:24:22,174 INFO  rs.ac.bg.etf.pp1.MJParser - #38 (
+2026-02-09 19:24:22,174 INFO  rs.ac.bg.etf.pp1.MJParser - #47 20
+2026-02-09 19:24:22,174 INFO  rs.ac.bg.etf.pp1.MJParser - #39 )
+2026-02-09 19:24:22,174 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
+2026-02-09 19:24:22,174 INFO  rs.ac.bg.etf.pp1.MJParser - #17 case
+2026-02-09 19:24:22,175 INFO  rs.ac.bg.etf.pp1.MJParser - #47 5
+2026-02-09 19:24:22,175 INFO  rs.ac.bg.etf.pp1.MJParser - #35 :
+2026-02-09 19:24:22,175 INFO  rs.ac.bg.etf.pp1.MJParser - #6 print
+2026-02-09 19:24:22,175 INFO  rs.ac.bg.etf.pp1.MJParser - #38 (
+2026-02-09 19:24:22,175 INFO  rs.ac.bg.etf.pp1.MJParser - #47 50
+2026-02-09 19:24:22,175 INFO  rs.ac.bg.etf.pp1.MJParser - #39 )
+2026-02-09 19:24:22,175 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
+2026-02-09 19:24:22,175 INFO  rs.ac.bg.etf.pp1.MJParser - #43 }
+2026-02-09 19:24:22,177 INFO  rs.ac.bg.etf.pp1.MJParser - #43 }
+2026-02-09 19:24:22,177 INFO  rs.ac.bg.etf.pp1.MJParser - #9 void
+2026-02-09 19:24:22,177 INFO  rs.ac.bg.etf.pp1.MJParser - #45 testArrayLength
+2026-02-09 19:24:22,177 INFO  rs.ac.bg.etf.pp1.MJParser - #38 (
+2026-02-09 19:24:22,177 INFO  rs.ac.bg.etf.pp1.MJParser - #39 )
+2026-02-09 19:24:22,177 INFO  rs.ac.bg.etf.pp1.MJParser - #45 int
+2026-02-09 19:24:22,177 INFO  rs.ac.bg.etf.pp1.MJParser - #45 arr
+2026-02-09 19:24:22,177 INFO  rs.ac.bg.etf.pp1.MJParser - #40 [
+2026-02-09 19:24:22,177 INFO  rs.ac.bg.etf.pp1.MJParser - #41 ]
+2026-02-09 19:24:22,177 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
+2026-02-09 19:24:22,177 INFO  rs.ac.bg.etf.pp1.MJParser - #45 int
+2026-02-09 19:24:22,177 INFO  rs.ac.bg.etf.pp1.MJParser - #45 len
+2026-02-09 19:24:22,177 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
+2026-02-09 19:24:22,177 INFO  rs.ac.bg.etf.pp1.MJParser - #45 int
+2026-02-09 19:24:22,177 INFO  rs.ac.bg.etf.pp1.MJParser - #45 x
+2026-02-09 19:24:22,177 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
+2026-02-09 19:24:22,177 INFO  rs.ac.bg.etf.pp1.MJParser - #42 {
+2026-02-09 19:24:22,177 INFO  rs.ac.bg.etf.pp1.MJParser - #45 arr
+2026-02-09 19:24:22,177 INFO  rs.ac.bg.etf.pp1.MJParser - #23 =
+2026-02-09 19:24:22,177 INFO  rs.ac.bg.etf.pp1.MJParser - #5 new
+2026-02-09 19:24:22,179 INFO  rs.ac.bg.etf.pp1.MJParser - #45 int
+2026-02-09 19:24:22,179 INFO  rs.ac.bg.etf.pp1.MJParser - #40 [
+2026-02-09 19:24:22,179 INFO  rs.ac.bg.etf.pp1.MJParser - #47 15
+2026-02-09 19:24:22,179 INFO  rs.ac.bg.etf.pp1.MJParser - #41 ]
+2026-02-09 19:24:22,179 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
+2026-02-09 19:24:22,179 INFO  rs.ac.bg.etf.pp1.MJParser - #45 len
+2026-02-09 19:24:22,179 INFO  rs.ac.bg.etf.pp1.MJParser - #23 =
+2026-02-09 19:24:22,180 INFO  rs.ac.bg.etf.pp1.MJParser - #45 arr
+2026-02-09 19:24:22,180 INFO  rs.ac.bg.etf.pp1.MJParser - #37 .
+2026-02-09 19:24:22,180 INFO  rs.ac.bg.etf.pp1.MJParser - #13 length
+2026-02-09 19:24:22,180 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
+2026-02-09 19:24:22,180 INFO  rs.ac.bg.etf.pp1.MJParser - #6 print
+2026-02-09 19:24:22,181 INFO  rs.ac.bg.etf.pp1.MJParser - #38 (
+2026-02-09 19:24:22,181 INFO  rs.ac.bg.etf.pp1.MJParser - #45 len
+2026-02-09 19:24:22,181 INFO  rs.ac.bg.etf.pp1.MJParser - #39 )
+2026-02-09 19:24:22,181 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
+2026-02-09 19:24:22,181 INFO  rs.ac.bg.etf.pp1.MJParser - #45 arr
+2026-02-09 19:24:22,181 INFO  rs.ac.bg.etf.pp1.MJParser - #40 [
+2026-02-09 19:24:22,181 INFO  rs.ac.bg.etf.pp1.MJParser - #47 0
+2026-02-09 19:24:22,182 INFO  rs.ac.bg.etf.pp1.MJParser - #41 ]
+2026-02-09 19:24:22,182 INFO  rs.ac.bg.etf.pp1.MJParser - #23 =
+2026-02-09 19:24:22,182 INFO  rs.ac.bg.etf.pp1.MJParser - #47 100
+2026-02-09 19:24:22,182 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
+2026-02-09 19:24:22,182 INFO  rs.ac.bg.etf.pp1.MJParser - #45 arr
+2026-02-09 19:24:22,182 INFO  rs.ac.bg.etf.pp1.MJParser - #40 [
+2026-02-09 19:24:22,182 INFO  rs.ac.bg.etf.pp1.MJParser - #45 len
+2026-02-09 19:24:22,182 INFO  rs.ac.bg.etf.pp1.MJParser - #19 -
+2026-02-09 19:24:22,182 INFO  rs.ac.bg.etf.pp1.MJParser - #47 1
+2026-02-09 19:24:22,183 INFO  rs.ac.bg.etf.pp1.MJParser - #41 ]
+2026-02-09 19:24:22,183 INFO  rs.ac.bg.etf.pp1.MJParser - #23 =
+2026-02-09 19:24:22,183 INFO  rs.ac.bg.etf.pp1.MJParser - #47 200
+2026-02-09 19:24:22,183 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
+2026-02-09 19:24:22,183 INFO  rs.ac.bg.etf.pp1.MJParser - #45 x
+2026-02-09 19:24:22,183 INFO  rs.ac.bg.etf.pp1.MJParser - #23 =
+2026-02-09 19:24:22,183 INFO  rs.ac.bg.etf.pp1.MJParser - #45 len
+2026-02-09 19:24:22,183 INFO  rs.ac.bg.etf.pp1.MJParser - #37 .
+2026-02-09 19:24:22,183 INFO  rs.ac.bg.etf.pp1.MJParser - #13 length
+2026-02-09 19:24:22,183 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
+2026-02-09 19:24:22,183 INFO  rs.ac.bg.etf.pp1.MJParser - #43 }
+2026-02-09 19:24:22,183 INFO  rs.ac.bg.etf.pp1.MJParser - #9 void
+2026-02-09 19:24:22,183 INFO  rs.ac.bg.etf.pp1.MJParser - #45 testEnum
+2026-02-09 19:24:22,183 INFO  rs.ac.bg.etf.pp1.MJParser - #38 (
+2026-02-09 19:24:22,183 INFO  rs.ac.bg.etf.pp1.MJParser - #39 )
+2026-02-09 19:24:22,183 INFO  rs.ac.bg.etf.pp1.MJParser - #45 int
+2026-02-09 19:24:22,183 INFO  rs.ac.bg.etf.pp1.MJParser - #45 color
+2026-02-09 19:24:22,183 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
+2026-02-09 19:24:22,183 INFO  rs.ac.bg.etf.pp1.MJParser - #45 int
+2026-02-09 19:24:22,183 INFO  rs.ac.bg.etf.pp1.MJParser - #45 y
+2026-02-09 19:24:22,184 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
+2026-02-09 19:24:22,184 INFO  rs.ac.bg.etf.pp1.MJParser - #45 char
+2026-02-09 19:24:22,184 INFO  rs.ac.bg.etf.pp1.MJParser - #45 a
+2026-02-09 19:24:22,184 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
+2026-02-09 19:24:22,184 INFO  rs.ac.bg.etf.pp1.MJParser - #42 {
+2026-02-09 19:24:22,184 INFO  rs.ac.bg.etf.pp1.MJParser - #45 color
+2026-02-09 19:24:22,184 INFO  rs.ac.bg.etf.pp1.MJParser - #23 =
+2026-02-09 19:24:22,184 INFO  rs.ac.bg.etf.pp1.MJParser - #45 Color
+2026-02-09 19:24:22,184 INFO  rs.ac.bg.etf.pp1.MJParser - #37 .
+2026-02-09 19:24:22,184 INFO  rs.ac.bg.etf.pp1.MJParser - #45 RED
+2026-02-09 19:24:22,184 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
+2026-02-09 19:24:22,184 INFO  rs.ac.bg.etf.pp1.MJParser - #6 print
+2026-02-09 19:24:22,184 INFO  rs.ac.bg.etf.pp1.MJParser - #38 (
+2026-02-09 19:24:22,184 INFO  rs.ac.bg.etf.pp1.MJParser - #45 color
+2026-02-09 19:24:22,184 INFO  rs.ac.bg.etf.pp1.MJParser - #39 )
+2026-02-09 19:24:22,184 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
+2026-02-09 19:24:22,184 INFO  rs.ac.bg.etf.pp1.MJParser - #45 a
+2026-02-09 19:24:22,184 INFO  rs.ac.bg.etf.pp1.MJParser - #23 =
+2026-02-09 19:24:22,184 INFO  rs.ac.bg.etf.pp1.MJParser - #48 a
+2026-02-09 19:24:22,184 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
+2026-02-09 19:24:22,185 INFO  rs.ac.bg.etf.pp1.MJParser - #45 a
+2026-02-09 19:24:22,185 INFO  rs.ac.bg.etf.pp1.MJParser - #24 ++
+2026-02-09 19:24:22,185 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
+2026-02-09 19:24:22,185 INFO  rs.ac.bg.etf.pp1.MJParser - #45 color
+2026-02-09 19:24:22,185 INFO  rs.ac.bg.etf.pp1.MJParser - #23 =
+2026-02-09 19:24:22,185 INFO  rs.ac.bg.etf.pp1.MJParser - #45 Color
+2026-02-09 19:24:22,185 INFO  rs.ac.bg.etf.pp1.MJParser - #37 .
+2026-02-09 19:24:22,185 INFO  rs.ac.bg.etf.pp1.MJParser - #45 BLUE
+2026-02-09 19:24:22,185 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
+2026-02-09 19:24:22,185 INFO  rs.ac.bg.etf.pp1.MJParser - #6 print
+2026-02-09 19:24:22,185 INFO  rs.ac.bg.etf.pp1.MJParser - #38 (
+2026-02-09 19:24:22,185 INFO  rs.ac.bg.etf.pp1.MJParser - #45 color
+2026-02-09 19:24:22,185 INFO  rs.ac.bg.etf.pp1.MJParser - #39 )
+2026-02-09 19:24:22,185 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
+2026-02-09 19:24:22,185 INFO  rs.ac.bg.etf.pp1.MJParser - #14 if
+2026-02-09 19:24:22,185 INFO  rs.ac.bg.etf.pp1.MJParser - #38 (
+2026-02-09 19:24:22,185 INFO  rs.ac.bg.etf.pp1.MJParser - #45 color
+2026-02-09 19:24:22,185 INFO  rs.ac.bg.etf.pp1.MJParser - #26 ==
+2026-02-09 19:24:22,185 INFO  rs.ac.bg.etf.pp1.MJParser - #45 Color
+2026-02-09 19:24:22,186 INFO  rs.ac.bg.etf.pp1.MJParser - #37 .
+2026-02-09 19:24:22,186 INFO  rs.ac.bg.etf.pp1.MJParser - #45 BLUE
+2026-02-09 19:24:22,186 INFO  rs.ac.bg.etf.pp1.MJParser - #39 )
+2026-02-09 19:24:22,188 INFO  rs.ac.bg.etf.pp1.MJParser - #42 {
+2026-02-09 19:24:22,188 INFO  rs.ac.bg.etf.pp1.MJParser - #6 print
+2026-02-09 19:24:22,188 INFO  rs.ac.bg.etf.pp1.MJParser - #38 (
+2026-02-09 19:24:22,188 INFO  rs.ac.bg.etf.pp1.MJParser - #47 999
+2026-02-09 19:24:22,189 INFO  rs.ac.bg.etf.pp1.MJParser - #39 )
+2026-02-09 19:24:22,189 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
+2026-02-09 19:24:22,189 INFO  rs.ac.bg.etf.pp1.MJParser - #43 }
+2026-02-09 19:24:22,189 INFO  rs.ac.bg.etf.pp1.MJParser - #16 switch
+2026-02-09 19:24:22,189 INFO  rs.ac.bg.etf.pp1.MJParser - #38 (
+2026-02-09 19:24:22,189 INFO  rs.ac.bg.etf.pp1.MJParser - #45 color
+2026-02-09 19:24:22,189 INFO  rs.ac.bg.etf.pp1.MJParser - #39 )
+2026-02-09 19:24:22,189 INFO  rs.ac.bg.etf.pp1.MJParser - #42 {
+2026-02-09 19:24:22,189 INFO  rs.ac.bg.etf.pp1.MJParser - #17 case
+2026-02-09 19:24:22,189 INFO  rs.ac.bg.etf.pp1.MJParser - #47 1
+2026-02-09 19:24:22,189 INFO  rs.ac.bg.etf.pp1.MJParser - #35 :
+2026-02-09 19:24:22,189 INFO  rs.ac.bg.etf.pp1.MJParser - #6 print
+2026-02-09 19:24:22,189 INFO  rs.ac.bg.etf.pp1.MJParser - #38 (
+2026-02-09 19:24:22,189 INFO  rs.ac.bg.etf.pp1.MJParser - #47 111
+2026-02-09 19:24:22,189 INFO  rs.ac.bg.etf.pp1.MJParser - #39 )
+2026-02-09 19:24:22,189 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
+2026-02-09 19:24:22,189 INFO  rs.ac.bg.etf.pp1.MJParser - #17 case
+2026-02-09 19:24:22,189 INFO  rs.ac.bg.etf.pp1.MJParser - #47 5
+2026-02-09 19:24:22,189 INFO  rs.ac.bg.etf.pp1.MJParser - #35 :
+2026-02-09 19:24:22,189 INFO  rs.ac.bg.etf.pp1.MJParser - #6 print
+2026-02-09 19:24:22,189 INFO  rs.ac.bg.etf.pp1.MJParser - #38 (
+2026-02-09 19:24:22,189 INFO  rs.ac.bg.etf.pp1.MJParser - #47 555
+2026-02-09 19:24:22,190 INFO  rs.ac.bg.etf.pp1.MJParser - #39 )
+2026-02-09 19:24:22,190 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
+2026-02-09 19:24:22,190 INFO  rs.ac.bg.etf.pp1.MJParser - #17 case
+2026-02-09 19:24:22,190 INFO  rs.ac.bg.etf.pp1.MJParser - #47 6
+2026-02-09 19:24:22,190 INFO  rs.ac.bg.etf.pp1.MJParser - #35 :
+2026-02-09 19:24:22,190 INFO  rs.ac.bg.etf.pp1.MJParser - #6 print
+2026-02-09 19:24:22,190 INFO  rs.ac.bg.etf.pp1.MJParser - #38 (
+2026-02-09 19:24:22,190 INFO  rs.ac.bg.etf.pp1.MJParser - #47 666
+2026-02-09 19:24:22,190 INFO  rs.ac.bg.etf.pp1.MJParser - #39 )
+2026-02-09 19:24:22,190 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
+2026-02-09 19:24:22,190 INFO  rs.ac.bg.etf.pp1.MJParser - #43 }
+2026-02-09 19:24:22,190 INFO  rs.ac.bg.etf.pp1.MJParser - #45 y
+2026-02-09 19:24:22,190 INFO  rs.ac.bg.etf.pp1.MJParser - #23 =
+2026-02-09 19:24:22,190 INFO  rs.ac.bg.etf.pp1.MJParser - #45 Color
+2026-02-09 19:24:22,190 INFO  rs.ac.bg.etf.pp1.MJParser - #37 .
+2026-02-09 19:24:22,190 INFO  rs.ac.bg.etf.pp1.MJParser - #45 PURPLE
+2026-02-09 19:24:22,190 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
+2026-02-09 19:24:22,190 INFO  rs.ac.bg.etf.pp1.MJParser - #43 }
+2026-02-09 19:24:22,190 INFO  rs.ac.bg.etf.pp1.MJParser - #9 void
+2026-02-09 19:24:22,190 INFO  rs.ac.bg.etf.pp1.MJParser - #45 testFunctionCalls
+2026-02-09 19:24:22,190 INFO  rs.ac.bg.etf.pp1.MJParser - #38 (
+2026-02-09 19:24:22,192 INFO  rs.ac.bg.etf.pp1.MJParser - #39 )
+2026-02-09 19:24:22,192 INFO  rs.ac.bg.etf.pp1.MJParser - #45 int
+2026-02-09 19:24:22,192 INFO  rs.ac.bg.etf.pp1.MJParser - #45 result
+2026-02-09 19:24:22,192 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
+2026-02-09 19:24:22,192 INFO  rs.ac.bg.etf.pp1.MJParser - #45 int
+2026-02-09 19:24:22,192 INFO  rs.ac.bg.etf.pp1.MJParser - #45 arr
+2026-02-09 19:24:22,192 INFO  rs.ac.bg.etf.pp1.MJParser - #40 [
+2026-02-09 19:24:22,192 INFO  rs.ac.bg.etf.pp1.MJParser - #41 ]
+2026-02-09 19:24:22,192 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
+2026-02-09 19:24:22,192 INFO  rs.ac.bg.etf.pp1.MJParser - #42 {
+2026-02-09 19:24:22,192 INFO  rs.ac.bg.etf.pp1.MJParser - #45 result
+2026-02-09 19:24:22,192 INFO  rs.ac.bg.etf.pp1.MJParser - #23 =
+2026-02-09 19:24:22,192 INFO  rs.ac.bg.etf.pp1.MJParser - #45 noParams
+2026-02-09 19:24:22,192 INFO  rs.ac.bg.etf.pp1.MJParser - #38 (
+2026-02-09 19:24:22,192 INFO  rs.ac.bg.etf.pp1.MJParser - #39 )
+2026-02-09 19:24:22,192 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
+2026-02-09 19:24:22,192 INFO  rs.ac.bg.etf.pp1.MJParser - #6 print
+2026-02-09 19:24:22,192 INFO  rs.ac.bg.etf.pp1.MJParser - #38 (
+2026-02-09 19:24:22,192 INFO  rs.ac.bg.etf.pp1.MJParser - #45 result
+2026-02-09 19:24:22,192 INFO  rs.ac.bg.etf.pp1.MJParser - #39 )
+2026-02-09 19:24:22,192 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
+2026-02-09 19:24:22,192 INFO  rs.ac.bg.etf.pp1.MJParser - #45 result
+2026-02-09 19:24:22,192 INFO  rs.ac.bg.etf.pp1.MJParser - #23 =
+2026-02-09 19:24:22,192 INFO  rs.ac.bg.etf.pp1.MJParser - #45 withParams
+2026-02-09 19:24:22,193 INFO  rs.ac.bg.etf.pp1.MJParser - #38 (
+2026-02-09 19:24:22,193 INFO  rs.ac.bg.etf.pp1.MJParser - #47 10
+2026-02-09 19:24:22,193 INFO  rs.ac.bg.etf.pp1.MJParser - #36 ,
+2026-02-09 19:24:22,193 INFO  rs.ac.bg.etf.pp1.MJParser - #47 20
+2026-02-09 19:24:22,193 INFO  rs.ac.bg.etf.pp1.MJParser - #39 )
+2026-02-09 19:24:22,194 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
+2026-02-09 19:24:22,194 INFO  rs.ac.bg.etf.pp1.MJParser - #6 print
+2026-02-09 19:24:22,194 INFO  rs.ac.bg.etf.pp1.MJParser - #38 (
+2026-02-09 19:24:22,194 INFO  rs.ac.bg.etf.pp1.MJParser - #45 result
+2026-02-09 19:24:22,194 INFO  rs.ac.bg.etf.pp1.MJParser - #39 )
+2026-02-09 19:24:22,194 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
+2026-02-09 19:24:22,194 INFO  rs.ac.bg.etf.pp1.MJParser - #45 result
+2026-02-09 19:24:22,194 INFO  rs.ac.bg.etf.pp1.MJParser - #23 =
+2026-02-09 19:24:22,194 INFO  rs.ac.bg.etf.pp1.MJParser - #45 withParams
+2026-02-09 19:24:22,194 INFO  rs.ac.bg.etf.pp1.MJParser - #38 (
+2026-02-09 19:24:22,194 INFO  rs.ac.bg.etf.pp1.MJParser - #45 noParams
+2026-02-09 19:24:22,194 INFO  rs.ac.bg.etf.pp1.MJParser - #38 (
+2026-02-09 19:24:22,194 INFO  rs.ac.bg.etf.pp1.MJParser - #39 )
+2026-02-09 19:24:22,194 INFO  rs.ac.bg.etf.pp1.MJParser - #36 ,
+2026-02-09 19:24:22,194 INFO  rs.ac.bg.etf.pp1.MJParser - #47 5
+2026-02-09 19:24:22,194 INFO  rs.ac.bg.etf.pp1.MJParser - #39 )
+2026-02-09 19:24:22,195 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
+2026-02-09 19:24:22,195 INFO  rs.ac.bg.etf.pp1.MJParser - #6 print
+2026-02-09 19:24:22,195 INFO  rs.ac.bg.etf.pp1.MJParser - #38 (
+2026-02-09 19:24:22,195 INFO  rs.ac.bg.etf.pp1.MJParser - #45 result
+2026-02-09 19:24:22,195 INFO  rs.ac.bg.etf.pp1.MJParser - #39 )
+2026-02-09 19:24:22,195 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
+2026-02-09 19:24:22,195 INFO  rs.ac.bg.etf.pp1.MJParser - #45 result
+2026-02-09 19:24:22,195 INFO  rs.ac.bg.etf.pp1.MJParser - #23 =
+2026-02-09 19:24:22,195 INFO  rs.ac.bg.etf.pp1.MJParser - #45 withParams
+2026-02-09 19:24:22,195 INFO  rs.ac.bg.etf.pp1.MJParser - #38 (
+2026-02-09 19:24:22,195 INFO  rs.ac.bg.etf.pp1.MJParser - #47 10
+2026-02-09 19:24:22,195 INFO  rs.ac.bg.etf.pp1.MJParser - #39 )
+2026-02-09 19:24:22,195 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
+2026-02-09 19:24:22,195 INFO  rs.ac.bg.etf.pp1.MJParser - #45 result
+2026-02-09 19:24:22,195 INFO  rs.ac.bg.etf.pp1.MJParser - #23 =
+2026-02-09 19:24:22,195 INFO  rs.ac.bg.etf.pp1.MJParser - #45 arr
+2026-02-09 19:24:22,195 INFO  rs.ac.bg.etf.pp1.MJParser - #37 .
+2026-02-09 19:24:22,195 INFO  rs.ac.bg.etf.pp1.MJParser - #13 length
+2026-02-09 19:24:22,195 INFO  rs.ac.bg.etf.pp1.MJParser - #38 (
+2026-02-09 19:24:22,195 INFO  rs.ac.bg.etf.pp1.MJParser - #39 )
+2026-02-09 19:24:22,195 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
+2026-02-09 19:24:22,195 INFO  rs.ac.bg.etf.pp1.MJParser - #43 }
+2026-02-09 19:24:22,195 INFO  rs.ac.bg.etf.pp1.MJParser - #9 void
+2026-02-09 19:24:22,195 INFO  rs.ac.bg.etf.pp1.MJParser - #45 main
+2026-02-09 19:24:22,195 INFO  rs.ac.bg.etf.pp1.MJParser - #38 (
+2026-02-09 19:24:22,195 INFO  rs.ac.bg.etf.pp1.MJParser - #39 )
+2026-02-09 19:24:22,195 INFO  rs.ac.bg.etf.pp1.MJParser - #45 int
+2026-02-09 19:24:22,195 INFO  rs.ac.bg.etf.pp1.MJParser - #45 x
+2026-02-09 19:24:22,195 INFO  rs.ac.bg.etf.pp1.MJParser - #36 ,
+2026-02-09 19:24:22,195 INFO  rs.ac.bg.etf.pp1.MJParser - #45 size
+2026-02-09 19:24:22,195 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
+2026-02-09 19:24:22,195 INFO  rs.ac.bg.etf.pp1.MJParser - #45 int
+2026-02-09 19:24:22,195 INFO  rs.ac.bg.etf.pp1.MJParser - #45 myArray
+2026-02-09 19:24:22,195 INFO  rs.ac.bg.etf.pp1.MJParser - #40 [
+2026-02-09 19:24:22,195 INFO  rs.ac.bg.etf.pp1.MJParser - #41 ]
+2026-02-09 19:24:22,195 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
+2026-02-09 19:24:22,196 INFO  rs.ac.bg.etf.pp1.MJParser - #42 {
+2026-02-09 19:24:22,196 INFO  rs.ac.bg.etf.pp1.MJParser - #6 print
+2026-02-09 19:24:22,196 INFO  rs.ac.bg.etf.pp1.MJParser - #38 (
+2026-02-09 19:24:22,196 INFO  rs.ac.bg.etf.pp1.MJParser - #46 1
+2026-02-09 19:24:22,196 INFO  rs.ac.bg.etf.pp1.MJParser - #36 ,
+2026-02-09 19:24:22,196 INFO  rs.ac.bg.etf.pp1.MJParser - #47 2
+2026-02-09 19:24:22,196 INFO  rs.ac.bg.etf.pp1.MJParser - #39 )
+2026-02-09 19:24:22,196 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
+2026-02-09 19:24:22,196 INFO  rs.ac.bg.etf.pp1.MJParser - #45 testSwitch
+2026-02-09 19:24:22,196 INFO  rs.ac.bg.etf.pp1.MJParser - #38 (
+2026-02-09 19:24:22,196 INFO  rs.ac.bg.etf.pp1.MJParser - #47 2
+2026-02-09 19:24:22,196 INFO  rs.ac.bg.etf.pp1.MJParser - #39 )
+2026-02-09 19:24:22,196 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
+2026-02-09 19:24:22,196 INFO  rs.ac.bg.etf.pp1.MJParser - #45 testSwitch
+2026-02-09 19:24:22,196 INFO  rs.ac.bg.etf.pp1.MJParser - #38 (
+2026-02-09 19:24:22,196 INFO  rs.ac.bg.etf.pp1.MJParser - #47 5
+2026-02-09 19:24:22,196 INFO  rs.ac.bg.etf.pp1.MJParser - #39 )
+2026-02-09 19:24:22,196 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
+2026-02-09 19:24:22,196 INFO  rs.ac.bg.etf.pp1.MJParser - #45 myArray
+2026-02-09 19:24:22,197 INFO  rs.ac.bg.etf.pp1.MJParser - #23 =
+2026-02-09 19:24:22,197 INFO  rs.ac.bg.etf.pp1.MJParser - #5 new
+2026-02-09 19:24:22,197 INFO  rs.ac.bg.etf.pp1.MJParser - #45 int
+2026-02-09 19:24:22,197 INFO  rs.ac.bg.etf.pp1.MJParser - #40 [
+2026-02-09 19:24:22,197 INFO  rs.ac.bg.etf.pp1.MJParser - #47 10
+2026-02-09 19:24:22,197 INFO  rs.ac.bg.etf.pp1.MJParser - #41 ]
+2026-02-09 19:24:22,197 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
+2026-02-09 19:24:22,197 INFO  rs.ac.bg.etf.pp1.MJParser - #45 size
+2026-02-09 19:24:22,197 INFO  rs.ac.bg.etf.pp1.MJParser - #23 =
+2026-02-09 19:24:22,197 INFO  rs.ac.bg.etf.pp1.MJParser - #45 myArray
+2026-02-09 19:24:22,197 INFO  rs.ac.bg.etf.pp1.MJParser - #37 .
+2026-02-09 19:24:22,197 INFO  rs.ac.bg.etf.pp1.MJParser - #13 length
+2026-02-09 19:24:22,197 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
+2026-02-09 19:24:22,197 INFO  rs.ac.bg.etf.pp1.MJParser - #6 print
+2026-02-09 19:24:22,197 INFO  rs.ac.bg.etf.pp1.MJParser - #38 (
+2026-02-09 19:24:22,197 INFO  rs.ac.bg.etf.pp1.MJParser - #45 size
+2026-02-09 19:24:22,197 INFO  rs.ac.bg.etf.pp1.MJParser - #39 )
+2026-02-09 19:24:22,197 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
+2026-02-09 19:24:22,197 INFO  rs.ac.bg.etf.pp1.MJParser - #45 testArrayLength
+2026-02-09 19:24:22,197 INFO  rs.ac.bg.etf.pp1.MJParser - #38 (
+2026-02-09 19:24:22,197 INFO  rs.ac.bg.etf.pp1.MJParser - #39 )
+2026-02-09 19:24:22,198 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
+2026-02-09 19:24:22,198 INFO  rs.ac.bg.etf.pp1.MJParser - #45 testEnum
+2026-02-09 19:24:22,198 INFO  rs.ac.bg.etf.pp1.MJParser - #38 (
+2026-02-09 19:24:22,198 INFO  rs.ac.bg.etf.pp1.MJParser - #39 )
+2026-02-09 19:24:22,198 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
+2026-02-09 19:24:22,198 INFO  rs.ac.bg.etf.pp1.MJParser - #45 testFunctionCalls
+2026-02-09 19:24:22,198 INFO  rs.ac.bg.etf.pp1.MJParser - #38 (
+2026-02-09 19:24:22,198 INFO  rs.ac.bg.etf.pp1.MJParser - #39 )
+2026-02-09 19:24:22,198 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
+2026-02-09 19:24:22,198 INFO  rs.ac.bg.etf.pp1.MJParser - #45 x
+2026-02-09 19:24:22,198 INFO  rs.ac.bg.etf.pp1.MJParser - #23 =
+2026-02-09 19:24:22,198 INFO  rs.ac.bg.etf.pp1.MJParser - #45 Color
+2026-02-09 19:24:22,198 INFO  rs.ac.bg.etf.pp1.MJParser - #37 .
+2026-02-09 19:24:22,198 INFO  rs.ac.bg.etf.pp1.MJParser - #45 GREEN
+2026-02-09 19:24:22,198 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
+2026-02-09 19:24:22,198 INFO  rs.ac.bg.etf.pp1.MJParser - #45 x
+2026-02-09 19:24:22,198 INFO  rs.ac.bg.etf.pp1.MJParser - #25 --
+2026-02-09 19:24:22,198 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
+2026-02-09 19:24:22,198 INFO  rs.ac.bg.etf.pp1.MJParser - #45 myArray
+2026-02-09 19:24:22,198 INFO  rs.ac.bg.etf.pp1.MJParser - #40 [
+2026-02-09 19:24:22,199 INFO  rs.ac.bg.etf.pp1.MJParser - #47 5
+2026-02-09 19:24:22,199 INFO  rs.ac.bg.etf.pp1.MJParser - #41 ]
+2026-02-09 19:24:22,199 INFO  rs.ac.bg.etf.pp1.MJParser - #24 ++
+2026-02-09 19:24:22,199 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
+2026-02-09 19:24:22,199 INFO  rs.ac.bg.etf.pp1.MJParser - #6 print
+2026-02-09 19:24:22,199 INFO  rs.ac.bg.etf.pp1.MJParser - #38 (
+2026-02-09 19:24:22,199 INFO  rs.ac.bg.etf.pp1.MJParser - #45 x
+2026-02-09 19:24:22,199 INFO  rs.ac.bg.etf.pp1.MJParser - #39 )
+2026-02-09 19:24:22,199 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
+2026-02-09 19:24:22,199 INFO  rs.ac.bg.etf.pp1.MJParser - #45 x
+2026-02-09 19:24:22,199 INFO  rs.ac.bg.etf.pp1.MJParser - #23 =
+2026-02-09 19:24:22,199 INFO  rs.ac.bg.etf.pp1.MJParser - #45 LETTER
+2026-02-09 19:24:22,199 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
+2026-02-09 19:24:22,199 INFO  rs.ac.bg.etf.pp1.MJParser - #6 print
+2026-02-09 19:24:22,199 INFO  rs.ac.bg.etf.pp1.MJParser - #38 (
+2026-02-09 19:24:22,199 INFO  rs.ac.bg.etf.pp1.MJParser - #47 777
+2026-02-09 19:24:22,199 INFO  rs.ac.bg.etf.pp1.MJParser - #39 )
+2026-02-09 19:24:22,199 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
+2026-02-09 19:24:22,199 INFO  rs.ac.bg.etf.pp1.MJParser - #43 }
+2026-02-09 19:24:22,199 INFO  rs.ac.bg.etf.pp1.MJParser - #43 }
+2026-02-09 19:24:22,200 INFO  rs.ac.bg.etf.pp1.MJParser - #0 
+2026-02-09 19:24:22,200 INFO  rs.ac.bg.etf.pp1.MJParser - #0 
+2026-02-09 19:24:22,204 INFO  rs.ac.bg.etf.pp1.MJParserTest - Program(
   ProgramName(
-   BigTest
+   TestProgram
   ) [ProgramName]
   DeclList_const(
     ConstDeclList(
@@ -260,322 +443,113 @@
          char
         ) [Type]
         ConstDecl(
-         NL
+         LETTER
           Constant_char(
-           \
+           x
           ) [Constant_char]
         ) [ConstDecl]
         ConstDeclListRest_e(
         ) [ConstDeclListRest_e]
       ) [ConstDeclList]
-      DeclList_const(
-        ConstDeclList(
-          Type(
-           bool
-          ) [Type]
-          ConstDecl(
-           FLAG
-            Constant_bool(
-             1
-            ) [Constant_bool]
-          ) [ConstDecl]
-          ConstDeclListRest_e(
-          ) [ConstDeclListRest_e]
-        ) [ConstDeclList]
-        DeclList_var(
-          VarDeclList_array(
-            Type(
-             int
-            ) [Type]
-            IdentVarDecl(
-             g1
-            ) [IdentVarDecl]
-            VarDeclListRest_comma(
-              IdentVarDecl(
-               g2
-              ) [IdentVarDecl]
-              VarDeclListRest_e(
-              ) [VarDeclListRest_e]
-            ) [VarDeclListRest_comma]
-          ) [VarDeclList_array]
-          DeclList_var(
-            VarDeclList_array(
-              Type(
-               int
-              ) [Type]
-              ArrayVarDecl(
-               arrGlobal
-              ) [ArrayVarDecl]
-              VarDeclListRest_e(
-              ) [VarDeclListRest_e]
-            ) [VarDeclList_array]
-            DeclList_enum(
-              EnumDecl(
-                EnumName(
-                 Color
-                ) [EnumName]
-                EnumItemsList(
-                  IdentEnumItem(
-                   RED
-                  ) [IdentEnumItem]
-                  EnumItemsRest_comma(
-                    IdentEnumItem(
-                     GREEN
-                    ) [IdentEnumItem]
-                    EnumItemsRest_e(
-                    ) [EnumItemsRest_e]
-                  ) [EnumItemsRest_comma]
-                ) [EnumItemsList]
-              ) [EnumDecl]
-              DeclList_enum(
-                EnumDecl(
-                  EnumName(
-                   Light
-                  ) [EnumName]
-                  EnumItemsList(
-                    IdentEnumItem(
-                     RED
-                    ) [IdentEnumItem]
-                    EnumItemsRest_comma(
-                      IdentEnumItem(
-                       YELLOW
-                      ) [IdentEnumItem]
-                      EnumItemsRest_comma(
-                        AssignEnumItem(
-                         BLUE
-                         5
-                        ) [AssignEnumItem]
-                        EnumItemsRest_comma(
-                          AssignEnumItem(
-                           DARK
-                           8
-                          ) [AssignEnumItem]
-                          EnumItemsRest_comma(
-                            IdentEnumItem(
-                             SEVEN
-                            ) [IdentEnumItem]
-                            EnumItemsRest_e(
-                            ) [EnumItemsRest_e]
-                          ) [EnumItemsRest_comma]
-                        ) [EnumItemsRest_comma]
-                      ) [EnumItemsRest_comma]
-                    ) [EnumItemsRest_comma]
-                  ) [EnumItemsList]
-                ) [EnumDecl]
-                DeclList_e(
-                ) [DeclList_e]
-              ) [DeclList_enum]
-            ) [DeclList_enum]
-          ) [DeclList_var]
-        ) [DeclList_var]
-      ) [DeclList_const]
-    ) [DeclList_const]
-  ) [DeclList_const]
-  MethodDeclList_array(
-    MethodDecl(
-      VoidPrefix(
-      ) [VoidPrefix]
-      MethodName(
-       main
-      ) [MethodName]
-      ParamsList_e(
-      ) [ParamsList_e]
-      VarDiffDecl_list(
+      DeclList_var(
         VarDeclList_array(
           Type(
            int
           ) [Type]
           IdentVarDecl(
-           a
+           globalNum
           ) [IdentVarDecl]
-          VarDeclListRest_comma(
-            IdentVarDecl(
-             b
-            ) [IdentVarDecl]
-            VarDeclListRest_comma(
-              IdentVarDecl(
-               c
-              ) [IdentVarDecl]
-              VarDeclListRest_e(
-              ) [VarDeclListRest_e]
-            ) [VarDeclListRest_comma]
-          ) [VarDeclListRest_comma]
+          VarDeclListRest_e(
+          ) [VarDeclListRest_e]
         ) [VarDeclList_array]
-        VarDiffDecl_list(
+        DeclList_var(
           VarDeclList_array(
             Type(
-             bool
+             int
             ) [Type]
-            IdentVarDecl(
-             d
-            ) [IdentVarDecl]
-            VarDeclListRest_comma(
-              IdentVarDecl(
-               e
-              ) [IdentVarDecl]
-              VarDeclListRest_comma(
-                IdentVarDecl(
-                 f
-                ) [IdentVarDecl]
-                VarDeclListRest_e(
-                ) [VarDeclListRest_e]
-              ) [VarDeclListRest_comma]
-            ) [VarDeclListRest_comma]
+            ArrayVarDecl(
+             array
+            ) [ArrayVarDecl]
+            VarDeclListRest_e(
+            ) [VarDeclListRest_e]
           ) [VarDeclList_array]
-          VarDiffDecl_e(
-          ) [VarDiffDecl_e]
-        ) [VarDiffDecl_list]
-      ) [VarDiffDecl_list]
+          DeclList_enum(
+            EnumDecl(
+              EnumName(
+               Color
+              ) [EnumName]
+              EnumItemsList(
+                AssignEnumItem(
+                 RED
+                 1
+                ) [AssignEnumItem]
+                EnumItemsRest_comma(
+                  IdentEnumItem(
+                   GREEN
+                  ) [IdentEnumItem]
+                  EnumItemsRest_comma(
+                    AssignEnumItem(
+                     BLUE
+                     5
+                    ) [AssignEnumItem]
+                    EnumItemsRest_comma(
+                      IdentEnumItem(
+                       YELLOW
+                      ) [IdentEnumItem]
+                      EnumItemsRest_e(
+                      ) [EnumItemsRest_e]
+                    ) [EnumItemsRest_comma]
+                  ) [EnumItemsRest_comma]
+                ) [EnumItemsRest_comma]
+              ) [EnumItemsList]
+            ) [EnumDecl]
+            DeclList_e(
+            ) [DeclList_e]
+          ) [DeclList_enum]
+        ) [DeclList_var]
+      ) [DeclList_var]
+    ) [DeclList_const]
+  ) [DeclList_const]
+  MethodDeclList_array(
+    MethodDecl(
+      TypePrefix(
+        Type(
+         int
+        ) [Type]
+      ) [TypePrefix]
+      MethodName(
+       noParams
+      ) [MethodName]
+      ParamsList_e(
+      ) [ParamsList_e]
+      VarDiffDecl_e(
+      ) [VarDiffDecl_e]
       StatementList_sl(
         MatchStatement(
-          DesigStatement(
-            ExprDesignatorStatement(
-              Designator(
-               i
-                DesignatorList_e(
-                ) [DesignatorList_e]
-              ) [Designator]
-              Assignop(
-              ) [Assignop]
+          ReturnStatement(
+            ReturnExpression_expr(
               NonTerExpression(
-                TermExpression(
-                  Term(
-                    NumberParamFactor(
-                     0
-                    ) [NumberParamFactor]
-                    FactorList_e(
-                    ) [FactorList_e]
-                  ) [Term]
+                NonTernaryExpression(
                   TermList_e(
-                  ) [TermList_e]
-                ) [TermExpression]
-              ) [NonTerExpression]
-            ) [ExprDesignatorStatement]
-          ) [DesigStatement]
-        ) [MatchStatement]
-        StatementList_sl(
-          MatchStatement(
-            DesigStatement(
-              ExprDesignatorStatement(
-                Designator(
-                 sum
-                  DesignatorList_e(
-                  ) [DesignatorList_e]
-                ) [Designator]
-                Assignop(
-                ) [Assignop]
-                NonTerExpression(
-                  TermExpression(
                     Term(
-                      NumberParamFactor(
-                       0
-                      ) [NumberParamFactor]
                       FactorList_e(
+                        Factor(
+                          UnaryMinus_e(
+                          ) [UnaryMinus_e]
+                          NumberParamFactor(
+                           42
+                          ) [NumberParamFactor]
+                        ) [Factor]
                       ) [FactorList_e]
                     ) [Term]
-                    TermList_e(
-                    ) [TermList_e]
-                  ) [TermExpression]
-                ) [NonTerExpression]
-              ) [ExprDesignatorStatement]
-            ) [DesigStatement]
-          ) [MatchStatement]
-          StatementList_sl(
-            MatchStatement(
-              DesigStatement(
-                ExprDesignatorStatement(
-                  Designator(
-                   arrLocal
-                    DesignatorList_e(
-                    ) [DesignatorList_e]
-                  ) [Designator]
-                  Assignop(
-                  ) [Assignop]
-                  NonTerExpression(
-                    TermExpression(
-                      Term(
-                        NewParamFactor(
-                          Type(
-                           int
-                          ) [Type]
-                          NonTerExpression(
-                            TermExpression(
-                              Term(
-                                NumberParamFactor(
-                                 10
-                                ) [NumberParamFactor]
-                                FactorList_e(
-                                ) [FactorList_e]
-                              ) [Term]
-                              TermList_e(
-                              ) [TermList_e]
-                            ) [TermExpression]
-                          ) [NonTerExpression]
-                        ) [NewParamFactor]
-                        FactorList_e(
-                        ) [FactorList_e]
-                      ) [Term]
-                      TermList_e(
-                      ) [TermList_e]
-                    ) [TermExpression]
-                  ) [NonTerExpression]
-                ) [ExprDesignatorStatement]
-              ) [DesigStatement]
-            ) [MatchStatement]
-            StatementList_sl(
-              MatchStatement(
-                PrintStatement(
-                  PrintExpression_non_num(
-                    NonTerExpression(
-                      TermExpression(
-                        Term(
-                          NonParamFactor(
-                            Designator(
-                             sum
-                              DesignatorList_e(
-                              ) [DesignatorList_e]
-                            ) [Designator]
-                          ) [NonParamFactor]
-                          FactorList_e(
-                          ) [FactorList_e]
-                        ) [Term]
-                        TermList_e(
-                        ) [TermList_e]
-                      ) [TermExpression]
-                    ) [NonTerExpression]
-                  ) [PrintExpression_non_num]
-                ) [PrintStatement]
-              ) [MatchStatement]
-              StatementList_sl(
-                MatchStatement(
-                  PrintStatement(
-                    PrintExpression_non_num(
-                      NonTerExpression(
-                        TermExpression(
-                          Term(
-                            NonParamFactor(
-                              Designator(
-                               NL
-                                DesignatorList_e(
-                                ) [DesignatorList_e]
-                              ) [Designator]
-                            ) [NonParamFactor]
-                            FactorList_e(
-                            ) [FactorList_e]
-                          ) [Term]
-                          TermList_e(
-                          ) [TermList_e]
-                        ) [TermExpression]
-                      ) [NonTerExpression]
-                    ) [PrintExpression_non_num]
-                  ) [PrintStatement]
-                ) [MatchStatement]
-                StatementList_e(
-                ) [StatementList_e]
-              ) [StatementList_sl]
-            ) [StatementList_sl]
-          ) [StatementList_sl]
-        ) [StatementList_sl]
+                  ) [TermList_e]
+                ) [NonTernaryExpression]
+              ) [NonTerExpression]
+            ) [ReturnExpression_expr]
+          ) [ReturnStatement]
+        ) [MatchStatement]
+        StatementList_e(
+        ) [StatementList_e]
       ) [StatementList_sl]
     ) [MethodDecl]
     MethodDeclList_array(
@@ -586,7 +560,7 @@
           ) [Type]
         ) [TypePrefix]
         MethodName(
-         add
+         withParams
         ) [MethodName]
         ParamsList_param(
           Type(
@@ -602,259 +576,198 @@
             IdentVarDecl(
              b
             ) [IdentVarDecl]
-            ParamsListRest_param(
-              Type(
-               int
-              ) [Type]
-              IdentVarDecl(
-               c
-              ) [IdentVarDecl]
-              ParamsListRest_param(
-                Type(
-                 int
-                ) [Type]
-                IdentVarDecl(
-                 d
-                ) [IdentVarDecl]
-                ParamsListRest_param(
-                  Type(
-                   int
-                  ) [Type]
-                  IdentVarDecl(
-                   e
-                  ) [IdentVarDecl]
-                  ParamsListRest_e(
-                  ) [ParamsListRest_e]
-                ) [ParamsListRest_param]
-              ) [ParamsListRest_param]
-            ) [ParamsListRest_param]
+            ParamsListRest_e(
+            ) [ParamsListRest_e]
           ) [ParamsListRest_param]
         ) [ParamsList_param]
-        VarDiffDecl_list(
-          VarDeclList_array(
-            Type(
-             int
-            ) [Type]
-            IdentVarDecl(
-             result
-            ) [IdentVarDecl]
-            VarDeclListRest_e(
-            ) [VarDeclListRest_e]
-          ) [VarDeclList_array]
-          VarDiffDecl_e(
-          ) [VarDiffDecl_e]
-        ) [VarDiffDecl_list]
+        VarDiffDecl_e(
+        ) [VarDiffDecl_e]
         StatementList_sl(
           MatchStatement(
-            DesigStatement(
-              ExprDesignatorStatement(
-                Designator(
-                 result
-                  DesignatorList_e(
-                  ) [DesignatorList_e]
-                ) [Designator]
-                Assignop(
-                ) [Assignop]
+            ReturnStatement(
+              ReturnExpression_expr(
                 NonTerExpression(
-                  TermExpression(
-                    Term(
-                      NonParamFactor(
-                        Designator(
-                         a
-                          DesignatorList_e(
-                          ) [DesignatorList_e]
-                        ) [Designator]
-                      ) [NonParamFactor]
-                      FactorList_e(
-                      ) [FactorList_e]
-                    ) [Term]
+                  NonTernaryExpression(
                     TermList_array(
+                      TermList_e(
+                        Term(
+                          FactorList_e(
+                            Factor(
+                              UnaryMinus_e(
+                              ) [UnaryMinus_e]
+                              DesignatorFactor_e(
+                                Designator_var(
+                                 a
+                                ) [Designator_var]
+                              ) [DesignatorFactor_e]
+                            ) [Factor]
+                          ) [FactorList_e]
+                        ) [Term]
+                      ) [TermList_e]
                       PlusAddop(
                       ) [PlusAddop]
                       Term(
-                        NonParamFactor(
-                          Designator(
-                           b
-                            DesignatorList_e(
-                            ) [DesignatorList_e]
-                          ) [Designator]
-                        ) [NonParamFactor]
                         FactorList_e(
+                          Factor(
+                            UnaryMinus_e(
+                            ) [UnaryMinus_e]
+                            DesignatorFactor_e(
+                              Designator_var(
+                               b
+                              ) [Designator_var]
+                            ) [DesignatorFactor_e]
+                          ) [Factor]
                         ) [FactorList_e]
                       ) [Term]
-                      TermList_e(
-                      ) [TermList_e]
                     ) [TermList_array]
-                  ) [TermExpression]
+                  ) [NonTernaryExpression]
                 ) [NonTerExpression]
-              ) [ExprDesignatorStatement]
-            ) [DesigStatement]
+              ) [ReturnExpression_expr]
+            ) [ReturnStatement]
           ) [MatchStatement]
-          StatementList_sl(
-            MatchStatement(
-              ReturnStatement(
-                ReturnExpression_expr(
-                  NonTerExpression(
-                    TermExpression(
-                      Term(
-                        NonParamFactor(
-                          Designator(
-                           result
-                            DesignatorList_e(
-                            ) [DesignatorList_e]
-                          ) [Designator]
-                        ) [NonParamFactor]
-                        FactorList_e(
-                        ) [FactorList_e]
-                      ) [Term]
-                      TermList_e(
-                      ) [TermList_e]
-                    ) [TermExpression]
-                  ) [NonTerExpression]
-                ) [ReturnExpression_expr]
-              ) [ReturnStatement]
-            ) [MatchStatement]
-            StatementList_e(
-            ) [StatementList_e]
-          ) [StatementList_sl]
+          StatementList_e(
+          ) [StatementList_e]
         ) [StatementList_sl]
       ) [MethodDecl]
       MethodDeclList_array(
         MethodDecl(
-          TypePrefix(
-            Type(
-             int
-            ) [Type]
-          ) [TypePrefix]
+          VoidPrefix(
+          ) [VoidPrefix]
           MethodName(
-           sumArray
+           testSwitch
           ) [MethodName]
           ParamsList_param(
             Type(
              int
             ) [Type]
-            ArrayVarDecl(
-             a
-            ) [ArrayVarDecl]
-            ParamsListRest_param(
-              Type(
-               int
-              ) [Type]
-              IdentVarDecl(
-               n
-              ) [IdentVarDecl]
-              ParamsListRest_e(
-              ) [ParamsListRest_e]
-            ) [ParamsListRest_param]
+            IdentVarDecl(
+             val
+            ) [IdentVarDecl]
+            ParamsListRest_e(
+            ) [ParamsListRest_e]
           ) [ParamsList_param]
-          VarDiffDecl_list(
-            VarDeclList_array(
-              Type(
-               int
-              ) [Type]
-              IdentVarDecl(
-               i
-              ) [IdentVarDecl]
-              VarDeclListRest_e(
-              ) [VarDeclListRest_e]
-            ) [VarDeclList_array]
-            VarDiffDecl_list(
-              VarDeclList_array(
-                Type(
-                 int
-                ) [Type]
-                IdentVarDecl(
-                 s
-                ) [IdentVarDecl]
-                VarDeclListRest_e(
-                ) [VarDeclListRest_e]
-              ) [VarDeclList_array]
-              VarDiffDecl_e(
-              ) [VarDiffDecl_e]
-            ) [VarDiffDecl_list]
-          ) [VarDiffDecl_list]
+          VarDiffDecl_e(
+          ) [VarDiffDecl_e]
           StatementList_sl(
             MatchStatement(
-              DesigStatement(
-                ExprDesignatorStatement(
-                  Designator(
-                   i
-                    DesignatorList_e(
-                    ) [DesignatorList_e]
-                  ) [Designator]
-                  Assignop(
-                  ) [Assignop]
-                  NonTerExpression(
-                    TermExpression(
+              SwitchStatement(
+                SwitchWord(
+                ) [SwitchWord]
+                NonTerExpression(
+                  NonTernaryExpression(
+                    TermList_e(
                       Term(
-                        NumberParamFactor(
-                         0
-                        ) [NumberParamFactor]
                         FactorList_e(
+                          Factor(
+                            UnaryMinus_e(
+                            ) [UnaryMinus_e]
+                            DesignatorFactor_e(
+                              Designator_var(
+                               val
+                              ) [Designator_var]
+                            ) [DesignatorFactor_e]
+                          ) [Factor]
                         ) [FactorList_e]
                       ) [Term]
-                      TermList_e(
-                      ) [TermList_e]
-                    ) [TermExpression]
-                  ) [NonTerExpression]
-                ) [ExprDesignatorStatement]
-              ) [DesigStatement]
+                    ) [TermList_e]
+                  ) [NonTernaryExpression]
+                ) [NonTerExpression]
+                SwitchCases_s(
+                 1
+                  StatementList_sl(
+                    MatchStatement(
+                      PrintStatement(
+                        PrintExpression_non_num(
+                          NonTerExpression(
+                            NonTernaryExpression(
+                              TermList_e(
+                                Term(
+                                  FactorList_e(
+                                    Factor(
+                                      UnaryMinus_e(
+                                      ) [UnaryMinus_e]
+                                      NumberParamFactor(
+                                       10
+                                      ) [NumberParamFactor]
+                                    ) [Factor]
+                                  ) [FactorList_e]
+                                ) [Term]
+                              ) [TermList_e]
+                            ) [NonTernaryExpression]
+                          ) [NonTerExpression]
+                        ) [PrintExpression_non_num]
+                      ) [PrintStatement]
+                    ) [MatchStatement]
+                    StatementList_e(
+                    ) [StatementList_e]
+                  ) [StatementList_sl]
+                  SwitchCases_s(
+                   2
+                    StatementList_sl(
+                      MatchStatement(
+                        PrintStatement(
+                          PrintExpression_non_num(
+                            NonTerExpression(
+                              NonTernaryExpression(
+                                TermList_e(
+                                  Term(
+                                    FactorList_e(
+                                      Factor(
+                                        UnaryMinus_e(
+                                        ) [UnaryMinus_e]
+                                        NumberParamFactor(
+                                         20
+                                        ) [NumberParamFactor]
+                                      ) [Factor]
+                                    ) [FactorList_e]
+                                  ) [Term]
+                                ) [TermList_e]
+                              ) [NonTernaryExpression]
+                            ) [NonTerExpression]
+                          ) [PrintExpression_non_num]
+                        ) [PrintStatement]
+                      ) [MatchStatement]
+                      StatementList_e(
+                      ) [StatementList_e]
+                    ) [StatementList_sl]
+                    SwitchCases_s(
+                     5
+                      StatementList_sl(
+                        MatchStatement(
+                          PrintStatement(
+                            PrintExpression_non_num(
+                              NonTerExpression(
+                                NonTernaryExpression(
+                                  TermList_e(
+                                    Term(
+                                      FactorList_e(
+                                        Factor(
+                                          UnaryMinus_e(
+                                          ) [UnaryMinus_e]
+                                          NumberParamFactor(
+                                           50
+                                          ) [NumberParamFactor]
+                                        ) [Factor]
+                                      ) [FactorList_e]
+                                    ) [Term]
+                                  ) [TermList_e]
+                                ) [NonTernaryExpression]
+                              ) [NonTerExpression]
+                            ) [PrintExpression_non_num]
+                          ) [PrintStatement]
+                        ) [MatchStatement]
+                        StatementList_e(
+                        ) [StatementList_e]
+                      ) [StatementList_sl]
+                      SwitchCases_e(
+                      ) [SwitchCases_e]
+                    ) [SwitchCases_s]
+                  ) [SwitchCases_s]
+                ) [SwitchCases_s]
+              ) [SwitchStatement]
             ) [MatchStatement]
-            StatementList_sl(
-              MatchStatement(
-                DesigStatement(
-                  ExprDesignatorStatement(
-                    Designator(
-                     s
-                      DesignatorList_e(
-                      ) [DesignatorList_e]
-                    ) [Designator]
-                    Assignop(
-                    ) [Assignop]
-                    NonTerExpression(
-                      TermExpression(
-                        Term(
-                          NumberParamFactor(
-                           0
-                          ) [NumberParamFactor]
-                          FactorList_e(
-                          ) [FactorList_e]
-                        ) [Term]
-                        TermList_e(
-                        ) [TermList_e]
-                      ) [TermExpression]
-                    ) [NonTerExpression]
-                  ) [ExprDesignatorStatement]
-                ) [DesigStatement]
-              ) [MatchStatement]
-              StatementList_sl(
-                MatchStatement(
-                  ReturnStatement(
-                    ReturnExpression_expr(
-                      NonTerExpression(
-                        TermExpression(
-                          Term(
-                            NonParamFactor(
-                              Designator(
-                               s
-                                DesignatorList_e(
-                                ) [DesignatorList_e]
-                              ) [Designator]
-                            ) [NonParamFactor]
-                            FactorList_e(
-                            ) [FactorList_e]
-                          ) [Term]
-                          TermList_e(
-                          ) [TermList_e]
-                        ) [TermExpression]
-                      ) [NonTerExpression]
-                    ) [ReturnExpression_expr]
-                  ) [ReturnStatement]
-                ) [MatchStatement]
-                StatementList_e(
-                ) [StatementList_e]
-              ) [StatementList_sl]
-            ) [StatementList_sl]
+            StatementList_e(
+            ) [StatementList_e]
           ) [StatementList_sl]
         ) [MethodDecl]
         MethodDeclList_array(
@@ -862,26 +775,18 @@
             VoidPrefix(
             ) [VoidPrefix]
             MethodName(
-             shadowTest
+             testArrayLength
             ) [MethodName]
-            ParamsList_param(
-              Type(
-               int
-              ) [Type]
-              IdentVarDecl(
-               g1
-              ) [IdentVarDecl]
-              ParamsListRest_e(
-              ) [ParamsListRest_e]
-            ) [ParamsList_param]
+            ParamsList_e(
+            ) [ParamsList_e]
             VarDiffDecl_list(
               VarDeclList_array(
                 Type(
                  int
                 ) [Type]
-                IdentVarDecl(
-                 g2
-                ) [IdentVarDecl]
+                ArrayVarDecl(
+                 arr
+                ) [ArrayVarDecl]
                 VarDeclListRest_e(
                 ) [VarDeclListRest_e]
               ) [VarDeclList_array]
@@ -890,54 +795,72 @@
                   Type(
                    int
                   ) [Type]
-                  ArrayVarDecl(
-                   arrGlobal
-                  ) [ArrayVarDecl]
+                  IdentVarDecl(
+                   len
+                  ) [IdentVarDecl]
                   VarDeclListRest_e(
                   ) [VarDeclListRest_e]
                 ) [VarDeclList_array]
-                VarDiffDecl_e(
-                ) [VarDiffDecl_e]
+                VarDiffDecl_list(
+                  VarDeclList_array(
+                    Type(
+                     int
+                    ) [Type]
+                    IdentVarDecl(
+                     x
+                    ) [IdentVarDecl]
+                    VarDeclListRest_e(
+                    ) [VarDeclListRest_e]
+                  ) [VarDeclList_array]
+                  VarDiffDecl_e(
+                  ) [VarDiffDecl_e]
+                ) [VarDiffDecl_list]
               ) [VarDiffDecl_list]
             ) [VarDiffDecl_list]
             StatementList_sl(
               MatchStatement(
                 DesigStatement(
                   ExprDesignatorStatement(
-                    Designator(
-                     g2
-                      DesignatorList_e(
-                      ) [DesignatorList_e]
-                    ) [Designator]
+                    Designator_var(
+                     arr
+                    ) [Designator_var]
                     Assignop(
                     ) [Assignop]
                     NonTerExpression(
-                      TermExpression(
-                        Term(
-                          NonParamFactor(
-                            Designator(
-                             g1
-                              DesignatorList_e(
-                              ) [DesignatorList_e]
-                            ) [Designator]
-                          ) [NonParamFactor]
-                          FactorList_e(
-                          ) [FactorList_e]
-                        ) [Term]
-                        TermList_array(
-                          PlusAddop(
-                          ) [PlusAddop]
+                      NonTernaryExpression(
+                        TermList_e(
                           Term(
-                            NumberParamFactor(
-                             10
-                            ) [NumberParamFactor]
                             FactorList_e(
+                              Factor(
+                                UnaryMinus_e(
+                                ) [UnaryMinus_e]
+                                NewParamFactor(
+                                  Type(
+                                   int
+                                  ) [Type]
+                                  NonTerExpression(
+                                    NonTernaryExpression(
+                                      TermList_e(
+                                        Term(
+                                          FactorList_e(
+                                            Factor(
+                                              UnaryMinus_e(
+                                              ) [UnaryMinus_e]
+                                              NumberParamFactor(
+                                               15
+                                              ) [NumberParamFactor]
+                                            ) [Factor]
+                                          ) [FactorList_e]
+                                        ) [Term]
+                                      ) [TermList_e]
+                                    ) [NonTernaryExpression]
+                                  ) [NonTerExpression]
+                                ) [NewParamFactor]
+                              ) [Factor]
                             ) [FactorList_e]
                           ) [Term]
-                          TermList_e(
-                          ) [TermList_e]
-                        ) [TermList_array]
-                      ) [TermExpression]
+                        ) [TermList_e]
+                      ) [NonTernaryExpression]
                     ) [NonTerExpression]
                   ) [ExprDesignatorStatement]
                 ) [DesigStatement]
@@ -946,88 +869,745 @@
                 MatchStatement(
                   DesigStatement(
                     ExprDesignatorStatement(
-                      Designator(
-                       arrGlobal
-                        DesignatorList_e(
-                        ) [DesignatorList_e]
-                      ) [Designator]
+                      Designator_var(
+                       len
+                      ) [Designator_var]
                       Assignop(
                       ) [Assignop]
                       NonTerExpression(
-                        TermExpression(
-                          Term(
-                            NewParamFactor(
-                              Type(
-                               int
-                              ) [Type]
-                              NonTerExpression(
-                                TermExpression(
-                                  Term(
-                                    NumberParamFactor(
-                                     5
-                                    ) [NumberParamFactor]
-                                    FactorList_e(
-                                    ) [FactorList_e]
-                                  ) [Term]
-                                  TermList_e(
-                                  ) [TermList_e]
-                                ) [TermExpression]
-                              ) [NonTerExpression]
-                            ) [NewParamFactor]
-                            FactorList_e(
-                            ) [FactorList_e]
-                          ) [Term]
+                        NonTernaryExpression(
                           TermList_e(
+                            Term(
+                              FactorList_e(
+                                Factor(
+                                  UnaryMinus_e(
+                                  ) [UnaryMinus_e]
+                                  DesignatorFactor_e(
+                                    Designator_nest(
+                                      Designator_var(
+                                       arr
+                                      ) [Designator_var]
+                                      LengthDesignatorOp(
+                                      ) [LengthDesignatorOp]
+                                    ) [Designator_nest]
+                                  ) [DesignatorFactor_e]
+                                ) [Factor]
+                              ) [FactorList_e]
+                            ) [Term]
                           ) [TermList_e]
-                        ) [TermExpression]
+                        ) [NonTernaryExpression]
                       ) [NonTerExpression]
                     ) [ExprDesignatorStatement]
                   ) [DesigStatement]
                 ) [MatchStatement]
                 StatementList_sl(
                   MatchStatement(
-                    DesigStatement(
-                      ExprDesignatorStatement(
-                        Designator(
-                         arrGlobal
-                          DesignatorList_array(
-                            ExpDesignatorOp(
-                              NonTerExpression(
-                                TermExpression(
+                    PrintStatement(
+                      PrintExpression_non_num(
+                        NonTerExpression(
+                          NonTernaryExpression(
+                            TermList_e(
+                              Term(
+                                FactorList_e(
+                                  Factor(
+                                    UnaryMinus_e(
+                                    ) [UnaryMinus_e]
+                                    DesignatorFactor_e(
+                                      Designator_var(
+                                       len
+                                      ) [Designator_var]
+                                    ) [DesignatorFactor_e]
+                                  ) [Factor]
+                                ) [FactorList_e]
+                              ) [Term]
+                            ) [TermList_e]
+                          ) [NonTernaryExpression]
+                        ) [NonTerExpression]
+                      ) [PrintExpression_non_num]
+                    ) [PrintStatement]
+                  ) [MatchStatement]
+                  StatementList_sl(
+                    MatchStatement(
+                      DesigStatement(
+                        ExprDesignatorStatement(
+                          Designator_elem(
+                            DesignatorArrayName(
+                             arr
+                            ) [DesignatorArrayName]
+                            NonTerExpression(
+                              NonTernaryExpression(
+                                TermList_e(
                                   Term(
-                                    NumberParamFactor(
-                                     0
-                                    ) [NumberParamFactor]
                                     FactorList_e(
+                                      Factor(
+                                        UnaryMinus_e(
+                                        ) [UnaryMinus_e]
+                                        NumberParamFactor(
+                                         0
+                                        ) [NumberParamFactor]
+                                      ) [Factor]
                                     ) [FactorList_e]
                                   ) [Term]
-                                  TermList_e(
-                                  ) [TermList_e]
-                                ) [TermExpression]
+                                ) [TermList_e]
+                              ) [NonTernaryExpression]
+                            ) [NonTerExpression]
+                          ) [Designator_elem]
+                          Assignop(
+                          ) [Assignop]
+                          NonTerExpression(
+                            NonTernaryExpression(
+                              TermList_e(
+                                Term(
+                                  FactorList_e(
+                                    Factor(
+                                      UnaryMinus_e(
+                                      ) [UnaryMinus_e]
+                                      NumberParamFactor(
+                                       100
+                                      ) [NumberParamFactor]
+                                    ) [Factor]
+                                  ) [FactorList_e]
+                                ) [Term]
+                              ) [TermList_e]
+                            ) [NonTernaryExpression]
+                          ) [NonTerExpression]
+                        ) [ExprDesignatorStatement]
+                      ) [DesigStatement]
+                    ) [MatchStatement]
+                    StatementList_sl(
+                      MatchStatement(
+                        DesigStatement(
+                          ExprDesignatorStatement(
+                            Designator_elem(
+                              DesignatorArrayName(
+                               arr
+                              ) [DesignatorArrayName]
+                              NonTerExpression(
+                                NonTernaryExpression(
+                                  TermList_array(
+                                    TermList_e(
+                                      Term(
+                                        FactorList_e(
+                                          Factor(
+                                            UnaryMinus_e(
+                                            ) [UnaryMinus_e]
+                                            DesignatorFactor_e(
+                                              Designator_var(
+                                               len
+                                              ) [Designator_var]
+                                            ) [DesignatorFactor_e]
+                                          ) [Factor]
+                                        ) [FactorList_e]
+                                      ) [Term]
+                                    ) [TermList_e]
+                                    MinusAddop(
+                                    ) [MinusAddop]
+                                    Term(
+                                      FactorList_e(
+                                        Factor(
+                                          UnaryMinus_e(
+                                          ) [UnaryMinus_e]
+                                          NumberParamFactor(
+                                           1
+                                          ) [NumberParamFactor]
+                                        ) [Factor]
+                                      ) [FactorList_e]
+                                    ) [Term]
+                                  ) [TermList_array]
+                                ) [NonTernaryExpression]
                               ) [NonTerExpression]
-                            ) [ExpDesignatorOp]
-                            DesignatorList_e(
-                            ) [DesignatorList_e]
-                          ) [DesignatorList_array]
-                        ) [Designator]
+                            ) [Designator_elem]
+                            Assignop(
+                            ) [Assignop]
+                            NonTerExpression(
+                              NonTernaryExpression(
+                                TermList_e(
+                                  Term(
+                                    FactorList_e(
+                                      Factor(
+                                        UnaryMinus_e(
+                                        ) [UnaryMinus_e]
+                                        NumberParamFactor(
+                                         200
+                                        ) [NumberParamFactor]
+                                      ) [Factor]
+                                    ) [FactorList_e]
+                                  ) [Term]
+                                ) [TermList_e]
+                              ) [NonTernaryExpression]
+                            ) [NonTerExpression]
+                          ) [ExprDesignatorStatement]
+                        ) [DesigStatement]
+                      ) [MatchStatement]
+                      StatementList_sl(
+                        MatchStatement(
+                          DesigStatement(
+                            ExprDesignatorStatement(
+                              Designator_var(
+                               x
+                              ) [Designator_var]
+                              Assignop(
+                              ) [Assignop]
+                              NonTerExpression(
+                                NonTernaryExpression(
+                                  TermList_e(
+                                    Term(
+                                      FactorList_e(
+                                        Factor(
+                                          UnaryMinus_e(
+                                          ) [UnaryMinus_e]
+                                          DesignatorFactor_e(
+                                            Designator_nest(
+                                              Designator_var(
+                                               len
+                                              ) [Designator_var]
+                                              LengthDesignatorOp(
+                                              ) [LengthDesignatorOp]
+                                            ) [Designator_nest]
+                                          ) [DesignatorFactor_e]
+                                        ) [Factor]
+                                      ) [FactorList_e]
+                                    ) [Term]
+                                  ) [TermList_e]
+                                ) [NonTernaryExpression]
+                              ) [NonTerExpression]
+                            ) [ExprDesignatorStatement]
+                          ) [DesigStatement]
+                        ) [MatchStatement]
+                        StatementList_e(
+                        ) [StatementList_e]
+                      ) [StatementList_sl]
+                    ) [StatementList_sl]
+                  ) [StatementList_sl]
+                ) [StatementList_sl]
+              ) [StatementList_sl]
+            ) [StatementList_sl]
+          ) [MethodDecl]
+          MethodDeclList_array(
+            MethodDecl(
+              VoidPrefix(
+              ) [VoidPrefix]
+              MethodName(
+               testEnum
+              ) [MethodName]
+              ParamsList_e(
+              ) [ParamsList_e]
+              VarDiffDecl_list(
+                VarDeclList_array(
+                  Type(
+                   int
+                  ) [Type]
+                  IdentVarDecl(
+                   color
+                  ) [IdentVarDecl]
+                  VarDeclListRest_e(
+                  ) [VarDeclListRest_e]
+                ) [VarDeclList_array]
+                VarDiffDecl_list(
+                  VarDeclList_array(
+                    Type(
+                     int
+                    ) [Type]
+                    IdentVarDecl(
+                     y
+                    ) [IdentVarDecl]
+                    VarDeclListRest_e(
+                    ) [VarDeclListRest_e]
+                  ) [VarDeclList_array]
+                  VarDiffDecl_list(
+                    VarDeclList_array(
+                      Type(
+                       char
+                      ) [Type]
+                      IdentVarDecl(
+                       a
+                      ) [IdentVarDecl]
+                      VarDeclListRest_e(
+                      ) [VarDeclListRest_e]
+                    ) [VarDeclList_array]
+                    VarDiffDecl_e(
+                    ) [VarDiffDecl_e]
+                  ) [VarDiffDecl_list]
+                ) [VarDiffDecl_list]
+              ) [VarDiffDecl_list]
+              StatementList_sl(
+                MatchStatement(
+                  DesigStatement(
+                    ExprDesignatorStatement(
+                      Designator_var(
+                       color
+                      ) [Designator_var]
+                      Assignop(
+                      ) [Assignop]
+                      NonTerExpression(
+                        NonTernaryExpression(
+                          TermList_e(
+                            Term(
+                              FactorList_e(
+                                Factor(
+                                  UnaryMinus_e(
+                                  ) [UnaryMinus_e]
+                                  DesignatorFactor_e(
+                                    Designator_nest(
+                                      Designator_var(
+                                       Color
+                                      ) [Designator_var]
+                                      IdentDesignatorOp(
+                                       RED
+                                      ) [IdentDesignatorOp]
+                                    ) [Designator_nest]
+                                  ) [DesignatorFactor_e]
+                                ) [Factor]
+                              ) [FactorList_e]
+                            ) [Term]
+                          ) [TermList_e]
+                        ) [NonTernaryExpression]
+                      ) [NonTerExpression]
+                    ) [ExprDesignatorStatement]
+                  ) [DesigStatement]
+                ) [MatchStatement]
+                StatementList_sl(
+                  MatchStatement(
+                    PrintStatement(
+                      PrintExpression_non_num(
+                        NonTerExpression(
+                          NonTernaryExpression(
+                            TermList_e(
+                              Term(
+                                FactorList_e(
+                                  Factor(
+                                    UnaryMinus_e(
+                                    ) [UnaryMinus_e]
+                                    DesignatorFactor_e(
+                                      Designator_var(
+                                       color
+                                      ) [Designator_var]
+                                    ) [DesignatorFactor_e]
+                                  ) [Factor]
+                                ) [FactorList_e]
+                              ) [Term]
+                            ) [TermList_e]
+                          ) [NonTernaryExpression]
+                        ) [NonTerExpression]
+                      ) [PrintExpression_non_num]
+                    ) [PrintStatement]
+                  ) [MatchStatement]
+                  StatementList_sl(
+                    MatchStatement(
+                      DesigStatement(
+                        ExprDesignatorStatement(
+                          Designator_var(
+                           a
+                          ) [Designator_var]
+                          Assignop(
+                          ) [Assignop]
+                          NonTerExpression(
+                            NonTernaryExpression(
+                              TermList_e(
+                                Term(
+                                  FactorList_e(
+                                    Factor(
+                                      UnaryMinus_e(
+                                      ) [UnaryMinus_e]
+                                      CharParamFactor(
+                                       a
+                                      ) [CharParamFactor]
+                                    ) [Factor]
+                                  ) [FactorList_e]
+                                ) [Term]
+                              ) [TermList_e]
+                            ) [NonTernaryExpression]
+                          ) [NonTerExpression]
+                        ) [ExprDesignatorStatement]
+                      ) [DesigStatement]
+                    ) [MatchStatement]
+                    StatementList_sl(
+                      MatchStatement(
+                        DesigStatement(
+                          IncDesignatorStatement(
+                            Designator_var(
+                             a
+                            ) [Designator_var]
+                          ) [IncDesignatorStatement]
+                        ) [DesigStatement]
+                      ) [MatchStatement]
+                      StatementList_sl(
+                        MatchStatement(
+                          DesigStatement(
+                            ExprDesignatorStatement(
+                              Designator_var(
+                               color
+                              ) [Designator_var]
+                              Assignop(
+                              ) [Assignop]
+                              NonTerExpression(
+                                NonTernaryExpression(
+                                  TermList_e(
+                                    Term(
+                                      FactorList_e(
+                                        Factor(
+                                          UnaryMinus_e(
+                                          ) [UnaryMinus_e]
+                                          DesignatorFactor_e(
+                                            Designator_nest(
+                                              Designator_var(
+                                               Color
+                                              ) [Designator_var]
+                                              IdentDesignatorOp(
+                                               BLUE
+                                              ) [IdentDesignatorOp]
+                                            ) [Designator_nest]
+                                          ) [DesignatorFactor_e]
+                                        ) [Factor]
+                                      ) [FactorList_e]
+                                    ) [Term]
+                                  ) [TermList_e]
+                                ) [NonTernaryExpression]
+                              ) [NonTerExpression]
+                            ) [ExprDesignatorStatement]
+                          ) [DesigStatement]
+                        ) [MatchStatement]
+                        StatementList_sl(
+                          MatchStatement(
+                            PrintStatement(
+                              PrintExpression_non_num(
+                                NonTerExpression(
+                                  NonTernaryExpression(
+                                    TermList_e(
+                                      Term(
+                                        FactorList_e(
+                                          Factor(
+                                            UnaryMinus_e(
+                                            ) [UnaryMinus_e]
+                                            DesignatorFactor_e(
+                                              Designator_var(
+                                               color
+                                              ) [Designator_var]
+                                            ) [DesignatorFactor_e]
+                                          ) [Factor]
+                                        ) [FactorList_e]
+                                      ) [Term]
+                                    ) [TermList_e]
+                                  ) [NonTernaryExpression]
+                                ) [NonTerExpression]
+                              ) [PrintExpression_non_num]
+                            ) [PrintStatement]
+                          ) [MatchStatement]
+                          StatementList_sl(
+                            UnmatchStatement(
+                              IfElseStatement_non_else(
+                                Condition(
+                                  CondTerm(
+                                    RelopCondFact(
+                                      NonTernaryExpression(
+                                        TermList_e(
+                                          Term(
+                                            FactorList_e(
+                                              Factor(
+                                                UnaryMinus_e(
+                                                ) [UnaryMinus_e]
+                                                DesignatorFactor_e(
+                                                  Designator_var(
+                                                   color
+                                                  ) [Designator_var]
+                                                ) [DesignatorFactor_e]
+                                              ) [Factor]
+                                            ) [FactorList_e]
+                                          ) [Term]
+                                        ) [TermList_e]
+                                      ) [NonTernaryExpression]
+                                      EqRelop(
+                                      ) [EqRelop]
+                                      NonTernaryExpression(
+                                        TermList_e(
+                                          Term(
+                                            FactorList_e(
+                                              Factor(
+                                                UnaryMinus_e(
+                                                ) [UnaryMinus_e]
+                                                DesignatorFactor_e(
+                                                  Designator_nest(
+                                                    Designator_var(
+                                                     Color
+                                                    ) [Designator_var]
+                                                    IdentDesignatorOp(
+                                                     BLUE
+                                                    ) [IdentDesignatorOp]
+                                                  ) [Designator_nest]
+                                                ) [DesignatorFactor_e]
+                                              ) [Factor]
+                                            ) [FactorList_e]
+                                          ) [Term]
+                                        ) [TermList_e]
+                                      ) [NonTernaryExpression]
+                                    ) [RelopCondFact]
+                                    CondFactRest_e(
+                                    ) [CondFactRest_e]
+                                  ) [CondTerm]
+                                  ConditionRest_e(
+                                  ) [ConditionRest_e]
+                                ) [Condition]
+                                MatchStatement(
+                                  RecStatement(
+                                    StatementList_sl(
+                                      MatchStatement(
+                                        PrintStatement(
+                                          PrintExpression_non_num(
+                                            NonTerExpression(
+                                              NonTernaryExpression(
+                                                TermList_e(
+                                                  Term(
+                                                    FactorList_e(
+                                                      Factor(
+                                                        UnaryMinus_e(
+                                                        ) [UnaryMinus_e]
+                                                        NumberParamFactor(
+                                                         999
+                                                        ) [NumberParamFactor]
+                                                      ) [Factor]
+                                                    ) [FactorList_e]
+                                                  ) [Term]
+                                                ) [TermList_e]
+                                              ) [NonTernaryExpression]
+                                            ) [NonTerExpression]
+                                          ) [PrintExpression_non_num]
+                                        ) [PrintStatement]
+                                      ) [MatchStatement]
+                                      StatementList_e(
+                                      ) [StatementList_e]
+                                    ) [StatementList_sl]
+                                  ) [RecStatement]
+                                ) [MatchStatement]
+                              ) [IfElseStatement_non_else]
+                            ) [UnmatchStatement]
+                            StatementList_sl(
+                              MatchStatement(
+                                SwitchStatement(
+                                  SwitchWord(
+                                  ) [SwitchWord]
+                                  NonTerExpression(
+                                    NonTernaryExpression(
+                                      TermList_e(
+                                        Term(
+                                          FactorList_e(
+                                            Factor(
+                                              UnaryMinus_e(
+                                              ) [UnaryMinus_e]
+                                              DesignatorFactor_e(
+                                                Designator_var(
+                                                 color
+                                                ) [Designator_var]
+                                              ) [DesignatorFactor_e]
+                                            ) [Factor]
+                                          ) [FactorList_e]
+                                        ) [Term]
+                                      ) [TermList_e]
+                                    ) [NonTernaryExpression]
+                                  ) [NonTerExpression]
+                                  SwitchCases_s(
+                                   1
+                                    StatementList_sl(
+                                      MatchStatement(
+                                        PrintStatement(
+                                          PrintExpression_non_num(
+                                            NonTerExpression(
+                                              NonTernaryExpression(
+                                                TermList_e(
+                                                  Term(
+                                                    FactorList_e(
+                                                      Factor(
+                                                        UnaryMinus_e(
+                                                        ) [UnaryMinus_e]
+                                                        NumberParamFactor(
+                                                         111
+                                                        ) [NumberParamFactor]
+                                                      ) [Factor]
+                                                    ) [FactorList_e]
+                                                  ) [Term]
+                                                ) [TermList_e]
+                                              ) [NonTernaryExpression]
+                                            ) [NonTerExpression]
+                                          ) [PrintExpression_non_num]
+                                        ) [PrintStatement]
+                                      ) [MatchStatement]
+                                      StatementList_e(
+                                      ) [StatementList_e]
+                                    ) [StatementList_sl]
+                                    SwitchCases_s(
+                                     5
+                                      StatementList_sl(
+                                        MatchStatement(
+                                          PrintStatement(
+                                            PrintExpression_non_num(
+                                              NonTerExpression(
+                                                NonTernaryExpression(
+                                                  TermList_e(
+                                                    Term(
+                                                      FactorList_e(
+                                                        Factor(
+                                                          UnaryMinus_e(
+                                                          ) [UnaryMinus_e]
+                                                          NumberParamFactor(
+                                                           555
+                                                          ) [NumberParamFactor]
+                                                        ) [Factor]
+                                                      ) [FactorList_e]
+                                                    ) [Term]
+                                                  ) [TermList_e]
+                                                ) [NonTernaryExpression]
+                                              ) [NonTerExpression]
+                                            ) [PrintExpression_non_num]
+                                          ) [PrintStatement]
+                                        ) [MatchStatement]
+                                        StatementList_e(
+                                        ) [StatementList_e]
+                                      ) [StatementList_sl]
+                                      SwitchCases_s(
+                                       6
+                                        StatementList_sl(
+                                          MatchStatement(
+                                            PrintStatement(
+                                              PrintExpression_non_num(
+                                                NonTerExpression(
+                                                  NonTernaryExpression(
+                                                    TermList_e(
+                                                      Term(
+                                                        FactorList_e(
+                                                          Factor(
+                                                            UnaryMinus_e(
+                                                            ) [UnaryMinus_e]
+                                                            NumberParamFactor(
+                                                             666
+                                                            ) [NumberParamFactor]
+                                                          ) [Factor]
+                                                        ) [FactorList_e]
+                                                      ) [Term]
+                                                    ) [TermList_e]
+                                                  ) [NonTernaryExpression]
+                                                ) [NonTerExpression]
+                                              ) [PrintExpression_non_num]
+                                            ) [PrintStatement]
+                                          ) [MatchStatement]
+                                          StatementList_e(
+                                          ) [StatementList_e]
+                                        ) [StatementList_sl]
+                                        SwitchCases_e(
+                                        ) [SwitchCases_e]
+                                      ) [SwitchCases_s]
+                                    ) [SwitchCases_s]
+                                  ) [SwitchCases_s]
+                                ) [SwitchStatement]
+                              ) [MatchStatement]
+                              StatementList_sl(
+                                MatchStatement(
+                                  DesigStatement(
+                                    ExprDesignatorStatement(
+                                      Designator_var(
+                                       y
+                                      ) [Designator_var]
+                                      Assignop(
+                                      ) [Assignop]
+                                      NonTerExpression(
+                                        NonTernaryExpression(
+                                          TermList_e(
+                                            Term(
+                                              FactorList_e(
+                                                Factor(
+                                                  UnaryMinus_e(
+                                                  ) [UnaryMinus_e]
+                                                  DesignatorFactor_e(
+                                                    Designator_nest(
+                                                      Designator_var(
+                                                       Color
+                                                      ) [Designator_var]
+                                                      IdentDesignatorOp(
+                                                       PURPLE
+                                                      ) [IdentDesignatorOp]
+                                                    ) [Designator_nest]
+                                                  ) [DesignatorFactor_e]
+                                                ) [Factor]
+                                              ) [FactorList_e]
+                                            ) [Term]
+                                          ) [TermList_e]
+                                        ) [NonTernaryExpression]
+                                      ) [NonTerExpression]
+                                    ) [ExprDesignatorStatement]
+                                  ) [DesigStatement]
+                                ) [MatchStatement]
+                                StatementList_e(
+                                ) [StatementList_e]
+                              ) [StatementList_sl]
+                            ) [StatementList_sl]
+                          ) [StatementList_sl]
+                        ) [StatementList_sl]
+                      ) [StatementList_sl]
+                    ) [StatementList_sl]
+                  ) [StatementList_sl]
+                ) [StatementList_sl]
+              ) [StatementList_sl]
+            ) [MethodDecl]
+            MethodDeclList_array(
+              MethodDecl(
+                VoidPrefix(
+                ) [VoidPrefix]
+                MethodName(
+                 testFunctionCalls
+                ) [MethodName]
+                ParamsList_e(
+                ) [ParamsList_e]
+                VarDiffDecl_list(
+                  VarDeclList_array(
+                    Type(
+                     int
+                    ) [Type]
+                    IdentVarDecl(
+                     result
+                    ) [IdentVarDecl]
+                    VarDeclListRest_e(
+                    ) [VarDeclListRest_e]
+                  ) [VarDeclList_array]
+                  VarDiffDecl_list(
+                    VarDeclList_array(
+                      Type(
+                       int
+                      ) [Type]
+                      ArrayVarDecl(
+                       arr
+                      ) [ArrayVarDecl]
+                      VarDeclListRest_e(
+                      ) [VarDeclListRest_e]
+                    ) [VarDeclList_array]
+                    VarDiffDecl_e(
+                    ) [VarDiffDecl_e]
+                  ) [VarDiffDecl_list]
+                ) [VarDiffDecl_list]
+                StatementList_sl(
+                  MatchStatement(
+                    DesigStatement(
+                      ExprDesignatorStatement(
+                        Designator_var(
+                         result
+                        ) [Designator_var]
                         Assignop(
                         ) [Assignop]
                         NonTerExpression(
-                          TermExpression(
-                            Term(
-                              NonParamFactor(
-                                Designator(
-                                 g2
-                                  DesignatorList_e(
-                                  ) [DesignatorList_e]
-                                ) [Designator]
-                              ) [NonParamFactor]
-                              FactorList_e(
-                              ) [FactorList_e]
-                            ) [Term]
+                          NonTernaryExpression(
                             TermList_e(
+                              Term(
+                                FactorList_e(
+                                  Factor(
+                                    UnaryMinus_e(
+                                    ) [UnaryMinus_e]
+                                    DesignatorFactor_func(
+                                      Designator_var(
+                                       noParams
+                                      ) [Designator_var]
+                                    ) [DesignatorFactor_func]
+                                  ) [Factor]
+                                ) [FactorList_e]
+                              ) [Term]
                             ) [TermList_e]
-                          ) [TermExpression]
+                          ) [NonTernaryExpression]
                         ) [NonTerExpression]
                       ) [ExprDesignatorStatement]
                     ) [DesigStatement]
@@ -1037,207 +1617,784 @@
                       PrintStatement(
                         PrintExpression_non_num(
                           NonTerExpression(
-                            TermExpression(
-                              Term(
-                                NonParamFactor(
-                                  Designator(
-                                   arrGlobal
-                                    DesignatorList_array(
-                                      ExpDesignatorOp(
-                                        NonTerExpression(
-                                          TermExpression(
-                                            Term(
-                                              NumberParamFactor(
-                                               0
-                                              ) [NumberParamFactor]
-                                              FactorList_e(
-                                              ) [FactorList_e]
-                                            ) [Term]
-                                            TermList_e(
-                                            ) [TermList_e]
-                                          ) [TermExpression]
-                                        ) [NonTerExpression]
-                                      ) [ExpDesignatorOp]
-                                      DesignatorList_e(
-                                      ) [DesignatorList_e]
-                                    ) [DesignatorList_array]
-                                  ) [Designator]
-                                ) [NonParamFactor]
-                                FactorList_e(
-                                ) [FactorList_e]
-                              ) [Term]
+                            NonTernaryExpression(
                               TermList_e(
+                                Term(
+                                  FactorList_e(
+                                    Factor(
+                                      UnaryMinus_e(
+                                      ) [UnaryMinus_e]
+                                      DesignatorFactor_e(
+                                        Designator_var(
+                                         result
+                                        ) [Designator_var]
+                                      ) [DesignatorFactor_e]
+                                    ) [Factor]
+                                  ) [FactorList_e]
+                                ) [Term]
                               ) [TermList_e]
-                            ) [TermExpression]
+                            ) [NonTernaryExpression]
                           ) [NonTerExpression]
                         ) [PrintExpression_non_num]
                       ) [PrintStatement]
                     ) [MatchStatement]
-                    StatementList_e(
-                    ) [StatementList_e]
-                  ) [StatementList_sl]
-                ) [StatementList_sl]
-              ) [StatementList_sl]
-            ) [StatementList_sl]
-          ) [MethodDecl]
-          MethodDeclList_array(
-            MethodDecl(
-              TypePrefix(
-                Type(
-                 int
-                ) [Type]
-              ) [TypePrefix]
-              MethodName(
-               boundedAdd
-              ) [MethodName]
-              ParamsList_param(
-                Type(
-                 int
-                ) [Type]
-                IdentVarDecl(
-                 x
-                ) [IdentVarDecl]
-                ParamsListRest_e(
-                ) [ParamsListRest_e]
-              ) [ParamsList_param]
-              VarDiffDecl_e(
-              ) [VarDiffDecl_e]
-              StatementList_sl(
-                UnmatchStatement(
-                  IfElseStatement_non_else(
-                    Condition(
-                      CondTerm(
-                        RelopCondFact(
-                          TermExpression(
-                            Term(
-                              NonParamFactor(
-                                Designator(
-                                 x
-                                  DesignatorList_e(
-                                  ) [DesignatorList_e]
-                                ) [Designator]
-                              ) [NonParamFactor]
-                              FactorList_e(
-                              ) [FactorList_e]
-                            ) [Term]
-                            TermList_array(
-                              PlusAddop(
-                              ) [PlusAddop]
-                              Term(
-                                NumberParamFactor(
-                                 1
-                                ) [NumberParamFactor]
-                                FactorList_e(
-                                ) [FactorList_e]
-                              ) [Term]
-                              TermList_e(
-                              ) [TermList_e]
-                            ) [TermList_array]
-                          ) [TermExpression]
-                          GreaterRelop(
-                          ) [GreaterRelop]
-                          TermExpression(
-                            Term(
-                              NonParamFactor(
-                                Designator(
-                                 MAX
-                                  DesignatorList_e(
-                                  ) [DesignatorList_e]
-                                ) [Designator]
-                              ) [NonParamFactor]
-                              FactorList_e(
-                              ) [FactorList_e]
-                            ) [Term]
-                            TermList_e(
-                            ) [TermList_e]
-                          ) [TermExpression]
-                        ) [RelopCondFact]
-                        CondFactRest_e(
-                        ) [CondFactRest_e]
-                      ) [CondTerm]
-                      ConditionRest_e(
-                      ) [ConditionRest_e]
-                    ) [Condition]
-                    MatchStatement(
-                      RecStatement(
-                        StatementList_sl(
-                          MatchStatement(
-                            ReturnStatement(
-                              ReturnExpression_expr(
-                                NonTerExpression(
-                                  TermExpression(
+                    StatementList_sl(
+                      MatchStatement(
+                        DesigStatement(
+                          ExprDesignatorStatement(
+                            Designator_var(
+                             result
+                            ) [Designator_var]
+                            Assignop(
+                            ) [Assignop]
+                            NonTerExpression(
+                              NonTernaryExpression(
+                                TermList_e(
+                                  Term(
+                                    FactorList_e(
+                                      Factor(
+                                        UnaryMinus_e(
+                                        ) [UnaryMinus_e]
+                                        DesignatorFactor_param_func(
+                                          Designator_var(
+                                           withParams
+                                          ) [Designator_var]
+                                          ActParsList(
+                                            NonTerExpression(
+                                              NonTernaryExpression(
+                                                TermList_e(
+                                                  Term(
+                                                    FactorList_e(
+                                                      Factor(
+                                                        UnaryMinus_e(
+                                                        ) [UnaryMinus_e]
+                                                        NumberParamFactor(
+                                                         10
+                                                        ) [NumberParamFactor]
+                                                      ) [Factor]
+                                                    ) [FactorList_e]
+                                                  ) [Term]
+                                                ) [TermList_e]
+                                              ) [NonTernaryExpression]
+                                            ) [NonTerExpression]
+                                            ActParsRest_array(
+                                              NonTerExpression(
+                                                NonTernaryExpression(
+                                                  TermList_e(
+                                                    Term(
+                                                      FactorList_e(
+                                                        Factor(
+                                                          UnaryMinus_e(
+                                                          ) [UnaryMinus_e]
+                                                          NumberParamFactor(
+                                                           20
+                                                          ) [NumberParamFactor]
+                                                        ) [Factor]
+                                                      ) [FactorList_e]
+                                                    ) [Term]
+                                                  ) [TermList_e]
+                                                ) [NonTernaryExpression]
+                                              ) [NonTerExpression]
+                                              ActParsRest_e(
+                                              ) [ActParsRest_e]
+                                            ) [ActParsRest_array]
+                                          ) [ActParsList]
+                                        ) [DesignatorFactor_param_func]
+                                      ) [Factor]
+                                    ) [FactorList_e]
+                                  ) [Term]
+                                ) [TermList_e]
+                              ) [NonTernaryExpression]
+                            ) [NonTerExpression]
+                          ) [ExprDesignatorStatement]
+                        ) [DesigStatement]
+                      ) [MatchStatement]
+                      StatementList_sl(
+                        MatchStatement(
+                          PrintStatement(
+                            PrintExpression_non_num(
+                              NonTerExpression(
+                                NonTernaryExpression(
+                                  TermList_e(
                                     Term(
-                                      NonParamFactor(
-                                        Designator(
-                                         MAX
-                                          DesignatorList_e(
-                                          ) [DesignatorList_e]
-                                        ) [Designator]
-                                      ) [NonParamFactor]
                                       FactorList_e(
+                                        Factor(
+                                          UnaryMinus_e(
+                                          ) [UnaryMinus_e]
+                                          DesignatorFactor_e(
+                                            Designator_var(
+                                             result
+                                            ) [Designator_var]
+                                          ) [DesignatorFactor_e]
+                                        ) [Factor]
                                       ) [FactorList_e]
                                     ) [Term]
+                                  ) [TermList_e]
+                                ) [NonTernaryExpression]
+                              ) [NonTerExpression]
+                            ) [PrintExpression_non_num]
+                          ) [PrintStatement]
+                        ) [MatchStatement]
+                        StatementList_sl(
+                          MatchStatement(
+                            DesigStatement(
+                              ExprDesignatorStatement(
+                                Designator_var(
+                                 result
+                                ) [Designator_var]
+                                Assignop(
+                                ) [Assignop]
+                                NonTerExpression(
+                                  NonTernaryExpression(
                                     TermList_e(
+                                      Term(
+                                        FactorList_e(
+                                          Factor(
+                                            UnaryMinus_e(
+                                            ) [UnaryMinus_e]
+                                            DesignatorFactor_param_func(
+                                              Designator_var(
+                                               withParams
+                                              ) [Designator_var]
+                                              ActParsList(
+                                                NonTerExpression(
+                                                  NonTernaryExpression(
+                                                    TermList_e(
+                                                      Term(
+                                                        FactorList_e(
+                                                          Factor(
+                                                            UnaryMinus_e(
+                                                            ) [UnaryMinus_e]
+                                                            DesignatorFactor_func(
+                                                              Designator_var(
+                                                               noParams
+                                                              ) [Designator_var]
+                                                            ) [DesignatorFactor_func]
+                                                          ) [Factor]
+                                                        ) [FactorList_e]
+                                                      ) [Term]
+                                                    ) [TermList_e]
+                                                  ) [NonTernaryExpression]
+                                                ) [NonTerExpression]
+                                                ActParsRest_array(
+                                                  NonTerExpression(
+                                                    NonTernaryExpression(
+                                                      TermList_e(
+                                                        Term(
+                                                          FactorList_e(
+                                                            Factor(
+                                                              UnaryMinus_e(
+                                                              ) [UnaryMinus_e]
+                                                              NumberParamFactor(
+                                                               5
+                                                              ) [NumberParamFactor]
+                                                            ) [Factor]
+                                                          ) [FactorList_e]
+                                                        ) [Term]
+                                                      ) [TermList_e]
+                                                    ) [NonTernaryExpression]
+                                                  ) [NonTerExpression]
+                                                  ActParsRest_e(
+                                                  ) [ActParsRest_e]
+                                                ) [ActParsRest_array]
+                                              ) [ActParsList]
+                                            ) [DesignatorFactor_param_func]
+                                          ) [Factor]
+                                        ) [FactorList_e]
+                                      ) [Term]
                                     ) [TermList_e]
-                                  ) [TermExpression]
+                                  ) [NonTernaryExpression]
                                 ) [NonTerExpression]
-                              ) [ReturnExpression_expr]
-                            ) [ReturnStatement]
+                              ) [ExprDesignatorStatement]
+                            ) [DesigStatement]
                           ) [MatchStatement]
-                          StatementList_e(
-                          ) [StatementList_e]
+                          StatementList_sl(
+                            MatchStatement(
+                              PrintStatement(
+                                PrintExpression_non_num(
+                                  NonTerExpression(
+                                    NonTernaryExpression(
+                                      TermList_e(
+                                        Term(
+                                          FactorList_e(
+                                            Factor(
+                                              UnaryMinus_e(
+                                              ) [UnaryMinus_e]
+                                              DesignatorFactor_e(
+                                                Designator_var(
+                                                 result
+                                                ) [Designator_var]
+                                              ) [DesignatorFactor_e]
+                                            ) [Factor]
+                                          ) [FactorList_e]
+                                        ) [Term]
+                                      ) [TermList_e]
+                                    ) [NonTernaryExpression]
+                                  ) [NonTerExpression]
+                                ) [PrintExpression_non_num]
+                              ) [PrintStatement]
+                            ) [MatchStatement]
+                            StatementList_sl(
+                              MatchStatement(
+                                DesigStatement(
+                                  ExprDesignatorStatement(
+                                    Designator_var(
+                                     result
+                                    ) [Designator_var]
+                                    Assignop(
+                                    ) [Assignop]
+                                    NonTerExpression(
+                                      NonTernaryExpression(
+                                        TermList_e(
+                                          Term(
+                                            FactorList_e(
+                                              Factor(
+                                                UnaryMinus_e(
+                                                ) [UnaryMinus_e]
+                                                DesignatorFactor_param_func(
+                                                  Designator_var(
+                                                   withParams
+                                                  ) [Designator_var]
+                                                  ActParsList(
+                                                    NonTerExpression(
+                                                      NonTernaryExpression(
+                                                        TermList_e(
+                                                          Term(
+                                                            FactorList_e(
+                                                              Factor(
+                                                                UnaryMinus_e(
+                                                                ) [UnaryMinus_e]
+                                                                NumberParamFactor(
+                                                                 10
+                                                                ) [NumberParamFactor]
+                                                              ) [Factor]
+                                                            ) [FactorList_e]
+                                                          ) [Term]
+                                                        ) [TermList_e]
+                                                      ) [NonTernaryExpression]
+                                                    ) [NonTerExpression]
+                                                    ActParsRest_e(
+                                                    ) [ActParsRest_e]
+                                                  ) [ActParsList]
+                                                ) [DesignatorFactor_param_func]
+                                              ) [Factor]
+                                            ) [FactorList_e]
+                                          ) [Term]
+                                        ) [TermList_e]
+                                      ) [NonTernaryExpression]
+                                    ) [NonTerExpression]
+                                  ) [ExprDesignatorStatement]
+                                ) [DesigStatement]
+                              ) [MatchStatement]
+                              StatementList_sl(
+                                MatchStatement(
+                                  DesigStatement(
+                                    ExprDesignatorStatement(
+                                      Designator_var(
+                                       result
+                                      ) [Designator_var]
+                                      Assignop(
+                                      ) [Assignop]
+                                      NonTerExpression(
+                                        NonTernaryExpression(
+                                          TermList_e(
+                                            Term(
+                                              FactorList_e(
+                                                Factor(
+                                                  UnaryMinus_e(
+                                                  ) [UnaryMinus_e]
+                                                  DesignatorFactor_func(
+                                                    Designator_nest(
+                                                      Designator_var(
+                                                       arr
+                                                      ) [Designator_var]
+                                                      LengthDesignatorOp(
+                                                      ) [LengthDesignatorOp]
+                                                    ) [Designator_nest]
+                                                  ) [DesignatorFactor_func]
+                                                ) [Factor]
+                                              ) [FactorList_e]
+                                            ) [Term]
+                                          ) [TermList_e]
+                                        ) [NonTernaryExpression]
+                                      ) [NonTerExpression]
+                                    ) [ExprDesignatorStatement]
+                                  ) [DesigStatement]
+                                ) [MatchStatement]
+                                StatementList_e(
+                                ) [StatementList_e]
+                              ) [StatementList_sl]
+                            ) [StatementList_sl]
+                          ) [StatementList_sl]
                         ) [StatementList_sl]
-                      ) [RecStatement]
-                    ) [MatchStatement]
-                  ) [IfElseStatement_non_else]
-                ) [UnmatchStatement]
-                StatementList_sl(
-                  MatchStatement(
-                    ReturnStatement(
-                      ReturnExpression_expr(
-                        NonTerExpression(
-                          TermExpression(
-                            Term(
-                              NonParamFactor(
-                                Designator(
-                                 x
-                                  DesignatorList_e(
-                                  ) [DesignatorList_e]
-                                ) [Designator]
-                              ) [NonParamFactor]
-                              FactorList_e(
-                              ) [FactorList_e]
-                            ) [Term]
-                            TermList_array(
-                              PlusAddop(
-                              ) [PlusAddop]
-                              Term(
-                                NumberParamFactor(
-                                 1
-                                ) [NumberParamFactor]
-                                FactorList_e(
-                                ) [FactorList_e]
-                              ) [Term]
-                              TermList_e(
-                              ) [TermList_e]
-                            ) [TermList_array]
-                          ) [TermExpression]
-                        ) [NonTerExpression]
-                      ) [ReturnExpression_expr]
-                    ) [ReturnStatement]
-                  ) [MatchStatement]
-                  StatementList_e(
-                  ) [StatementList_e]
+                      ) [StatementList_sl]
+                    ) [StatementList_sl]
+                  ) [StatementList_sl]
                 ) [StatementList_sl]
-              ) [StatementList_sl]
-            ) [MethodDecl]
-            MethodDeclList_e(
-            ) [MethodDeclList_e]
+              ) [MethodDecl]
+              MethodDeclList_array(
+                MethodDecl(
+                  VoidPrefix(
+                  ) [VoidPrefix]
+                  MethodName(
+                   main
+                  ) [MethodName]
+                  ParamsList_e(
+                  ) [ParamsList_e]
+                  VarDiffDecl_list(
+                    VarDeclList_array(
+                      Type(
+                       int
+                      ) [Type]
+                      IdentVarDecl(
+                       x
+                      ) [IdentVarDecl]
+                      VarDeclListRest_comma(
+                        IdentVarDecl(
+                         size
+                        ) [IdentVarDecl]
+                        VarDeclListRest_e(
+                        ) [VarDeclListRest_e]
+                      ) [VarDeclListRest_comma]
+                    ) [VarDeclList_array]
+                    VarDiffDecl_list(
+                      VarDeclList_array(
+                        Type(
+                         int
+                        ) [Type]
+                        ArrayVarDecl(
+                         myArray
+                        ) [ArrayVarDecl]
+                        VarDeclListRest_e(
+                        ) [VarDeclListRest_e]
+                      ) [VarDeclList_array]
+                      VarDiffDecl_e(
+                      ) [VarDiffDecl_e]
+                    ) [VarDiffDecl_list]
+                  ) [VarDiffDecl_list]
+                  StatementList_sl(
+                    MatchStatement(
+                      PrintStatement(
+                        PrintExpression_num(
+                          NonTerExpression(
+                            NonTernaryExpression(
+                              TermList_e(
+                                Term(
+                                  FactorList_e(
+                                    Factor(
+                                      UnaryMinus_e(
+                                      ) [UnaryMinus_e]
+                                      BoolParamFactor(
+                                       1
+                                      ) [BoolParamFactor]
+                                    ) [Factor]
+                                  ) [FactorList_e]
+                                ) [Term]
+                              ) [TermList_e]
+                            ) [NonTernaryExpression]
+                          ) [NonTerExpression]
+                         2
+                        ) [PrintExpression_num]
+                      ) [PrintStatement]
+                    ) [MatchStatement]
+                    StatementList_sl(
+                      MatchStatement(
+                        DesigStatement(
+                          ParamsDesignatorStatement(
+                            Designator_var(
+                             testSwitch
+                            ) [Designator_var]
+                            ActPars_params(
+                              ActParsList(
+                                NonTerExpression(
+                                  NonTernaryExpression(
+                                    TermList_e(
+                                      Term(
+                                        FactorList_e(
+                                          Factor(
+                                            UnaryMinus_e(
+                                            ) [UnaryMinus_e]
+                                            NumberParamFactor(
+                                             2
+                                            ) [NumberParamFactor]
+                                          ) [Factor]
+                                        ) [FactorList_e]
+                                      ) [Term]
+                                    ) [TermList_e]
+                                  ) [NonTernaryExpression]
+                                ) [NonTerExpression]
+                                ActParsRest_e(
+                                ) [ActParsRest_e]
+                              ) [ActParsList]
+                            ) [ActPars_params]
+                          ) [ParamsDesignatorStatement]
+                        ) [DesigStatement]
+                      ) [MatchStatement]
+                      StatementList_sl(
+                        MatchStatement(
+                          DesigStatement(
+                            ParamsDesignatorStatement(
+                              Designator_var(
+                               testSwitch
+                              ) [Designator_var]
+                              ActPars_params(
+                                ActParsList(
+                                  NonTerExpression(
+                                    NonTernaryExpression(
+                                      TermList_e(
+                                        Term(
+                                          FactorList_e(
+                                            Factor(
+                                              UnaryMinus_e(
+                                              ) [UnaryMinus_e]
+                                              NumberParamFactor(
+                                               5
+                                              ) [NumberParamFactor]
+                                            ) [Factor]
+                                          ) [FactorList_e]
+                                        ) [Term]
+                                      ) [TermList_e]
+                                    ) [NonTernaryExpression]
+                                  ) [NonTerExpression]
+                                  ActParsRest_e(
+                                  ) [ActParsRest_e]
+                                ) [ActParsList]
+                              ) [ActPars_params]
+                            ) [ParamsDesignatorStatement]
+                          ) [DesigStatement]
+                        ) [MatchStatement]
+                        StatementList_sl(
+                          MatchStatement(
+                            DesigStatement(
+                              ExprDesignatorStatement(
+                                Designator_var(
+                                 myArray
+                                ) [Designator_var]
+                                Assignop(
+                                ) [Assignop]
+                                NonTerExpression(
+                                  NonTernaryExpression(
+                                    TermList_e(
+                                      Term(
+                                        FactorList_e(
+                                          Factor(
+                                            UnaryMinus_e(
+                                            ) [UnaryMinus_e]
+                                            NewParamFactor(
+                                              Type(
+                                               int
+                                              ) [Type]
+                                              NonTerExpression(
+                                                NonTernaryExpression(
+                                                  TermList_e(
+                                                    Term(
+                                                      FactorList_e(
+                                                        Factor(
+                                                          UnaryMinus_e(
+                                                          ) [UnaryMinus_e]
+                                                          NumberParamFactor(
+                                                           10
+                                                          ) [NumberParamFactor]
+                                                        ) [Factor]
+                                                      ) [FactorList_e]
+                                                    ) [Term]
+                                                  ) [TermList_e]
+                                                ) [NonTernaryExpression]
+                                              ) [NonTerExpression]
+                                            ) [NewParamFactor]
+                                          ) [Factor]
+                                        ) [FactorList_e]
+                                      ) [Term]
+                                    ) [TermList_e]
+                                  ) [NonTernaryExpression]
+                                ) [NonTerExpression]
+                              ) [ExprDesignatorStatement]
+                            ) [DesigStatement]
+                          ) [MatchStatement]
+                          StatementList_sl(
+                            MatchStatement(
+                              DesigStatement(
+                                ExprDesignatorStatement(
+                                  Designator_var(
+                                   size
+                                  ) [Designator_var]
+                                  Assignop(
+                                  ) [Assignop]
+                                  NonTerExpression(
+                                    NonTernaryExpression(
+                                      TermList_e(
+                                        Term(
+                                          FactorList_e(
+                                            Factor(
+                                              UnaryMinus_e(
+                                              ) [UnaryMinus_e]
+                                              DesignatorFactor_e(
+                                                Designator_nest(
+                                                  Designator_var(
+                                                   myArray
+                                                  ) [Designator_var]
+                                                  LengthDesignatorOp(
+                                                  ) [LengthDesignatorOp]
+                                                ) [Designator_nest]
+                                              ) [DesignatorFactor_e]
+                                            ) [Factor]
+                                          ) [FactorList_e]
+                                        ) [Term]
+                                      ) [TermList_e]
+                                    ) [NonTernaryExpression]
+                                  ) [NonTerExpression]
+                                ) [ExprDesignatorStatement]
+                              ) [DesigStatement]
+                            ) [MatchStatement]
+                            StatementList_sl(
+                              MatchStatement(
+                                PrintStatement(
+                                  PrintExpression_non_num(
+                                    NonTerExpression(
+                                      NonTernaryExpression(
+                                        TermList_e(
+                                          Term(
+                                            FactorList_e(
+                                              Factor(
+                                                UnaryMinus_e(
+                                                ) [UnaryMinus_e]
+                                                DesignatorFactor_e(
+                                                  Designator_var(
+                                                   size
+                                                  ) [Designator_var]
+                                                ) [DesignatorFactor_e]
+                                              ) [Factor]
+                                            ) [FactorList_e]
+                                          ) [Term]
+                                        ) [TermList_e]
+                                      ) [NonTernaryExpression]
+                                    ) [NonTerExpression]
+                                  ) [PrintExpression_non_num]
+                                ) [PrintStatement]
+                              ) [MatchStatement]
+                              StatementList_sl(
+                                MatchStatement(
+                                  DesigStatement(
+                                    ParamsDesignatorStatement(
+                                      Designator_var(
+                                       testArrayLength
+                                      ) [Designator_var]
+                                      ActPars_e(
+                                      ) [ActPars_e]
+                                    ) [ParamsDesignatorStatement]
+                                  ) [DesigStatement]
+                                ) [MatchStatement]
+                                StatementList_sl(
+                                  MatchStatement(
+                                    DesigStatement(
+                                      ParamsDesignatorStatement(
+                                        Designator_var(
+                                         testEnum
+                                        ) [Designator_var]
+                                        ActPars_e(
+                                        ) [ActPars_e]
+                                      ) [ParamsDesignatorStatement]
+                                    ) [DesigStatement]
+                                  ) [MatchStatement]
+                                  StatementList_sl(
+                                    MatchStatement(
+                                      DesigStatement(
+                                        ParamsDesignatorStatement(
+                                          Designator_var(
+                                           testFunctionCalls
+                                          ) [Designator_var]
+                                          ActPars_e(
+                                          ) [ActPars_e]
+                                        ) [ParamsDesignatorStatement]
+                                      ) [DesigStatement]
+                                    ) [MatchStatement]
+                                    StatementList_sl(
+                                      MatchStatement(
+                                        DesigStatement(
+                                          ExprDesignatorStatement(
+                                            Designator_var(
+                                             x
+                                            ) [Designator_var]
+                                            Assignop(
+                                            ) [Assignop]
+                                            NonTerExpression(
+                                              NonTernaryExpression(
+                                                TermList_e(
+                                                  Term(
+                                                    FactorList_e(
+                                                      Factor(
+                                                        UnaryMinus_e(
+                                                        ) [UnaryMinus_e]
+                                                        DesignatorFactor_e(
+                                                          Designator_nest(
+                                                            Designator_var(
+                                                             Color
+                                                            ) [Designator_var]
+                                                            IdentDesignatorOp(
+                                                             GREEN
+                                                            ) [IdentDesignatorOp]
+                                                          ) [Designator_nest]
+                                                        ) [DesignatorFactor_e]
+                                                      ) [Factor]
+                                                    ) [FactorList_e]
+                                                  ) [Term]
+                                                ) [TermList_e]
+                                              ) [NonTernaryExpression]
+                                            ) [NonTerExpression]
+                                          ) [ExprDesignatorStatement]
+                                        ) [DesigStatement]
+                                      ) [MatchStatement]
+                                      StatementList_sl(
+                                        MatchStatement(
+                                          DesigStatement(
+                                            DecDesignatorStatement(
+                                              Designator_var(
+                                               x
+                                              ) [Designator_var]
+                                            ) [DecDesignatorStatement]
+                                          ) [DesigStatement]
+                                        ) [MatchStatement]
+                                        StatementList_sl(
+                                          MatchStatement(
+                                            DesigStatement(
+                                              IncDesignatorStatement(
+                                                Designator_elem(
+                                                  DesignatorArrayName(
+                                                   myArray
+                                                  ) [DesignatorArrayName]
+                                                  NonTerExpression(
+                                                    NonTernaryExpression(
+                                                      TermList_e(
+                                                        Term(
+                                                          FactorList_e(
+                                                            Factor(
+                                                              UnaryMinus_e(
+                                                              ) [UnaryMinus_e]
+                                                              NumberParamFactor(
+                                                               5
+                                                              ) [NumberParamFactor]
+                                                            ) [Factor]
+                                                          ) [FactorList_e]
+                                                        ) [Term]
+                                                      ) [TermList_e]
+                                                    ) [NonTernaryExpression]
+                                                  ) [NonTerExpression]
+                                                ) [Designator_elem]
+                                              ) [IncDesignatorStatement]
+                                            ) [DesigStatement]
+                                          ) [MatchStatement]
+                                          StatementList_sl(
+                                            MatchStatement(
+                                              PrintStatement(
+                                                PrintExpression_non_num(
+                                                  NonTerExpression(
+                                                    NonTernaryExpression(
+                                                      TermList_e(
+                                                        Term(
+                                                          FactorList_e(
+                                                            Factor(
+                                                              UnaryMinus_e(
+                                                              ) [UnaryMinus_e]
+                                                              DesignatorFactor_e(
+                                                                Designator_var(
+                                                                 x
+                                                                ) [Designator_var]
+                                                              ) [DesignatorFactor_e]
+                                                            ) [Factor]
+                                                          ) [FactorList_e]
+                                                        ) [Term]
+                                                      ) [TermList_e]
+                                                    ) [NonTernaryExpression]
+                                                  ) [NonTerExpression]
+                                                ) [PrintExpression_non_num]
+                                              ) [PrintStatement]
+                                            ) [MatchStatement]
+                                            StatementList_sl(
+                                              MatchStatement(
+                                                DesigStatement(
+                                                  ExprDesignatorStatement(
+                                                    Designator_var(
+                                                     x
+                                                    ) [Designator_var]
+                                                    Assignop(
+                                                    ) [Assignop]
+                                                    NonTerExpression(
+                                                      NonTernaryExpression(
+                                                        TermList_e(
+                                                          Term(
+                                                            FactorList_e(
+                                                              Factor(
+                                                                UnaryMinus_e(
+                                                                ) [UnaryMinus_e]
+                                                                DesignatorFactor_e(
+                                                                  Designator_var(
+                                                                   LETTER
+                                                                  ) [Designator_var]
+                                                                ) [DesignatorFactor_e]
+                                                              ) [Factor]
+                                                            ) [FactorList_e]
+                                                          ) [Term]
+                                                        ) [TermList_e]
+                                                      ) [NonTernaryExpression]
+                                                    ) [NonTerExpression]
+                                                  ) [ExprDesignatorStatement]
+                                                ) [DesigStatement]
+                                              ) [MatchStatement]
+                                              StatementList_sl(
+                                                MatchStatement(
+                                                  PrintStatement(
+                                                    PrintExpression_non_num(
+                                                      NonTerExpression(
+                                                        NonTernaryExpression(
+                                                          TermList_e(
+                                                            Term(
+                                                              FactorList_e(
+                                                                Factor(
+                                                                  UnaryMinus_e(
+                                                                  ) [UnaryMinus_e]
+                                                                  NumberParamFactor(
+                                                                   777
+                                                                  ) [NumberParamFactor]
+                                                                ) [Factor]
+                                                              ) [FactorList_e]
+                                                            ) [Term]
+                                                          ) [TermList_e]
+                                                        ) [NonTernaryExpression]
+                                                      ) [NonTerExpression]
+                                                    ) [PrintExpression_non_num]
+                                                  ) [PrintStatement]
+                                                ) [MatchStatement]
+                                                StatementList_e(
+                                                ) [StatementList_e]
+                                              ) [StatementList_sl]
+                                            ) [StatementList_sl]
+                                          ) [StatementList_sl]
+                                        ) [StatementList_sl]
+                                      ) [StatementList_sl]
+                                    ) [StatementList_sl]
+                                  ) [StatementList_sl]
+                                ) [StatementList_sl]
+                              ) [StatementList_sl]
+                            ) [StatementList_sl]
+                          ) [StatementList_sl]
+                        ) [StatementList_sl]
+                      ) [StatementList_sl]
+                    ) [StatementList_sl]
+                  ) [StatementList_sl]
+                ) [MethodDecl]
+                MethodDeclList_e(
+                ) [MethodDeclList_e]
+              ) [MethodDeclList_array]
+            ) [MethodDeclList_array]
           ) [MethodDeclList_array]
         ) [MethodDeclList_array]
       ) [MethodDeclList_array]
     ) [MethodDeclList_array]
   ) [MethodDeclList_array]
 ) [Program]
-2026-02-05 23:54:48,669 INFO  rs.ac.bg.etf.pp1.MJParserTest - -------------------------------------------
-2026-02-05 23:54:48,691 INFO  rs.ac.bg.etf.pp1.MJParserTest - parsiranje uspesno zavrseno!
+2026-02-09 19:24:22,208 INFO  rs.ac.bg.etf.pp1.MJParserTest - -------------------------------------------
+2026-02-09 19:24:22,216 ERROR rs.ac.bg.etf.pp1.SemanticAnalyzer - Funckija .length moze se samo pozivati nad imenom niza
+2026-02-09 19:24:22,216 ERROR rs.ac.bg.etf.pp1.SemanticAnalyzer - Operator ++ moze se koristiti samo na elementu tipa int na liniji 60
+2026-02-09 19:24:22,217 ERROR rs.ac.bg.etf.pp1.SemanticAnalyzer - Data vrednost Enuma nije deklarisana: PURPLE u Color na liniji 77
+2026-02-09 19:24:22,217 ERROR rs.ac.bg.etf.pp1.SemanticAnalyzer - Razliciti tipovi, ne moze se dodeliti! na liniji 125
+2026-02-09 19:24:22,217 ERROR rs.ac.bg.etf.pp1.MJParserTest - parsiranje NIJE uspesno

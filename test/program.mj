@@ -1,84 +1,130 @@
-program BigTest
-
-// =======================
-
+program TestProgram
 
 const int MAX = 100;
-const char NL = '\';
-const bool FLAG = true;
+const char LETTER = 'x';
 
-int g1, g2;
-int arrGlobal[];
+int globalNum;
+int array[];
 
-enum Color { RED, GREEN }
-enum Light { RED, YELLOW, BLUE = 5, DARK = 8, SEVEN }
+enum Color {
+    RED = 1,
+    GREEN,
+    BLUE = 5,
+    YELLOW
+}
 
-
-// aaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 {
-void main() 
-int a, b, c;
-bool d,e,f;
-{
-
-
-    i = 0;
-    sum = 0;
-
-    arrLocal = new int[10];
-
-
-
-    print(sum);
-    print(NL);
-}
-
-// ---------- non-void method ----------
-
-int add(int a, int b, int c, int d, int e)
-    int result;
-
-	{
-    result = a + b;
-    return result;
-}
-
-// ---------- array parameter ---------- 
-
-int sumArray(int a[], int n)
-    int i;
-    int s;
-
-  {
-
-    i = 0;
-    s = 0;
-
-
-    return s;
-}
-
-// ---------- shadowing test ---------- 
-
-void shadowTest(int g1) 
-	int g2;
-    int arrGlobal[];
-	
-	{
-
-    g2 = g1 + 10;
-    arrGlobal = new int[5];
-    arrGlobal[0] = g2;
-
-    print(arrGlobal[0]);
-}
-
-// ---------- const usage ---------- /
-
-int boundedAdd(int x) {
-    if (x + 1 > MAX) {
-        return MAX;
+    int noParams() {
+        return 42;
     }
-    return x + 1;
-}
+    
+    int withParams(int a, int b) {
+        return a + b;
+    }
+    
+    void testSwitch(int val) {
+        switch (val) {
+            case 1:
+                print(10);
+            case 2:
+                print(20);
+            case 5:
+                print(50);
+        }
+    }
+    
+    void testArrayLength()
+        int arr[];
+        int len;
+        int x;
+    {
+        arr = new int[15];
+        len = arr.length;
+        print(len);
+        
+        arr[0] = 100;
+        arr[len - 1] = 200;
+
+        x = len.length;     // SEMANTIC ERROR 1
+                            // .length nad int promenljivom
+    }
+    
+    void testEnum()
+        int color;
+        int y;
+        char a;
+    {
+        color = Color.RED;
+        print(color);
+        a = 'a';
+        a++;
+        color = Color.BLUE;
+        print(color);
+        
+        if (color == Color.BLUE) {
+            print(999);
+        }
+        
+        switch (color) {
+            case 1:
+                print(111);
+            case 5:
+                print(555);
+            case 6:
+                print(666);
+        }
+
+        y = Color.PURPLE;   // SEMANTIC ERROR 2
+                            // ne postoji clan PURPLE u enum Color
+    }
+    
+    void testFunctionCalls()
+        int result;
+        int arr[];
+    {
+        result = noParams();
+        print(result);
+        
+        result = withParams(10, 20);
+        print(result);
+        
+        result = withParams(noParams(), 5);
+        print(result);
+
+        result = withParams(10);   // SEMANTIC ERROR 3
+                                   // pogresan broj parametara
+
+        result = arr.length();     // SEMANTIC ERROR 4
+                                   // .length nije funkcija
+    }
+    
+    void main()
+        int x, size;
+        int myArray[];
+    {
+        print(true, 2);
+        
+        testSwitch(2);
+        testSwitch(5);
+        
+        myArray = new int[10];
+        size = myArray.length;
+        print(size);
+        
+        testArrayLength();
+        
+        testEnum();
+        
+        testFunctionCalls();
+        
+        x = Color.GREEN;
+        x--;
+        myArray[5]++;
+        print(x);
+        
+        x = LETTER;          // SEMANTIC ERROR 5
+                             // dodela char u int
+        
+        print(777);
+    }
 }

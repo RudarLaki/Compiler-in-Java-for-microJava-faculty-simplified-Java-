@@ -1,23 +1,31 @@
 // generated with ast extension for cup
 // version 0.8
-// 5/1/2026 23:51:26
+// 9/1/2026 18:57:41
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class TermList_array extends TermList {
 
+    private TermList TermList;
     private Addop Addop;
     private Term Term;
-    private TermList TermList;
 
-    public TermList_array (Addop Addop, Term Term, TermList TermList) {
+    public TermList_array (TermList TermList, Addop Addop, Term Term) {
+        this.TermList=TermList;
+        if(TermList!=null) TermList.setParent(this);
         this.Addop=Addop;
         if(Addop!=null) Addop.setParent(this);
         this.Term=Term;
         if(Term!=null) Term.setParent(this);
+    }
+
+    public TermList getTermList() {
+        return TermList;
+    }
+
+    public void setTermList(TermList TermList) {
         this.TermList=TermList;
-        if(TermList!=null) TermList.setParent(this);
     }
 
     public Addop getAddop() {
@@ -36,35 +44,27 @@ public class TermList_array extends TermList {
         this.Term=Term;
     }
 
-    public TermList getTermList() {
-        return TermList;
-    }
-
-    public void setTermList(TermList TermList) {
-        this.TermList=TermList;
-    }
-
     public void accept(Visitor visitor) {
         visitor.visit(this);
     }
 
     public void childrenAccept(Visitor visitor) {
+        if(TermList!=null) TermList.accept(visitor);
         if(Addop!=null) Addop.accept(visitor);
         if(Term!=null) Term.accept(visitor);
-        if(TermList!=null) TermList.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
+        if(TermList!=null) TermList.traverseTopDown(visitor);
         if(Addop!=null) Addop.traverseTopDown(visitor);
         if(Term!=null) Term.traverseTopDown(visitor);
-        if(TermList!=null) TermList.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
+        if(TermList!=null) TermList.traverseBottomUp(visitor);
         if(Addop!=null) Addop.traverseBottomUp(visitor);
         if(Term!=null) Term.traverseBottomUp(visitor);
-        if(TermList!=null) TermList.traverseBottomUp(visitor);
         accept(visitor);
     }
 
@@ -72,6 +72,12 @@ public class TermList_array extends TermList {
         StringBuffer buffer=new StringBuffer();
         buffer.append(tab);
         buffer.append("TermList_array(\n");
+
+        if(TermList!=null)
+            buffer.append(TermList.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
+        buffer.append("\n");
 
         if(Addop!=null)
             buffer.append(Addop.toString("  "+tab));
@@ -81,12 +87,6 @@ public class TermList_array extends TermList {
 
         if(Term!=null)
             buffer.append(Term.toString("  "+tab));
-        else
-            buffer.append(tab+"  null");
-        buffer.append("\n");
-
-        if(TermList!=null)
-            buffer.append(TermList.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");

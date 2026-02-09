@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 5/1/2026 23:51:26
+// 9/1/2026 18:57:41
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -17,31 +17,32 @@ public interface Visitor {
     public void visit(Prefix Prefix);
     public void visit(StatementList StatementList);
     public void visit(FactorList FactorList);
+    public void visit(DotDesignatorOp DotDesignatorOp);
     public void visit(Addop Addop);
     public void visit(ConstDeclListRest ConstDeclListRest);
     public void visit(CondFactRest CondFactRest);
-    public void visit(Factor Factor);
     public void visit(VarDiffDecl VarDiffDecl);
     public void visit(DeclList DeclList);
-    public void visit(DesignatorOp DesignatorOp);
+    public void visit(Designator Designator);
     public void visit(PrintExpression PrintExpression);
     public void visit(ActParsRest ActParsRest);
     public void visit(ForExpression ForExpression);
     public void visit(ReturnExpression ReturnExpression);
+    public void visit(PartFactor PartFactor);
     public void visit(VarDeclListRest VarDeclListRest);
     public void visit(EnumItem EnumItem);
     public void visit(VarDeclList VarDeclList);
     public void visit(SwitchCases SwitchCases);
-    public void visit(DesignatorList DesignatorList);
+    public void visit(ActPars ActPars);
     public void visit(DesignatorStatement DesignatorStatement);
     public void visit(EpsilonDesignatorStatement EpsilonDesignatorStatement);
+    public void visit(UnaryMinus UnaryMinus);
     public void visit(UnmatchedStatement UnmatchedStatement);
     public void visit(ParamsListRest ParamsListRest);
     public void visit(EnumItemsRest EnumItemsRest);
     public void visit(Statement Statement);
     public void visit(Expression Expression);
     public void visit(VarDecl VarDecl);
-    public void visit(NonTernaryExpression NonTernaryExpression);
     public void visit(CondFact CondFact);
     public void visit(MethodDeclList MethodDeclList);
     public void visit(Param Param);
@@ -50,17 +51,19 @@ public interface Visitor {
     public void visit(BoolParamFactor BoolParamFactor);
     public void visit(CharParamFactor CharParamFactor);
     public void visit(NumberParamFactor NumberParamFactor);
-    public void visit(ParamFactor_non_empty ParamFactor_non_empty);
-    public void visit(ParamFactor_empty ParamFactor_empty);
-    public void visit(NonParamFactor NonParamFactor);
+    public void visit(DesignatorFactor_param_func DesignatorFactor_param_func);
+    public void visit(DesignatorFactor_func DesignatorFactor_func);
+    public void visit(DesignatorFactor_e DesignatorFactor_e);
+    public void visit(UnaryMinus_e UnaryMinus_e);
+    public void visit(UnaryMinus_m UnaryMinus_m);
+    public void visit(Factor Factor);
     public void visit(FactorList_e FactorList_e);
     public void visit(FactorList_array FactorList_array);
     public void visit(Term Term);
     public void visit(TermList_e TermList_e);
     public void visit(TermList_array TermList_array);
     public void visit(TernaryExpression TernaryExpression);
-    public void visit(TermExpression TermExpression);
-    public void visit(MinusTermExpression MinusTermExpression);
+    public void visit(NonTernaryExpression NonTernaryExpression);
     public void visit(TerExpression TerExpression);
     public void visit(NonTerExpression NonTerExpression);
     public void visit(ModMulop ModMulop);
@@ -75,12 +78,12 @@ public interface Visitor {
     public void visit(NeqRelop NeqRelop);
     public void visit(EqRelop EqRelop);
     public void visit(Assignop Assignop);
-    public void visit(ExpDesignatorOp ExpDesignatorOp);
     public void visit(LengthDesignatorOp LengthDesignatorOp);
     public void visit(IdentDesignatorOp IdentDesignatorOp);
-    public void visit(DesignatorList_e DesignatorList_e);
-    public void visit(DesignatorList_array DesignatorList_array);
-    public void visit(Designator Designator);
+    public void visit(DesignatorArrayName DesignatorArrayName);
+    public void visit(Designator_elem Designator_elem);
+    public void visit(Designator_nest Designator_nest);
+    public void visit(Designator_var Designator_var);
     public void visit(RelopCondFact RelopCondFact);
     public void visit(NonRelopCondFact NonRelopCondFact);
     public void visit(CondFactRest_e CondFactRest_e);
@@ -92,19 +95,22 @@ public interface Visitor {
     public void visit(ActParsRest_e ActParsRest_e);
     public void visit(ActParsRest_array ActParsRest_array);
     public void visit(ActParsList ActParsList);
+    public void visit(ActPars_e ActPars_e);
+    public void visit(ActPars_params ActPars_params);
     public void visit(DecDesignatorStatement DecDesignatorStatement);
     public void visit(IncDesignatorStatement IncDesignatorStatement);
-    public void visit(NoParamsDesignatorStatement NoParamsDesignatorStatement);
     public void visit(ParamsDesignatorStatement ParamsDesignatorStatement);
     public void visit(ExprDesignatorStatement ExprDesignatorStatement);
     public void visit(EpsilonDesignatorStatement_e EpsilonDesignatorStatement_e);
     public void visit(EpsilonDesignatorStatement_ds EpsilonDesignatorStatement_ds);
     public void visit(NonConditionedForExpression NonConditionedForExpression);
     public void visit(ConditionedForExpression ConditionedForExpression);
+    public void visit(ForWord ForWord);
     public void visit(StatementList_e StatementList_e);
     public void visit(StatementList_sl StatementList_sl);
     public void visit(SwitchCases_e SwitchCases_e);
     public void visit(SwitchCases_s SwitchCases_s);
+    public void visit(SwitchWord SwitchWord);
     public void visit(PrintExpression_non_num PrintExpression_non_num);
     public void visit(PrintExpression_num PrintExpression_num);
     public void visit(ReturnExpression_non_expr ReturnExpression_non_expr);

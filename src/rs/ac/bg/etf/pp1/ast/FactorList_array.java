@@ -1,23 +1,31 @@
 // generated with ast extension for cup
 // version 0.8
-// 5/1/2026 23:51:26
+// 9/1/2026 18:57:41
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class FactorList_array extends FactorList {
 
+    private FactorList FactorList;
     private Mulop Mulop;
     private Factor Factor;
-    private FactorList FactorList;
 
-    public FactorList_array (Mulop Mulop, Factor Factor, FactorList FactorList) {
+    public FactorList_array (FactorList FactorList, Mulop Mulop, Factor Factor) {
+        this.FactorList=FactorList;
+        if(FactorList!=null) FactorList.setParent(this);
         this.Mulop=Mulop;
         if(Mulop!=null) Mulop.setParent(this);
         this.Factor=Factor;
         if(Factor!=null) Factor.setParent(this);
+    }
+
+    public FactorList getFactorList() {
+        return FactorList;
+    }
+
+    public void setFactorList(FactorList FactorList) {
         this.FactorList=FactorList;
-        if(FactorList!=null) FactorList.setParent(this);
     }
 
     public Mulop getMulop() {
@@ -36,35 +44,27 @@ public class FactorList_array extends FactorList {
         this.Factor=Factor;
     }
 
-    public FactorList getFactorList() {
-        return FactorList;
-    }
-
-    public void setFactorList(FactorList FactorList) {
-        this.FactorList=FactorList;
-    }
-
     public void accept(Visitor visitor) {
         visitor.visit(this);
     }
 
     public void childrenAccept(Visitor visitor) {
+        if(FactorList!=null) FactorList.accept(visitor);
         if(Mulop!=null) Mulop.accept(visitor);
         if(Factor!=null) Factor.accept(visitor);
-        if(FactorList!=null) FactorList.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
+        if(FactorList!=null) FactorList.traverseTopDown(visitor);
         if(Mulop!=null) Mulop.traverseTopDown(visitor);
         if(Factor!=null) Factor.traverseTopDown(visitor);
-        if(FactorList!=null) FactorList.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
+        if(FactorList!=null) FactorList.traverseBottomUp(visitor);
         if(Mulop!=null) Mulop.traverseBottomUp(visitor);
         if(Factor!=null) Factor.traverseBottomUp(visitor);
-        if(FactorList!=null) FactorList.traverseBottomUp(visitor);
         accept(visitor);
     }
 
@@ -72,6 +72,12 @@ public class FactorList_array extends FactorList {
         StringBuffer buffer=new StringBuffer();
         buffer.append(tab);
         buffer.append("FactorList_array(\n");
+
+        if(FactorList!=null)
+            buffer.append(FactorList.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
+        buffer.append("\n");
 
         if(Mulop!=null)
             buffer.append(Mulop.toString("  "+tab));
@@ -81,12 +87,6 @@ public class FactorList_array extends FactorList {
 
         if(Factor!=null)
             buffer.append(Factor.toString("  "+tab));
-        else
-            buffer.append(tab+"  null");
-        buffer.append("\n");
-
-        if(FactorList!=null)
-            buffer.append(FactorList.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");

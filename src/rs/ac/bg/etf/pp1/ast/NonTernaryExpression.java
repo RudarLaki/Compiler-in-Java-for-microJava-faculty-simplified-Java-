@@ -1,15 +1,30 @@
 // generated with ast extension for cup
 // version 0.8
-// 5/1/2026 23:51:26
+// 9/1/2026 18:57:41
 
 
 package rs.ac.bg.etf.pp1.ast;
 
-public abstract class NonTernaryExpression implements SyntaxNode {
+public class NonTernaryExpression implements SyntaxNode {
 
     private SyntaxNode parent;
-
     private int line;
+    public rs.etf.pp1.symboltable.concepts.Struct struct = null;
+
+    private TermList TermList;
+
+    public NonTernaryExpression (TermList TermList) {
+        this.TermList=TermList;
+        if(TermList!=null) TermList.setParent(this);
+    }
+
+    public TermList getTermList() {
+        return TermList;
+    }
+
+    public void setTermList(TermList TermList) {
+        this.TermList=TermList;
+    }
 
     public SyntaxNode getParent() {
         return parent;
@@ -27,11 +42,37 @@ public abstract class NonTernaryExpression implements SyntaxNode {
         this.line=line;
     }
 
-    public abstract void accept(Visitor visitor);
-    public abstract void childrenAccept(Visitor visitor);
-    public abstract void traverseTopDown(Visitor visitor);
-    public abstract void traverseBottomUp(Visitor visitor);
+    public void accept(Visitor visitor) {
+        visitor.visit(this);
+    }
 
-    public String toString() { return toString(""); }
-    public abstract String toString(String tab);
+    public void childrenAccept(Visitor visitor) {
+        if(TermList!=null) TermList.accept(visitor);
+    }
+
+    public void traverseTopDown(Visitor visitor) {
+        accept(visitor);
+        if(TermList!=null) TermList.traverseTopDown(visitor);
+    }
+
+    public void traverseBottomUp(Visitor visitor) {
+        if(TermList!=null) TermList.traverseBottomUp(visitor);
+        accept(visitor);
+    }
+
+    public String toString(String tab) {
+        StringBuffer buffer=new StringBuffer();
+        buffer.append(tab);
+        buffer.append("NonTernaryExpression(\n");
+
+        if(TermList!=null)
+            buffer.append(TermList.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
+        buffer.append("\n");
+
+        buffer.append(tab);
+        buffer.append(") [NonTernaryExpression]");
+        return buffer.toString();
+    }
 }

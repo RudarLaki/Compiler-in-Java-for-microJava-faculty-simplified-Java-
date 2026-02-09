@@ -44,26 +44,34 @@ scan with {:
 :}
 
 terminal PROGRAM,
-		 BREAK,
-		 ENUM,
-		 ELSE,
+
 		 CONST,
-		 IF,
+		 ENUM,
+
 		 NEW,
 		 PRINT,
 		 READ,
 		 RETURN,
 		 VOID,
+		 BREAK,
 		 CONTINUE,
 		 FOR,
 		 LENGTH,
+		 
+		 IF,
+		 ELSE,
 		 SWITCH,
 		 CASE,
+		 
 		 PLUS,
 		 MINUS,
 		 MUL,
 		 DIV,
 		 MOD,
+		 ASSIGN,
+		 INC,
+		 DEC,
+		 
 		 EQ,
 		 NEQ,
 		 GREATER,
@@ -72,13 +80,12 @@ terminal PROGRAM,
 		 LESS_EQUAL,
 		 AND,
 		 OR,
-		 ASSIGN,
-		 INC,
-		 DEC,
+		 
 		 SEMICOLON,
 		 COLON,
 		 COMMA,
 		 DOT,
+		 
 		 LPAREN,
 		 RPAREN,
 		 LBRACKET,
@@ -121,42 +128,51 @@ nonterminal Program,
 			ParamsList,
 			ParamsListRest,
 			Param,
-			Statement,
 			
-			Condition,
-			DesignatorStatement,
+			Statement,
 			MatchedStatement,
 			UnmatchedStatement,
-			ReturnExpression,
-			PrintExpression,
-			Expression,
-			NonTernaryExpression,
-			TernaryExpression,
+			DesignatorStatement,
+			SwitchWord,
 			SwitchCases,
 			ForExpression,
+			ForWord,
 			StatementList,
 			EpsilonDesignatorStatement,
 			
-			Designator,
-			DesignatorList,
-			DesignatorOp,
+			DotDesignatorOp,
+			ActPars,
 			ActParsList,
 			ActParsRest,
-			ConditionRest,
-			CondTerm,
-			CondFactRest,
-			CondFact,
-			
-			TermList,
-			Term,
-			FactorList,
-			Factor,
+
+		
+			UnaryMinus,
 			
 			Addop,
 			Mulop,
 			Assignop,
 			Relop;
-			
+
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Expression, 
+												   NonTernaryExpression,
+												   TernaryExpression, 
+												   TermList, 
+												   Term, 
+												   FactorList, 
+												   Factor, 
+												   PartFactor,
+												   
+												   Condition,
+												   ConditionRest,
+												   CondTerm,
+												   CondFactRest,
+												   CondFact,
+												   
+												   ReturnExpression,
+												   PrintExpression;
+
+nonterminal rs.etf.pp1.symboltable.concepts.Obj Designator,
+												DesignatorArrayName;	
 			
 
 Program ::= (Program) PROGRAM ProgramName DeclList LBRACE MethodDeclList RBRACE;
@@ -269,9 +285,9 @@ MatchedStatement ::=  (DesigStatement) DesignatorStatement SEMICOLON
 					  |
 					  (PrintStatement) PRINT LPAREN PrintExpression RPAREN SEMICOLON
 					  |
-					  (SwitchStatement) SWITCH LPAREN Expression RPAREN LBRACE SwitchCases RBRACE
+					  (SwitchStatement) SwitchWord LPAREN Expression RPAREN LBRACE SwitchCases RBRACE
 					  |
-					  (ForStatement) FOR LPAREN ForExpression RPAREN MatchedStatement
+					  (ForStatement) ForWord LPAREN ForExpression RPAREN MatchedStatement
 					  |
 					  (RecStatement) LBRACE StatementList RBRACE
 					  ;
@@ -291,17 +307,18 @@ PrintExpression ::= (PrintExpression_num) Expression COMMA NUMBER
 					(PrintExpression_non_num) Expression
 					;
 
+SwitchWord ::= (SwitchWord) SWITCH;
 SwitchCases ::= (SwitchCases_s) CASE NUMBER COLON StatementList SwitchCases
 				|
 				(SwitchCases_e) /* epsilon */
 				;
-
 
 StatementList ::= (StatementList_sl) Statement StatementList
 				  |
 				  (StatementList_e) /* epsilon */
 				  ;
 
+ForWord ::= (ForWord) FOR;
 ForExpression ::= (ConditionedForExpression) EpsilonDesignatorStatement SEMICOLON Condition SEMICOLON EpsilonDesignatorStatement
 				  |
 				  (NonConditionedForExpression) EpsilonDesignatorStatement SEMICOLON SEMICOLON EpsilonDesignatorStatement
@@ -315,14 +332,17 @@ EpsilonDesignatorStatement ::= (EpsilonDesignatorStatement_ds) DesignatorStateme
 
 DesignatorStatement ::= (ExprDesignatorStatement) Designator Assignop Expression
 						|
-						(ParamsDesignatorStatement) Designator LPAREN ActParsList RPAREN
-						|
-						(NoParamsDesignatorStatement) Designator LPAREN RPAREN
+						(ParamsDesignatorStatement) Designator LPAREN ActPars RPAREN
 						|
 						(IncDesignatorStatement) Designator INC
 						|
 						(DecDesignatorStatement) Designator DEC
 						;
+
+ActPars ::= (ActPars_params) ActParsList
+			|
+			(ActPars_e) /* epsilon */
+			;
 
 ActParsList ::= (ActParsList) Expression ActParsRest;		
 
@@ -339,7 +359,6 @@ ConditionRest ::= (ConditionRest_array) OR CondTerm ConditionRest
 				  ;
 
 CondTerm ::= (CondTerm) CondFact CondFactRest;
-
 CondFactRest ::= (CondFactRest_array) AND CondFact CondFactRest
 				 |
 				 (CondFactRest_e) /* epsilon */
@@ -351,19 +370,20 @@ CondFact ::= (NonRelopCondFact) NonTernaryExpression
 			 ;
 
 
-Designator ::= (Designator) IDENT DesignatorList;
+Designator ::= (Designator_var) IDENT
+			   |
+			   (Designator_nest) Designator DotDesignatorOp
+			   |
+			   (Designator_elem) DesignatorArrayName LBRACKET Expression RBRACKET
+			   ;
 
-DesignatorList ::= (DesignatorList_array) DesignatorOp DesignatorList
-				   |
-				   (DesignatorList_e) /* epsilon */
-				   ;
+DesignatorArrayName ::= (DesignatorArrayName) IDENT;
 
-DesignatorOp ::= (IdentDesignatorOp) DOT IDENT
-				 |
-				 (LengthDesignatorOp) DOT LENGTH
-				 |
-				 (ExpDesignatorOp) LBRACKET Expression RBRACKET
-				 ; 
+DotDesignatorOp ::= (IdentDesignatorOp) DOT IDENT
+					|
+					(LengthDesignatorOp) DOT LENGTH
+					; 
+
 
 Assignop ::= (Assignop) ASSIGN;
 
@@ -397,38 +417,42 @@ Expression ::= (NonTerExpression) NonTernaryExpression
 			   (TerExpression) TernaryExpression
 			   ;
 
-NonTernaryExpression ::= (MinusTermExpression) MINUS Term TermList
-					     |
-					     (TermExpression) Term TermList
-					     ;
+NonTernaryExpression ::= (NonTernaryExpression) TermList;
 
 TernaryExpression ::= (TernaryExpression) Condition QUESTION_MARK Expression COLON Expression;
 
-TermList ::= (TermList_array) Addop Term TermList
+TermList ::= (TermList_array) TermList Addop Term
 			 |
-			 (TermList_e) /* epsilon */
+			 (TermList_e) Term
 			 ;
 
-Term ::= (Term) Factor FactorList;
+Term ::= (Term) FactorList;
 
-FactorList ::= (FactorList_array) Mulop Factor FactorList
+FactorList ::= (FactorList_array) FactorList Mulop Factor
 			   |
-			   (FactorList_e) /* epsilon */
+			   (FactorList_e) Factor
 			   ;
 
-Factor ::= (NonParamFactor) Designator
-		   |
-		   (ParamFactor_empty) Designator LPAREN RPAREN
-		   |
-		   (ParamFactor_non_empty) Designator LPAREN ActParsList RPAREN
-		   |
-		   (NumberParamFactor) NUMBER
-		   |
-		   (CharParamFactor) CHAR
-		   |
-		   (BoolParamFactor) BOOL
-		   |
-		   (NewParamFactor) NEW Type LBRACKET Expression RBRACKET
-		   |
-		   (ExpParamFactor) LPAREN Expression RPAREN
-		   ;
+Factor ::= (Factor) UnaryMinus PartFactor;
+
+UnaryMinus ::= (UnaryMinus_m) MINUS
+			   |
+			   (UnaryMinus_e) /* epsilon*/
+			   ;
+		   
+PartFactor ::= (DesignatorFactor_e) Designator
+			   |
+			   (DesignatorFactor_func) Designator LPAREN RPAREN
+			   |
+			   (DesignatorFactor_param_func) Designator LPAREN ActParsList RPAREN
+			   |
+			   (NumberParamFactor) NUMBER
+			   |
+			   (CharParamFactor) CHAR
+			   |
+			   (BoolParamFactor) BOOL
+			   |
+			   (NewParamFactor) NEW Type LBRACKET Expression RBRACKET
+			   |
+			   (ExpParamFactor) LPAREN Expression RPAREN
+			   ;
