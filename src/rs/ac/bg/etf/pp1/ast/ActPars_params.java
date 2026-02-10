@@ -1,25 +1,36 @@
 // generated with ast extension for cup
 // version 0.8
-// 9/1/2026 18:57:41
+// 10/1/2026 0:30:21
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class ActPars_params extends ActPars {
 
-    private ActParsList ActParsList;
+    private Expression Expression;
+    private ActParsRest ActParsRest;
 
-    public ActPars_params (ActParsList ActParsList) {
-        this.ActParsList=ActParsList;
-        if(ActParsList!=null) ActParsList.setParent(this);
+    public ActPars_params (Expression Expression, ActParsRest ActParsRest) {
+        this.Expression=Expression;
+        if(Expression!=null) Expression.setParent(this);
+        this.ActParsRest=ActParsRest;
+        if(ActParsRest!=null) ActParsRest.setParent(this);
     }
 
-    public ActParsList getActParsList() {
-        return ActParsList;
+    public Expression getExpression() {
+        return Expression;
     }
 
-    public void setActParsList(ActParsList ActParsList) {
-        this.ActParsList=ActParsList;
+    public void setExpression(Expression Expression) {
+        this.Expression=Expression;
+    }
+
+    public ActParsRest getActParsRest() {
+        return ActParsRest;
+    }
+
+    public void setActParsRest(ActParsRest ActParsRest) {
+        this.ActParsRest=ActParsRest;
     }
 
     public void accept(Visitor visitor) {
@@ -27,16 +38,19 @@ public class ActPars_params extends ActPars {
     }
 
     public void childrenAccept(Visitor visitor) {
-        if(ActParsList!=null) ActParsList.accept(visitor);
+        if(Expression!=null) Expression.accept(visitor);
+        if(ActParsRest!=null) ActParsRest.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
-        if(ActParsList!=null) ActParsList.traverseTopDown(visitor);
+        if(Expression!=null) Expression.traverseTopDown(visitor);
+        if(ActParsRest!=null) ActParsRest.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
-        if(ActParsList!=null) ActParsList.traverseBottomUp(visitor);
+        if(Expression!=null) Expression.traverseBottomUp(visitor);
+        if(ActParsRest!=null) ActParsRest.traverseBottomUp(visitor);
         accept(visitor);
     }
 
@@ -45,8 +59,14 @@ public class ActPars_params extends ActPars {
         buffer.append(tab);
         buffer.append("ActPars_params(\n");
 
-        if(ActParsList!=null)
-            buffer.append(ActParsList.toString("  "+tab));
+        if(Expression!=null)
+            buffer.append(Expression.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
+        buffer.append("\n");
+
+        if(ActParsRest!=null)
+            buffer.append(ActParsRest.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");

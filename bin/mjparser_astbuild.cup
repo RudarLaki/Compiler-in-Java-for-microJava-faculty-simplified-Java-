@@ -381,12 +381,10 @@ DesignatorStatement ::= (ExprDesignatorStatement) Designator:D1 Assignop:A2 Expr
 						(DecDesignatorStatement) Designator:D1 DEC {: RESULT=new DecDesignatorStatement(D1); RESULT.setLine(D1left); :}
 						;
 
-ActPars ::= (ActPars_params) ActParsList:A1 {: RESULT=new ActPars_params(A1); RESULT.setLine(A1left); :}
+ActPars ::= (ActPars_params) Expression:E1 ActParsRest:A2 {: RESULT=new ActPars_params(E1, A2); RESULT.setLine(E1left); :}
 			|
 			(ActPars_e) {: RESULT=new ActPars_e(); :} /* epsilon */
-			;
-
-ActParsList ::= (ActParsList) Expression:E1 ActParsRest:A2 {: RESULT=new ActParsList(E1, A2); RESULT.setLine(E1left); :};		
+			;	
 
 ActParsRest ::= (ActParsRest_array) COMMA Expression:E1 ActParsRest:A2 {: RESULT=new ActParsRest_array(E1, A2); RESULT.setLine(E1left); :}
 				|
@@ -484,9 +482,7 @@ UnaryMinus ::= (UnaryMinus_m) MINUS {: RESULT=new UnaryMinus_m(); :}
 		   
 PartFactor ::= (DesignatorFactor_e) Designator:D1 {: RESULT=new DesignatorFactor_e(D1); RESULT.setLine(D1left); :}
 			   |
-			   (DesignatorFactor_func) Designator:D1 LPAREN RPAREN {: RESULT=new DesignatorFactor_func(D1); RESULT.setLine(D1left); :}
-			   |
-			   (DesignatorFactor_param_func) Designator:D1 LPAREN ActParsList:A2 RPAREN {: RESULT=new DesignatorFactor_param_func(D1, A2); RESULT.setLine(D1left); :}
+			   (DesignatorFactor_func) Designator:D1 LPAREN ActPars:A2 RPAREN {: RESULT=new DesignatorFactor_func(D1, A2); RESULT.setLine(D1left); :}
 			   |
 			   (NumberParamFactor) NUMBER:N1 {: RESULT=new NumberParamFactor(N1); RESULT.setLine(N1left); :}
 			   |

@@ -339,12 +339,10 @@ DesignatorStatement ::= (ExprDesignatorStatement) Designator Assignop Expression
 						(DecDesignatorStatement) Designator DEC
 						;
 
-ActPars ::= (ActPars_params) ActParsList
+ActPars ::= (ActPars_params) Expression ActParsRest
 			|
 			(ActPars_e) /* epsilon */
-			;
-
-ActParsList ::= (ActParsList) Expression ActParsRest;		
+			;	
 
 ActParsRest ::= (ActParsRest_array) COMMA Expression ActParsRest
 				|
@@ -442,9 +440,7 @@ UnaryMinus ::= (UnaryMinus_m) MINUS
 		   
 PartFactor ::= (DesignatorFactor_e) Designator
 			   |
-			   (DesignatorFactor_func) Designator LPAREN RPAREN
-			   |
-			   (DesignatorFactor_param_func) Designator LPAREN ActParsList RPAREN
+			   (DesignatorFactor_func) Designator LPAREN ActPars RPAREN
 			   |
 			   (NumberParamFactor) NUMBER
 			   |

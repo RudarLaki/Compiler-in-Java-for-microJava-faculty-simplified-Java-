@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 9/1/2026 18:57:41
+// 10/1/2026 0:30:21
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -8,10 +8,13 @@ package rs.ac.bg.etf.pp1.ast;
 public class DesignatorFactor_func extends PartFactor {
 
     private Designator Designator;
+    private ActPars ActPars;
 
-    public DesignatorFactor_func (Designator Designator) {
+    public DesignatorFactor_func (Designator Designator, ActPars ActPars) {
         this.Designator=Designator;
         if(Designator!=null) Designator.setParent(this);
+        this.ActPars=ActPars;
+        if(ActPars!=null) ActPars.setParent(this);
     }
 
     public Designator getDesignator() {
@@ -22,21 +25,32 @@ public class DesignatorFactor_func extends PartFactor {
         this.Designator=Designator;
     }
 
+    public ActPars getActPars() {
+        return ActPars;
+    }
+
+    public void setActPars(ActPars ActPars) {
+        this.ActPars=ActPars;
+    }
+
     public void accept(Visitor visitor) {
         visitor.visit(this);
     }
 
     public void childrenAccept(Visitor visitor) {
         if(Designator!=null) Designator.accept(visitor);
+        if(ActPars!=null) ActPars.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
         if(Designator!=null) Designator.traverseTopDown(visitor);
+        if(ActPars!=null) ActPars.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
         if(Designator!=null) Designator.traverseBottomUp(visitor);
+        if(ActPars!=null) ActPars.traverseBottomUp(visitor);
         accept(visitor);
     }
 
@@ -47,6 +61,12 @@ public class DesignatorFactor_func extends PartFactor {
 
         if(Designator!=null)
             buffer.append(Designator.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
+        buffer.append("\n");
+
+        if(ActPars!=null)
+            buffer.append(ActPars.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");

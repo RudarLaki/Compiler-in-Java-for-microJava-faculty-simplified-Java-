@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 9/1/2026 18:57:41
+// 10/1/2026 0:30:21
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -29,6 +29,7 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(ForExpression ForExpression) { }
     public void visit(ReturnExpression ReturnExpression) { }
     public void visit(PartFactor PartFactor) { }
+    public void visit(ActParsList ActParsList) { }
     public void visit(VarDeclListRest VarDeclListRest) { }
     public void visit(EnumItem EnumItem) { }
     public void visit(VarDeclList VarDeclList) { }
@@ -51,7 +52,6 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(BoolParamFactor BoolParamFactor) { visit(); }
     public void visit(CharParamFactor CharParamFactor) { visit(); }
     public void visit(NumberParamFactor NumberParamFactor) { visit(); }
-    public void visit(DesignatorFactor_param_func DesignatorFactor_param_func) { visit(); }
     public void visit(DesignatorFactor_func DesignatorFactor_func) { visit(); }
     public void visit(DesignatorFactor_e DesignatorFactor_e) { visit(); }
     public void visit(UnaryMinus_e UnaryMinus_e) { visit(); }
@@ -94,7 +94,6 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(Condition Condition) { visit(); }
     public void visit(ActParsRest_e ActParsRest_e) { visit(); }
     public void visit(ActParsRest_array ActParsRest_array) { visit(); }
-    public void visit(ActParsList ActParsList) { visit(); }
     public void visit(ActPars_e ActPars_e) { visit(); }
     public void visit(ActPars_params ActPars_params) { visit(); }
     public void visit(DecDesignatorStatement DecDesignatorStatement) { visit(); }

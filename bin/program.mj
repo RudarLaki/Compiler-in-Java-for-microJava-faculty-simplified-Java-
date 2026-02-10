@@ -45,8 +45,6 @@ enum Color {
         arr[0] = 100;
         arr[len - 1] = 200;
 
-        x = len.length;     // SEMANTIC ERROR 1
-                            // .length nad int promenljivom
     }
     
     void testEnum()
@@ -57,7 +55,6 @@ enum Color {
         color = Color.RED;
         print(color);
         a = 'a';
-        a++;
         color = Color.BLUE;
         print(color);
         
@@ -73,9 +70,6 @@ enum Color {
             case 6:
                 print(666);
         }
-
-        y = Color.PURPLE;   // SEMANTIC ERROR 2
-                            // ne postoji clan PURPLE u enum Color
     }
     
     void testFunctionCalls()
@@ -94,8 +88,6 @@ enum Color {
         result = withParams(10);   // SEMANTIC ERROR 3
                                    // pogresan broj parametara
 
-        result = arr.length();     // SEMANTIC ERROR 4
-                                   // .length nije funkcija
     }
     
     void main()
@@ -104,6 +96,11 @@ enum Color {
     {
         print(true, 2);
         
+        x = withParams;
+        x = withParams(1,'1');
+        x = withParams(1,1,2,3);
+        
+
         testSwitch(2);
         testSwitch(5);
         
@@ -121,9 +118,6 @@ enum Color {
         x--;
         myArray[5]++;
         print(x);
-        
-        x = LETTER;          // SEMANTIC ERROR 5
-                             // dodela char u int
         
         print(777);
     }
