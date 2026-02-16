@@ -1,0 +1,218 @@
+2026-02-16 17:11:17,928 INFO  rs.ac.bg.etf.pp1.MJParserTest - Compiling source file: D:\Eclipse\PP\PP_projekat\test\program.mj
+2026-02-16 17:11:18,033 INFO  rs.ac.bg.etf.pp1.MJParser - #2 program
+2026-02-16 17:11:18,033 INFO  rs.ac.bg.etf.pp1.MJParser - #45 Test
+2026-02-16 17:11:18,033 INFO  rs.ac.bg.etf.pp1.MJParser - #42 {
+2026-02-16 17:11:18,035 INFO  rs.ac.bg.etf.pp1.MJParser - #9 void
+2026-02-16 17:11:18,037 INFO  rs.ac.bg.etf.pp1.MJParser - #45 main
+2026-02-16 17:11:18,038 INFO  rs.ac.bg.etf.pp1.MJParser - #38 (
+2026-02-16 17:11:18,039 INFO  rs.ac.bg.etf.pp1.MJParser - #39 )
+2026-02-16 17:11:18,041 INFO  rs.ac.bg.etf.pp1.MJParser - #45 char
+2026-02-16 17:11:18,041 INFO  rs.ac.bg.etf.pp1.MJParser - #45 c
+2026-02-16 17:11:18,044 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
+2026-02-16 17:11:18,045 INFO  rs.ac.bg.etf.pp1.MJParser - #42 {
+2026-02-16 17:11:18,047 INFO  rs.ac.bg.etf.pp1.MJParser - #45 c
+2026-02-16 17:11:18,048 INFO  rs.ac.bg.etf.pp1.MJParser - #23 =
+2026-02-16 17:11:18,048 INFO  rs.ac.bg.etf.pp1.MJParser - #45 chr
+2026-02-16 17:11:18,051 INFO  rs.ac.bg.etf.pp1.MJParser - #38 (
+2026-02-16 17:11:18,051 INFO  rs.ac.bg.etf.pp1.MJParser - #47 65
+2026-02-16 17:11:18,051 INFO  rs.ac.bg.etf.pp1.MJParser - #39 )
+2026-02-16 17:11:18,053 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
+2026-02-16 17:11:18,054 INFO  rs.ac.bg.etf.pp1.MJParser - #45 c
+2026-02-16 17:11:18,054 INFO  rs.ac.bg.etf.pp1.MJParser - #23 =
+2026-02-16 17:11:18,054 INFO  rs.ac.bg.etf.pp1.MJParser - #45 chr
+2026-02-16 17:11:18,054 INFO  rs.ac.bg.etf.pp1.MJParser - #38 (
+2026-02-16 17:11:18,055 INFO  rs.ac.bg.etf.pp1.MJParser - #47 97
+2026-02-16 17:11:18,055 INFO  rs.ac.bg.etf.pp1.MJParser - #39 )
+2026-02-16 17:11:18,055 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
+2026-02-16 17:11:18,055 INFO  rs.ac.bg.etf.pp1.MJParser - #45 c
+2026-02-16 17:11:18,055 INFO  rs.ac.bg.etf.pp1.MJParser - #23 =
+2026-02-16 17:11:18,055 INFO  rs.ac.bg.etf.pp1.MJParser - #45 chr
+2026-02-16 17:11:18,055 INFO  rs.ac.bg.etf.pp1.MJParser - #38 (
+2026-02-16 17:11:18,056 INFO  rs.ac.bg.etf.pp1.MJParser - #47 10
+2026-02-16 17:11:18,056 INFO  rs.ac.bg.etf.pp1.MJParser - #39 )
+2026-02-16 17:11:18,057 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
+2026-02-16 17:11:18,057 INFO  rs.ac.bg.etf.pp1.MJParser - #6 print
+2026-02-16 17:11:18,057 INFO  rs.ac.bg.etf.pp1.MJParser - #38 (
+2026-02-16 17:11:18,057 INFO  rs.ac.bg.etf.pp1.MJParser - #45 c
+2026-02-16 17:11:18,057 INFO  rs.ac.bg.etf.pp1.MJParser - #39 )
+2026-02-16 17:11:18,058 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
+2026-02-16 17:11:18,058 INFO  rs.ac.bg.etf.pp1.MJParser - #43 }
+2026-02-16 17:11:18,060 INFO  rs.ac.bg.etf.pp1.MJParser - #43 }
+2026-02-16 17:11:18,062 INFO  rs.ac.bg.etf.pp1.MJParser - #0 
+2026-02-16 17:11:18,063 INFO  rs.ac.bg.etf.pp1.MJParser - #0 
+2026-02-16 17:11:18,064 INFO  rs.ac.bg.etf.pp1.MJParserTest - Program(
+  ProgramName(
+   Test
+  ) [ProgramName]
+  DeclList_e(
+  ) [DeclList_e]
+  MethodDeclList_array(
+    MethodDeclList_e(
+    ) [MethodDeclList_e]
+    MethodDecl(
+      VoidPrefix(
+      ) [VoidPrefix]
+      MethodName(
+       main
+      ) [MethodName]
+      ParamsList_epsilon(
+      ) [ParamsList_epsilon]
+      VarDeclListRec_rec(
+        VarDeclList(
+          Type(
+           char
+          ) [Type]
+          VarList_e(
+            IdentVarDecl(
+             c
+            ) [IdentVarDecl]
+          ) [VarList_e]
+        ) [VarDeclList]
+        VarDeclListRec_e(
+        ) [VarDeclListRec_e]
+      ) [VarDeclListRec_rec]
+      StatementList_sl(
+        MatchStatement(
+          DesigStatement(
+            ExprDesignatorStatement(
+              SimpleDesignator(
+               c
+              ) [SimpleDesignator]
+              Assignop(
+              ) [Assignop]
+              NonTerExpression(
+                NonTernaryExpression(
+                  TermList_e(
+                    Term_e(
+                      DesignatorActFactor_func(
+                        SimpleDesignator(
+                         chr
+                        ) [SimpleDesignator]
+                        ActPars_e(
+                          NonTerExpression(
+                            NonTernaryExpression(
+                              TermList_e(
+                                Term_e(
+                                  NumberParamFactor(
+                                   65
+                                  ) [NumberParamFactor]
+                                ) [Term_e]
+                              ) [TermList_e]
+                            ) [NonTernaryExpression]
+                          ) [NonTerExpression]
+                        ) [ActPars_e]
+                      ) [DesignatorActFactor_func]
+                    ) [Term_e]
+                  ) [TermList_e]
+                ) [NonTernaryExpression]
+              ) [NonTerExpression]
+            ) [ExprDesignatorStatement]
+          ) [DesigStatement]
+        ) [MatchStatement]
+        StatementList_sl(
+          MatchStatement(
+            DesigStatement(
+              ExprDesignatorStatement(
+                SimpleDesignator(
+                 c
+                ) [SimpleDesignator]
+                Assignop(
+                ) [Assignop]
+                NonTerExpression(
+                  NonTernaryExpression(
+                    TermList_e(
+                      Term_e(
+                        DesignatorActFactor_func(
+                          SimpleDesignator(
+                           chr
+                          ) [SimpleDesignator]
+                          ActPars_e(
+                            NonTerExpression(
+                              NonTernaryExpression(
+                                TermList_e(
+                                  Term_e(
+                                    NumberParamFactor(
+                                     97
+                                    ) [NumberParamFactor]
+                                  ) [Term_e]
+                                ) [TermList_e]
+                              ) [NonTernaryExpression]
+                            ) [NonTerExpression]
+                          ) [ActPars_e]
+                        ) [DesignatorActFactor_func]
+                      ) [Term_e]
+                    ) [TermList_e]
+                  ) [NonTernaryExpression]
+                ) [NonTerExpression]
+              ) [ExprDesignatorStatement]
+            ) [DesigStatement]
+          ) [MatchStatement]
+          StatementList_sl(
+            MatchStatement(
+              DesigStatement(
+                ExprDesignatorStatement(
+                  SimpleDesignator(
+                   c
+                  ) [SimpleDesignator]
+                  Assignop(
+                  ) [Assignop]
+                  NonTerExpression(
+                    NonTernaryExpression(
+                      TermList_e(
+                        Term_e(
+                          DesignatorActFactor_func(
+                            SimpleDesignator(
+                             chr
+                            ) [SimpleDesignator]
+                            ActPars_e(
+                              NonTerExpression(
+                                NonTernaryExpression(
+                                  TermList_e(
+                                    Term_e(
+                                      NumberParamFactor(
+                                       10
+                                      ) [NumberParamFactor]
+                                    ) [Term_e]
+                                  ) [TermList_e]
+                                ) [NonTernaryExpression]
+                              ) [NonTerExpression]
+                            ) [ActPars_e]
+                          ) [DesignatorActFactor_func]
+                        ) [Term_e]
+                      ) [TermList_e]
+                    ) [NonTernaryExpression]
+                  ) [NonTerExpression]
+                ) [ExprDesignatorStatement]
+              ) [DesigStatement]
+            ) [MatchStatement]
+            StatementList_sl(
+              MatchStatement(
+                PrintStatement(
+                  PrintExpression_non_num(
+                    NonTerExpression(
+                      NonTernaryExpression(
+                        TermList_e(
+                          Term_e(
+                            DesignatorFactor_e(
+                              SimpleDesignator(
+                               c
+                              ) [SimpleDesignator]
+                            ) [DesignatorFactor_e]
+                          ) [Term_e]
+                        ) [TermList_e]
+                      ) [NonTernaryExpression]
+                    ) [NonTerExpression]
+                  ) [PrintExpression_non_num]
+                ) [PrintStatement]
+              ) [MatchStatement]
+              StatementList_e(
+              ) [StatementList_e]
+            ) [StatementList_sl]
+          ) [StatementList_sl]
+        ) [StatementList_sl]
+      ) [StatementList_sl]
+    ) [MethodDecl]
+  ) [MethodDeclList_array]
+) [Program]
+2026-02-16 17:11:18,066 INFO  rs.ac.bg.etf.pp1.MJParserTest - -------------------------------------------
+2026-02-16 17:11:18,092 INFO  rs.ac.bg.etf.pp1.MJParserTest - parsiranje uspesno zavrseno!

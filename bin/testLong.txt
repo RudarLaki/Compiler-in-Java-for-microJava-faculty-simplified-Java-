@@ -1,0 +1,759 @@
+program TestProgram
+
+// ==========================================
+// KONSTANTE - Testiranje svih tipova
+// ==========================================
+const int MAX_SIZE = 100;
+const int MIN_SIZE = 0;
+const int NEGATIVE = - 50;
+
+const char LETTER_A = 'A';
+const char LETTER_Z = 'Z';
+const char NEWLINE = 'n';
+
+const bool TRUE_VAL = true;
+const bool FALSE_VAL = false;
+
+// ==========================================
+// ENUMERACIJE - Kompleksno testiranje
+// ==========================================
+enum Days {
+    MONDAY,
+    TUESDAY,
+    WEDNESDAY = 10,
+    THURSDAY,
+    FRIDAY = 20,
+    SATURDAY,
+    SUNDAY
+}
+
+enum Colors {
+    RED,
+    GREEN = 5,
+    BLUE,
+    YELLOW = 100,
+    BLACK,
+    WHITE
+}
+
+enum Status {
+    PENDING,
+    ACTIVE,
+    INACTIVE,
+    DELETED = 999
+}
+
+// ==========================================
+// GLOBALNE PROMENLJIVE - Svi tipovi
+// ==========================================
+int globalInt;
+int globalIntArray[];
+char globalChar;
+char globalCharArray[];
+bool globalBool;
+bool globalBoolArray[];
+
+Days currentDay;
+Colors favoriteColor;
+Status userStatus;
+
+int matrix[];  // Greška - ne podržava 2D nizove, ali testira parser
+int counter, total, sum;
+char name[], surname[], middlename[];
+{
+// ==========================================
+// FUNKCIJA 1: Testiranje aritmetike
+// ==========================================
+int arithmeticTest(int a, int b, int c)
+    int result;
+    int temp;
+    int x, y, z;
+    {
+    // Osnovna aritmetika
+    result = a + b;
+    result = a - b;
+    result = a * b;
+    result = a / b;
+    result = a % b;
+    
+    // Složeni izrazi
+    result = a + b * c;
+    result = (a + b) * c;
+    result = a * b + c * a;
+    result = a / b - c % b;
+    
+    // Unarne operacije
+    result = -a;
+    result = -a + b;
+    result = -(a + b);
+    result = -a * -b;
+    
+    // Increment i decrement
+    a++;
+    b--;
+    result++;
+    temp--;
+    
+    // Složenije dodele
+    result = a + b - c * (a + b) / (c - a);
+    result = (a * b * c) + (a / b / c);
+    
+    return result;
+}
+
+// ==========================================
+// FUNKCIJA 2: Testiranje nizova
+// ==========================================
+int arrayTest(int arr[], int size)
+    int i;
+    int sum;
+    int temp[];
+    int localArray[];
+    {
+    sum = 0;
+    i = 0;
+    
+    // Kreiranje niza
+    temp = new int[size];
+    localArray = new int[100];
+    
+    // Pristup elementima
+    arr[0] = 10;
+    arr[i] = 20;
+    arr[i + 1] = 30;
+    sum = arr[0];
+    sum = arr[i];
+    
+    // Dužina niza
+    i = arr.length;
+    temp = new int[arr.length];
+    
+    // Petlja kroz niz
+    for(i = 0; i < arr.length; i++) {
+        arr[i] = i * 2;
+        sum = sum + arr[i];
+    }
+    
+    // Ugneždeni pristup
+    temp[arr[0]] = arr[temp[1]];
+    
+    return sum;
+}
+
+
+// ==========================================
+// FUNKCIJA 4: Testiranje ternarnog operatora
+// ==========================================
+int ternaryTest(int a, int b, bool flag) 
+    int result;
+    int x, y;
+    {
+    // Jednostavni ternarni
+    result = flag ? a : b;
+    result = a > b ? a : b;
+    result = a == b ? 0 : 1;
+    
+    // Ugneždeni ternarni
+    result = a > 0 ? (b > 0 ? 1 : -1) : 0;
+    result = flag ? (a > b ? a : b) : (a < b ? a : b);
+    
+    // Ternarni sa aritmetikom
+    result = a > b ? a + b : a - b;
+    result = a == 0 ? 1 : a * 2;
+    
+    // Složeni ternarni
+    y = a == b ? a : a > b ? a : b;
+    
+    return result;
+}
+
+// ==========================================
+// FUNKCIJA 5: IF-ELSE testiranje
+// ==========================================
+void ifElseTest(int x, int y, bool flag) 
+    int result;
+    {
+    // Jednostavan if
+    if(x > 0) 
+        result = 1;
+    
+    // If-else
+    if(x > y) 
+        result = x;
+    else 
+        result = y;
+    
+    // Ugneždeni if-else
+    if(x > 0) {
+        if(y > 0) {
+            result = x + y;
+        } else {
+            result = x - y;
+        }
+    } else {
+        if(y > 0) {
+            result = y - x;
+        } else {
+            result = -(x + y);
+        }
+    }
+    
+    // If-else lanac
+    if(x > 100)
+        result = 3;
+    else if(x > 50)
+        result = 2;
+    else if(x > 0)
+        result = 1;
+    else
+        result = 0;
+    
+    // Složeni uslovi
+    if(x > 0 && y > 0 && x < 100) {
+        result = x * y;
+    } else if(x <= 0 || y <= 0) {
+        result = 0;
+    } else {
+        result = -1;
+    }
+    
+    // If sa break/continue
+    for(result = 0; result < 10; result++) {
+        if(result == 5)
+            break;
+        if(result % 2 == 0)
+            continue;
+        x = x + result;
+    }
+}
+
+// ==========================================
+// FUNKCIJA 6: FOR petlje
+// ==========================================
+void forLoopTest(int n) 
+    int i, j, k;
+    int sum;
+    int arr[];
+    {
+    arr = new int[n];
+    sum = 0;
+    
+    // Osnovna for petlja
+    for(i = 0; i < n; i++) {
+        sum = sum + i;
+    }
+    
+    // For sa break
+    for(i = 0; i < 100; i++) {
+        if(i == 50)
+            break;
+        sum = sum + i;
+    }
+    
+    // For sa continue
+    for(i = 0; i < n; i++) {
+        if(i % 2 == 0)
+            continue;
+        sum = sum + i;
+    }
+    
+    // Ugneždene for petlje
+    for(i = 0; i < n; i++) {
+        for(j = 0; j < n; j++) {
+            sum = sum + i * j;
+        }
+    }
+    
+    // For bez uslova
+    for(i = 0; ; i++) {
+        if(i >= n)
+            break;
+        arr[i] = i;
+    }
+    
+    // For bez inicijalizacije
+    i = 0;
+    for(; i < n; i++) {
+        sum = sum + i;
+    }
+    
+    // For bez inkrementa
+    i = 0;
+    for(; i < n; ) {
+        sum = sum + i;
+        i++;
+    }
+    
+    // Trostruko ugneždena petlja
+    for(i = 0; i < n; i++) {
+        for(j = 0; j < n; j++) {
+            for(k = 0; k < n; k++) {
+                sum = sum + i + j + k;
+            }
+        }
+    }
+}
+
+// ==========================================
+// FUNKCIJA 7: SWITCH testiranje
+// ==========================================
+void switchTest(int value) 
+    int result;
+    {
+    switch(value) {
+        case 0:
+            result = 0;
+            break;
+        case 1:
+            result = 1;
+            break;
+        case 2:
+            result = 2;
+            break;
+        case 10:
+            result = 10;
+            break;
+    }
+    
+    // Switch sa više naredbi
+    switch(value) {
+        case 0:
+            result = 0;
+            result++;
+            break;
+        case 1:
+            result = 1;
+            result = result * 2;
+            break;
+        case 2:
+            result = 2;
+            result = result * 3;
+            if(result > 5)
+                result = 5;
+            break;
+    }
+    
+    // Switch sa petljama
+    switch(value) {
+        case 1:
+            for(result = 0; result < 10; result++) {
+                value = value + result;
+            }
+            break;
+        case 2:
+            for(result = 0; result < value; result++) {
+                if(result == 5)
+                    break;
+            }
+            break;
+    }
+}
+
+// ==========================================
+// FUNKCIJA 8: Testiranje poziva funkcija
+// ==========================================
+int functionCallTest(int x, int y) 
+    int result;
+    int arr[];
+    bool flag;
+    {
+    // Poziv sa literalima
+    result = arithmeticTest(1, 2, 3);
+    result = arithmeticTest(x, y, x + y);
+    
+    // Poziv sa izrazima
+    result = arithmeticTest(x + y, x - y, x * y);
+    result = arithmeticTest(x, y, x);
+    
+    // Poziv sa nizom
+    arr = new int[10];
+    result = arrayTest(arr, 10);
+    result = arrayTest(arr, arr.length);
+    
+    // Poziv logičke funkcije
+    
+    // Ugneždeni pozivi
+    result = arithmeticTest(arithmeticTest(1, 2, 3), x, y);
+    result = ternaryTest(arithmeticTest(x, y, 1), y, flag);
+    
+    // Poziv u izrazu
+    result = arithmeticTest(x, y, 10) + 5;
+    result = arithmeticTest(x, y, 10) * arithmeticTest(y, x, 20);
+    
+    return result;
+}
+
+// ==========================================
+// FUNKCIJA 9: READ i PRINT testiranje
+// ==========================================
+void inputOutputTest() 
+    int num;
+    char ch;
+    bool flag;
+    int arr[];
+    int i;
+    {
+    // Čitanje osnovnih tipova
+    read(num);
+    read(ch);
+    read(flag);
+    
+    // Ispis osnovnih tipova
+    print(num);
+    print(ch);
+    print(flag);
+    
+    // Ispis sa širinom
+    print(num, 5);
+    print(ch, 1);
+    print(flag, 1);
+    
+    // Ispis izraza
+    print(num + 10);
+    print(num * 2 + 5);
+    
+    // Ispis konstanti
+    print(MAX_SIZE);
+    print(LETTER_A);
+    print(TRUE_VAL);
+    
+    // Čitanje niza
+    arr = new int[10];
+    for(i = 0; i < arr.length; i++) {
+        read(arr[i]);
+    }
+    
+    // Ispis niza
+    for(i = 0; i < arr.length; i++) {
+        print(arr[i], 5);
+    }
+}
+
+// ==========================================
+// FUNKCIJA 10: Enum testiranje
+// ==========================================
+void enumTest() 
+    int color;
+    int stat;
+    int value;
+    {
+    // Dodela enum vrednosti
+    value = Days.MONDAY;
+    value = Days.FRIDAY;
+    
+    color = Colors.RED;
+    color = Colors.BLUE;
+    
+    stat = Status.ACTIVE;
+    
+    // Poređenje enuma
+    if(value == Days.MONDAY) {
+        print(1);
+    }
+    
+    if(color != Colors.RED) {
+        print(2);
+    }
+    
+    // Switch sa enumom
+    switch(value) {
+        case 0:  // MONDAY
+            print(1);
+            break;
+        case 1:  // TUESDAY
+            print(2);
+            break;
+        case 10: // WEDNESDAY
+            print(3);
+            break;
+    }
+}
+
+// ==========================================
+// FUNKCIJA 11: Kompleksni izrazi
+// ==========================================
+int complexExpressions(int a, int b, int c, int d) 
+    int result;
+    int temp;
+    bool flag;
+    int arr[];
+    {
+    // Vrlo složeni aritmetički izrazi
+    result = ((a + b) * (c - d)) / ((a - b) + (c + d));
+    result = (a * b * c * d) + (a / b) - (c % d);
+    result = -(a + b) * -(c - d) + (a * -b);
+    
+    // Složeni logički izrazi
+    
+    // Ternarni u izrazima
+    result = (a > b ? a : b) + (c > d ? c : d);
+    result = (a > b ? a * 2 : b * 2) + (c > d ? c / 2 : d / 2);
+    
+    // Nizovi u složenim izrazima
+    arr = new int[a + b];
+    arr[0] = (a + b) * (c - d);
+    arr[arr[0]] = arr[1] + arr[2];
+    result = arr[a] + arr[b] + arr[c];
+    
+    // Pozivi funkcija u izrazima
+    result = arithmeticTest(a, b, c) + arithmeticTest(c, d, a);
+    result = arithmeticTest(a, b, c) > 0 ? a : b;
+    
+    // Sve kombinovano
+    result = arithmeticTest(a, b, c) > arithmeticTest(c, d, a) ? 
+             ((a + b) * (c - d)) : 
+             ((a - b) / (c + d));
+    
+    return result;
+}
+
+// ==========================================
+// FUNKCIJA 12: Testiranje graničnih slučajeva
+// ==========================================
+void edgeCaseTest() 
+    int x, y, z;
+    int arr[];
+    bool flag;
+    {
+    // Prazne petlje
+    for(; ; ) {
+        break;
+    }
+    
+
+    
+    // Višestruki break/continue
+    for(x = 0; x < 100; x++) {
+        if(x == 10)
+            break;
+        if(x == 5)
+            continue;
+        if(x == 20)
+            break;
+        if(x % 2 == 0)
+            continue;
+    }
+    
+    // Kompleksni switch
+    switch(x) {
+        case 0:
+            for(y = 0; y < 10; y++) {
+                if(y == 5)
+                    break;
+            }
+            break;
+        case 1:
+            if(x > 0) {
+                y = 1;
+            } else {
+                y = 0;
+            }
+            break;
+        case 2:
+ 
+            break;
+    }
+}
+
+// ==========================================
+// FUNKCIJA 13: Testiranje return naredbi
+// ==========================================
+int returnTest(int x) {
+    if(x > 100)
+        return 100;
+    
+    if(x < 0)
+        return 0;
+    
+    if(x == 50)
+        return x * 2;
+    
+    for(; x < 100; x++) {
+        if(x == 75)
+            return x;
+    }
+    
+    return x;
+}
+
+void voidReturnTest() 
+    int x;
+    {
+    x = 5;
+    
+    if(x > 10)
+        return;
+    
+    x++;
+    
+    if(x > 20)
+        return;
+    
+    return;
+}
+
+// ==========================================
+// FUNKCIJA 14: Testiranje lokalnih promenljivih
+// ==========================================
+void localVariableTest() 
+    int a, b, c;
+    int arr1[], arr2[], arr3[];
+    char ch1, ch2;
+    bool flag1, flag2, flag3, flag4;
+	int localA;
+	int localB;
+    char localC;
+    {
+    a = 1;
+    b = 2;
+    c = a + b;
+    
+    arr1 = new int[10];
+    arr2 = new int[20];
+    arr3 = new int[a + b];
+    
+    ch1 = 'X';
+    ch2 = 'Y';
+    
+    flag1 = true;
+    flag2 = true;
+    
+    // Blokovi sa lokalnim promenljivim
+    {
+        localA = 100;
+        a = localA;
+    }
+    
+    {
+        localB = a + b;
+        localC = ch1;
+    }
+}
+
+// ==========================================
+// FUNKCIJA 15: Parametri funkcija
+// ==========================================
+int multiParamTest(int p1, int p2, int p3, int p4, int p5) {
+    return p1 + p2 + p3 + p4 + p5;
+}
+
+int arrayParamTest(int arr1[], int arr2[], int size1, int size2)
+    int sum;
+    int i;
+    {
+    sum = 0;
+    
+    for(i = 0; i < size1; i++) {
+        sum = sum + arr1[i];
+    }
+    
+    for(i = 0; i < size2; i++) {
+        sum = sum + arr2[i];
+    }
+    
+    return sum;
+}
+
+bool boolParamTest(bool flag1, bool flag2, bool flag3) {
+}
+
+// ==========================================
+// MAIN FUNKCIJA - Poziva sve testove
+// ==========================================
+void main()
+    int result;
+    int testArray[];
+    bool flag;
+    int i;
+    {
+    print('=', 50);
+    print('S');
+    print('T');
+    print('A');
+    print('R');
+    print('T');
+    
+    // Test 1: Aritmetika
+    result = arithmeticTest(10, 5, 3);
+    print(result);
+    
+    // Test 2: Nizovi
+    testArray = new int[20];
+    result = arrayTest(testArray, 20);
+    print(result);
+    
+    // Test 3: Logika
+    print(flag);
+    
+    // Test 4: Ternarni
+    result = ternaryTest(15, 10, 1);
+    print(result);
+    
+    // Test 5: If-Else
+    ifElseTest(25, 15, true);
+    
+    // Test 6: For petlje
+    forLoopTest(10);
+    
+    // Test 7: Switch
+    switchTest(2);
+    
+    // Test 8: Pozivi funkcija
+    result = functionCallTest(100, 50);
+    print(result);
+    
+    // Test 9: I/O
+    inputOutputTest();
+    
+    // Test 10: Enum
+    enumTest();
+    
+    // Test 11: Kompleksni izrazi
+    result = complexExpressions(10, 20, 30, 40);
+    print(result);
+    
+    // Test 12: Granični slučajevi
+    edgeCaseTest();
+    
+    // Test 13: Return
+    result = returnTest(75);
+    print(result);
+    voidReturnTest();
+    
+    // Test 14: Lokalne promenljive
+    localVariableTest();
+    
+    // Test 15: Multi-parametri
+    result = multiParamTest(1, 2, 3, 4, 5);
+    print(result);
+    
+    result = arrayParamTest(testArray, testArray, 10, 10);
+    print(result);
+    
+    flag = boolParamTest(1, 0, 1);
+    print(flag);
+    
+    // Finalna petlja sa svim elementima
+    for(i = 0; i < 100; i++) {
+        if(i % 10 == 0)
+            print(i, 5);
+        
+        if(i == 50) {
+            print('H');
+            print('A');
+            print('L');
+            print('F');
+        }
+        
+        testArray[i % 20] = i;
+        
+        if(i > 75)
+            break;
+    }
+    
+    print('E', 50);
+    print('N');
+    print('D');
+}
+
+}

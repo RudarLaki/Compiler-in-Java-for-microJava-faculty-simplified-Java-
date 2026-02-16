@@ -1,0 +1,117 @@
+program TestProgram
+
+const int MAX = 100;
+const char LETTER = 'x';
+
+int globalNum;
+int array[];
+
+enum Color {
+    RED = 1,
+    GREEN,
+    BLUE = 5,
+    YELLOW
+}
+
+{
+    int noParams() {
+        return 42;
+    }
+    
+    int withParams(int a, int b) {
+        return a + b;
+    }
+    
+    void testSwitch(int val) {
+        switch (val) {
+            case 1:
+                print(10);
+            case 2:
+                print(20);
+            case 5:
+                print(50);
+        }
+    }
+    
+    void testArrayLength()
+        int arr[];
+        int len;
+        int x;
+    {
+        arr = new int[15];
+        len = arr.length;
+        print(len);
+        
+        arr[0] = 100;
+        arr[len - 1] = 200;
+
+    }
+    
+    void testEnum()
+        int color;
+        int y;
+        char a;
+    {
+        color = Color.RED;
+        print(color);
+        a = 'a';
+        color = Color.BLUE;
+        print(color);
+        
+        if (color == Color.BLUE) {
+            print(999);
+        }
+        
+        switch (color) {
+            case 1:
+                print(111);
+            case 5:
+                print(555);
+            case 6:
+                print(666);
+        }
+    }
+    
+    void testFunctionCalls()
+        int result;
+        int arr[];
+    {
+        result = noParams();
+        print(result);
+        
+        result = withParams(10, 20);
+        print(result);
+        
+        result = withParams(noParams(), 5);
+        print(result);
+
+    }
+    
+    void main()
+        int x, size;
+        int myArray[];
+    {
+        print(true, 2);
+
+
+        testSwitch(2);
+        testSwitch(5);
+        
+        myArray = new int[10];
+        size = myArray.length;
+        print(size);
+        
+        testArrayLength();
+        
+        testEnum();
+        
+        testFunctionCalls();
+        
+        x = Color.GREEN;
+        x--;
+        myArray[5]++;
+        print(x);
+        
+        print(777);
+    }
+}

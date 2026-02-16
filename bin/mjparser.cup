@@ -1,0 +1,435 @@
+package rs.ac.bg.etf.pp1;
+
+import java_cup.runtime.*;
+import org.apache.log4j.*;
+import rs.ac.bg.etf.pp1.ast.*;
+
+parser code {:
+
+	boolean errorDetected;
+	Logger log = Logger.getLogger(getClass());
+
+	public void report_fatal_error(String message, Object info) throws java.lang.Exception{
+		done_parsing();
+		report_error(message, info);
+	}
+	
+	public void syntax_error(Symbol cur_token){
+		report_error("\nSintaksna greska", cur_token);
+	}
+	
+	public void unrecovered_syntax_error(Symbol cur_token) throws java.lang.Exception{
+		report_fatal_error("Fatalna greska, parsiranje nemoguce nastaviti", cur_token);
+	}
+	
+	public void report_error(String message, Object info){
+		errorDetected = true;
+		StringBuilder msg = new StringBuilder(message);
+		if(info instanceof Symbol)
+			msg.append(" na liniji ").append(((Symbol)info).left);
+		log.error(msg.toString());
+	}
+:}
+
+init with {:
+	errorDetected = false;
+:}
+
+
+scan with {:
+	Symbol s = this.getScanner().next_token();
+	if(s != null && s.value != null)
+		log.info(s.toString() + " " + s.value.toString());
+	return s;
+:}
+
+terminal PROGRAM,
+
+		 CONST,
+		 ENUM,
+
+		 NEW,
+		 PRINT,
+		 READ,
+		 RETURN,
+		 VOID,
+		 BREAK,
+		 CONTINUE,
+		 FOR,
+		 LENGTH,
+		 
+		 IF,
+		 ELSE,
+		 SWITCH,
+		 CASE,
+		 
+		 PLUS,
+		 MINUS,
+		 MUL,
+		 DIV,
+		 MOD,
+		 ASSIGN,
+		 INC,
+		 DEC,
+		 
+		 EQ,
+		 NEQ,
+		 GREATER,
+		 GREATER_EQUAL,
+		 LESS,
+		 LESS_EQUAL,
+		 AND,
+		 OR,
+		 
+		 SEMICOLON,
+		 COLON,
+		 COMMA,
+		 DOT,
+		 
+		 LPAREN,
+		 RPAREN,
+		 LBRACKET,
+		 RBRACKET,
+		 LBRACE,
+		 RBRACE,
+		 QUESTION_MARK;
+
+
+terminal String IDENT;
+terminal Integer BOOL, NUMBER;
+terminal Character CHAR;
+
+nonterminal Program,
+			ProgramName,
+			
+			DeclList,
+			MethodDeclList,
+			ConstDeclList,
+			VarDeclList,
+			EnumDecl,
+			
+			VarDecl,
+			VarList,
+			VarDeclListRec,
+			
+			EnumItemsList,
+			EnumItemsRest,
+			EnumItem,
+			EnumName,
+			
+			ConstDecl,
+			ConstList,
+			Constant,
+			
+			Prefix,
+			MethodDecl,
+			ParamsList,
+			Param,
+			
+			Statement,
+			MatchedStatement,
+			UnmatchedStatement,
+			DesignatorStatement,
+			SwitchWord,
+			SwitchCases,
+			ForExpression,
+			ForWord,
+			StatementList,
+			EpsilonDesignatorStatement,
+			
+			DotDesignatorOp,
+			ActPars,
+						
+			Addop,
+			Mulop,
+			Assignop,
+			Relop;
+
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Type,
+
+												   Expression, 
+												   NonTernaryExpression,
+												   TernaryExpression, 
+												   TermList, 
+												   Term, 
+												   Factor,
+												   												   
+												   Condition,
+												   CondTerm,
+												   CondFact,
+												   
+												   ReturnExpression,
+												   PrintExpression;
+
+nonterminal rs.etf.pp1.symboltable.concepts.Obj Designator,
+												DesignatorArrayName,
+												MethodName;	
+			
+
+Program ::= (Program) PROGRAM ProgramName DeclList LBRACE MethodDeclList RBRACE;
+
+ProgramName ::= (ProgramName) IDENT;
+
+DeclList ::= (DeclList_const) ConstDeclList DeclList
+			 |
+			 (DeclList_var) VarDeclList DeclList
+			 |
+			 (DeclList_enum) EnumDecl DeclList
+			 |					 
+			 (DeclList_e) /*epsilon*/
+			 ;
+			 
+VarDeclListRec ::=(VarDeclListRec_rec) VarDeclList VarDeclListRec
+				  |
+				  (VarDeclListRec_e) /*epsilon*/
+				  ;
+
+VarDeclList ::= (VarDeclList) Type VarList SEMICOLON;
+
+VarList ::= (VarList_array) VarDecl COMMA VarList
+			|
+			(VarList_e) VarDecl
+			;
+
+VarDecl ::= (IdentVarDecl) IDENT
+			|
+			(ArrayVarDecl) IDENT LBRACKET RBRACKET
+			;
+
+
+ConstDeclList ::= (ConstDeclList) CONST Type ConstList SEMICOLON;
+
+ConstList ::= (ConstList_array) ConstDecl COMMA ConstList
+					  |
+					  (ConstList_e) ConstDecl
+					  ;
+
+ConstDecl ::= (ConstDecl) IDENT ASSIGN Constant;
+
+Constant ::= (Constant_num) NUMBER
+			 |
+			 (Constant_neg_num) MINUS NUMBER
+			 |
+			 (Constant_char) CHAR
+			 |
+			 (Constant_bool) BOOL
+			 ;
+
+
+EnumDecl ::= (EnumDecl) ENUM EnumName LBRACE EnumItemsList RBRACE;
+
+EnumItemsList ::= (EnumItemsList) EnumItem EnumItemsRest;
+
+EnumItemsRest ::= (EnumItemsRest_comma) COMMA EnumItem EnumItemsRest
+				  |
+				  (EnumItemsRest_e) /* epsilon */
+				  ;
+
+EnumItem ::= (IdentEnumItem) IDENT 
+			 |
+			 (AssignEnumItem) IDENT ASSIGN NUMBER
+			 ;
+			 
+EnumName ::= (EnumName) IDENT;
+
+
+MethodDeclList ::= (MethodDeclList_array) MethodDeclList MethodDecl
+				   |
+				   (MethodDeclList_e) /* epsilon */
+				   ;
+
+MethodDecl ::= (MethodDecl) Prefix MethodName LPAREN ParamsList RPAREN VarDeclListRec LBRACE StatementList RBRACE;			   
+
+Prefix ::= (TypePrefix) Type
+		   |
+		   (VoidPrefix) VOID
+		   ;
+
+MethodName ::= (MethodName) IDENT;
+
+ParamsList ::= (ParamsList_param) Type VarDecl COMMA ParamsList
+			   |
+			   (ParamsList_e) Type VarDecl
+			   |
+			   (ParamsList_epsilon) /* epsilon*/
+			   ;
+
+Type ::= (Type) IDENT;
+
+Statement ::= (MatchStatement) MatchedStatement
+			  |
+			  (UnmatchStatement) UnmatchedStatement
+			  ;
+
+MatchedStatement ::=  (DesigStatement) DesignatorStatement SEMICOLON
+					  |
+					  (IfElseStatement) IF LPAREN Condition RPAREN MatchedStatement ELSE MatchedStatement
+					  |
+					  (BreakStatement) BREAK SEMICOLON
+					  |
+					  (ContinueStatement) CONTINUE SEMICOLON
+					  |
+					  (ReturnStatement) RETURN ReturnExpression SEMICOLON
+					  |
+					  (ReadStatement) READ LPAREN Designator RPAREN SEMICOLON
+					  |
+					  (PrintStatement) PRINT LPAREN PrintExpression RPAREN SEMICOLON
+					  |
+					  (SwitchStatement) SwitchWord LPAREN Expression RPAREN LBRACE SwitchCases RBRACE
+					  |
+					  (ForStatement) ForWord LPAREN ForExpression RPAREN MatchedStatement
+					  |
+					  (RecStatement) LBRACE StatementList RBRACE
+					  ;
+
+UnmatchedStatement ::= (IfElseStatement_non_else) IF LPAREN Condition RPAREN Statement
+					   |
+					   (IfElseStatement_else) IF LPAREN Condition RPAREN MatchedStatement ELSE UnmatchedStatement
+					   ;
+
+ReturnExpression ::= (ReturnExpression_expr) Expression
+					 |
+					 (ReturnExpression_non_expr) /* epsilon */ 
+					 ;
+
+PrintExpression ::= (PrintExpression_num) Expression COMMA NUMBER
+					|
+					(PrintExpression_non_num) Expression
+					;
+
+SwitchWord ::= (SwitchWord) SWITCH;
+SwitchCases ::= (SwitchCases_s) CASE NUMBER COLON StatementList SwitchCases
+				|
+				(SwitchCases_e) /* epsilon */
+				;
+
+StatementList ::= (StatementList_sl) Statement StatementList
+				  |
+				  (StatementList_e) /* epsilon */
+				  ;
+
+ForWord ::= (ForWord) FOR;
+ForExpression ::= (ConditionedForExpression) EpsilonDesignatorStatement SEMICOLON Condition SEMICOLON EpsilonDesignatorStatement
+				  |
+				  (NonConditionedForExpression) EpsilonDesignatorStatement SEMICOLON SEMICOLON EpsilonDesignatorStatement
+				  ;
+
+
+EpsilonDesignatorStatement ::= (EpsilonDesignatorStatement_ds) DesignatorStatement
+							   |
+							   (EpsilonDesignatorStatement_e) /* epsilon */
+							   ;
+
+DesignatorStatement ::= (ExprDesignatorStatement) Designator Assignop Expression
+						|
+						(ParamsDesignatorStatement) Designator LPAREN ActPars RPAREN
+						|
+						(NonParamsDesignatorStatement) Designator LPAREN RPAREN
+						|
+						(IncDesignatorStatement) Designator INC
+						|
+						(DecDesignatorStatement) Designator DEC
+						;
+
+ActPars ::= (ActPars_params) ActPars COMMA Expression
+			|
+			(ActPars_e) Expression
+			;	
+
+Condition ::= (Condition_OR) CondTerm OR Condition
+			  |
+			  (Condition_e) CondTerm
+			  ;
+
+
+CondTerm ::= (CondTerm_AND) CondFact AND CondTerm
+			 |
+			 (CondTerm_e) CondFact
+			 ;
+
+
+CondFact ::= (NonRelopCondFact) NonTernaryExpression
+			 |
+			 (RelopCondFact) NonTernaryExpression Relop NonTernaryExpression
+			 ;
+
+
+Designator ::= (SimpleDesignator) IDENT
+               | 
+               (ArrayDesignator) DesignatorArrayName LBRACKET Expression RBRACKET
+               | 
+               (DotDesignator) Designator DotDesignatorOp
+               ;
+
+DesignatorArrayName ::= (DesignatorArrayName) IDENT;
+
+DotDesignatorOp ::= (IdentDesignatorOp) DOT IDENT
+					|
+					(LengthDesignatorOp) DOT LENGTH
+					; 
+
+
+Assignop ::= (Assignop) ASSIGN;
+
+Relop ::= (EqRelop) EQ
+		  |
+		  (NeqRelop) NEQ
+		  |
+		  (GreaterRelop) GREATER
+		  |
+		  (GrEqRelop) GREATER_EQUAL
+		  |
+		  (SmallerRelop) LESS
+		  |
+		  (SmEqRelop) LESS_EQUAL
+		  ;
+
+Addop ::= (PlusAddop) PLUS
+		  |
+		  (MinusAddop) MINUS
+		  ;
+
+Mulop ::= (MulMulop) MUL
+		  |
+		  (DivMulop) DIV
+		  |
+		  (ModMulop) MOD
+		  ;
+
+Expression ::= (NonTerExpression) NonTernaryExpression
+			   |
+			   (TerExpression) TernaryExpression
+			   ;
+
+NonTernaryExpression ::= (NonTernaryExpression) TermList;
+
+TernaryExpression ::= (TernaryExpression) Condition QUESTION_MARK Expression COLON Expression;
+
+TermList ::= (TermList_array) TermList Addop Term
+			 |
+			 (TermList_e) Term
+			 ;
+
+Term ::= (Term_array) Term Mulop Factor
+		 |
+		 (Term_e) Factor
+	     ;
+
+Factor ::= (MinusFactor) MINUS Factor
+		   |
+		   (DesignatorFactor_e) Designator
+		   |
+		   (DesignatorActFactor_func) Designator LPAREN ActPars RPAREN
+		   |
+		   (DesignatorFactor_func) Designator LPAREN RPAREN
+		   |
+		   (NumberParamFactor) NUMBER
+		   |
+		   (CharParamFactor) CHAR
+		   |
+		   (BoolParamFactor) BOOL
+		   |
+		   (NewParamFactor) NEW Type LBRACKET Expression RBRACKET
+		   |
+		   (ExpParamFactor) LPAREN Expression RPAREN
+		   ;

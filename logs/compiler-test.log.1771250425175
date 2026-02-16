@@ -1,0 +1,52 @@
+2026-02-16 15:00:15,876 INFO  rs.ac.bg.etf.pp1.MJParserTest - Compiling source file: D:\Eclipse\PP\PP_projekat\test\program.mj
+2026-02-16 15:00:15,927 INFO  rs.ac.bg.etf.pp1.MJParser - #2 program
+2026-02-16 15:00:15,927 INFO  rs.ac.bg.etf.pp1.MJParser - #45 TestProgram
+2026-02-16 15:00:15,927 INFO  rs.ac.bg.etf.pp1.MJParser - #3 const
+2026-02-16 15:00:15,928 INFO  rs.ac.bg.etf.pp1.MJParser - #45 int
+2026-02-16 15:00:15,928 INFO  rs.ac.bg.etf.pp1.MJParser - #45 MAX
+2026-02-16 15:00:15,929 INFO  rs.ac.bg.etf.pp1.MJParser - #23 =
+2026-02-16 15:00:15,929 INFO  rs.ac.bg.etf.pp1.MJParser - #47 100
+2026-02-16 15:00:15,929 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
+2026-02-16 15:00:15,931 INFO  rs.ac.bg.etf.pp1.MJParser - #3 const
+2026-02-16 15:00:15,941 INFO  rs.ac.bg.etf.pp1.MJParser - #45 char
+2026-02-16 15:00:15,942 INFO  rs.ac.bg.etf.pp1.MJParser - #45 LETTER
+2026-02-16 15:00:15,942 INFO  rs.ac.bg.etf.pp1.MJParser - #23 =
+2026-02-16 15:00:15,942 INFO  rs.ac.bg.etf.pp1.MJParser - #48 x
+2026-02-16 15:00:15,942 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
+2026-02-16 15:00:15,942 INFO  rs.ac.bg.etf.pp1.MJParser - #45 int
+2026-02-16 15:00:15,942 INFO  rs.ac.bg.etf.pp1.MJParser - #45 globalNum
+2026-02-16 15:00:15,942 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
+2026-02-16 15:00:15,942 INFO  rs.ac.bg.etf.pp1.MJParser - #45 int
+2026-02-16 15:00:15,943 INFO  rs.ac.bg.etf.pp1.MJParser - #45 array
+2026-02-16 15:00:15,943 INFO  rs.ac.bg.etf.pp1.MJParser - #40 [
+2026-02-16 15:00:15,943 INFO  rs.ac.bg.etf.pp1.MJParser - #41 ]
+2026-02-16 15:00:15,943 INFO  rs.ac.bg.etf.pp1.MJParser - #34 ;
+2026-02-16 15:00:15,943 INFO  rs.ac.bg.etf.pp1.MJParser - #4 enum
+2026-02-16 15:00:15,944 INFO  rs.ac.bg.etf.pp1.MJParser - #45 Color
+2026-02-16 15:00:15,944 INFO  rs.ac.bg.etf.pp1.MJParser - #42 {
+2026-02-16 15:00:15,944 INFO  rs.ac.bg.etf.pp1.MJParser - #45 RED
+2026-02-16 15:00:15,945 INFO  rs.ac.bg.etf.pp1.MJParser - #23 =
+2026-02-16 15:00:15,945 INFO  rs.ac.bg.etf.pp1.MJParser - #47 1
+2026-02-16 15:00:15,945 INFO  rs.ac.bg.etf.pp1.MJParser - #36 ,
+2026-02-16 15:00:15,945 INFO  rs.ac.bg.etf.pp1.MJParser - #45 GREEN
+2026-02-16 15:00:15,945 INFO  rs.ac.bg.etf.pp1.MJParser - #36 ,
+2026-02-16 15:00:15,945 INFO  rs.ac.bg.etf.pp1.MJParser - #45 BLUE
+2026-02-16 15:00:15,945 INFO  rs.ac.bg.etf.pp1.MJParser - #23 =
+2026-02-16 15:00:15,945 INFO  rs.ac.bg.etf.pp1.MJParser - #47 5
+2026-02-16 15:00:15,945 INFO  rs.ac.bg.etf.pp1.MJParser - #36 ,
+2026-02-16 15:00:15,945 INFO  rs.ac.bg.etf.pp1.MJParser - #45 YELLOW
+2026-02-16 15:00:15,946 INFO  rs.ac.bg.etf.pp1.MJParser - #43 }
+2026-02-16 15:00:15,947 INFO  rs.ac.bg.etf.pp1.MJParser - #42 {
+2026-02-16 15:00:15,948 INFO  rs.ac.bg.etf.pp1.MJParser - #45 int
+2026-02-16 15:00:15,949 INFO  rs.ac.bg.etf.pp1.MJParser - #45 noParams
+2026-02-16 15:00:15,949 INFO  rs.ac.bg.etf.pp1.MJParser - #38 (
+2026-02-16 15:00:15,950 INFO  rs.ac.bg.etf.pp1.MJParser - #39 )
+2026-02-16 15:00:15,951 INFO  rs.ac.bg.etf.pp1.MJParser - #42 {
+2026-02-16 15:00:15,951 INFO  rs.ac.bg.etf.pp1.MJParser - #8 return
+2026-02-16 15:00:15,951 INFO  rs.ac.bg.etf.pp1.MJParser - #6 print
+2026-02-16 15:00:15,951 ERROR rs.ac.bg.etf.pp1.MJParser - 
+Sintaksna greska na liniji 18
+2026-02-16 15:00:15,951 ERROR rs.ac.bg.etf.pp1.MJParser - Fatalna greska, parsiranje nemoguce nastaviti na liniji 18
+2026-02-16 15:00:15,953 ERROR rs.ac.bg.etf.pp1.MJParserTest - Compilation error
+java.lang.ClassCastException: class rs.ac.bg.etf.pp1.ast.VarDeclListRec_e cannot be cast to class rs.ac.bg.etf.pp1.ast.Program (rs.ac.bg.etf.pp1.ast.VarDeclListRec_e and rs.ac.bg.etf.pp1.ast.Program are in unnamed module of loader 'app')
+	at rs.ac.bg.etf.pp1.MJParserTest.main(MJParserTest.java:40)
