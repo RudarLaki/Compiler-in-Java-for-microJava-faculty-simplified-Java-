@@ -1,5 +1,9 @@
 package rs.ac.bg.etf.pp1;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Stack;
+
 import rs.ac.bg.etf.pp1.ast.*;
 import rs.ac.bg.etf.pp1.ast.VisitorAdaptor;
 import rs.etf.pp1.mj.runtime.Code;
@@ -61,27 +65,29 @@ public class CodeGenerator extends VisitorAdaptor {
 			Code.put(Code.neg);
 		}
 	}
-	///////////////////////////////////// designator statements ///////////////////////////////
+
+	///////////////////////////////////// designator statements
+	///////////////////////////////////// ///////////////////////////////
 	@Override
 	public void visit(NonParamsDesignatorStatement nonParamsDesignatorStatement) {
 		int offset = nonParamsDesignatorStatement.getDesignator().obj.getAdr() - Code.pc;
 		Code.put(Code.call);
 		Code.put2(offset);
-		
-		if(!nonParamsDesignatorStatement.getDesignator().obj.getType().equals(Tab.noType))
+
+		if (!nonParamsDesignatorStatement.getDesignator().obj.getType().equals(Tab.noType))
 			Code.put(Code.pop);
 	}
-	
+
 	@Override
 	public void visit(ParamsDesignatorStatement paramsDesignatorStatement) {
 		int offset = paramsDesignatorStatement.getDesignator().obj.getAdr() - Code.pc;
 		Code.put(Code.call);
 		Code.put2(offset);
-		
-		if(!paramsDesignatorStatement.getDesignator().obj.getType().equals(Tab.noType))
+
+		if (!paramsDesignatorStatement.getDesignator().obj.getType().equals(Tab.noType))
 			Code.put(Code.pop);
 	}
-	
+
 	@Override
 	public void visit(ExprDesignatorStatement exprDesignatorStatement) {
 		Code.store(exprDesignatorStatement.getDesignator().obj);
@@ -172,18 +178,100 @@ public class CodeGenerator extends VisitorAdaptor {
 		else
 			Code.put(1);
 	}
-	
+
 	@Override
 	public void visit(DesignatorFactor_func designatorFactor_func) {
 		int offset = designatorFactor_func.getDesignator().obj.getAdr() - Code.pc;
 		Code.put(Code.call);
 		Code.put2(offset);
 	}
-	
+
 	@Override
 	public void visit(DesignatorActFactor_func designatorActFactor_func) {
 		int offset = designatorActFactor_func.getDesignator().obj.getAdr() - Code.pc;
 		Code.put(Code.call);
 		Code.put2(offset);
+	}
+
+	/////////////////////// Conditions ///////////////////////
+	private int returnRelOp(Relop relop) {
+		if (relop instanceof Relop_eq)
+			return Code.eq;
+		if (relop instanceof Relop_neq)
+			return Code.ne;
+		if (relop instanceof Relop_ls)
+			return Code.lt;
+		if (relop instanceof Relop_ls_eq)
+			return Code.le;
+		if (relop instanceof Relop_gr)
+			return Code.gt;
+		if (relop instanceof Relop_gr_eq)
+			return Code.ge;
+		return 0;
+	}
+
+	private Stack<Integer> skipAND = new Stack();
+	private Stack<Integer> skipOR = new Stack();
+	
+	private Stack<Integer> skipTrue = new Stack();
+	private Stack<Integer> skipFalse = new Stack();
+
+
+
+	@Override
+	public void visit(NonRelopCondFact nonRelopCondFact) {
+		Code.loadConst(0);
+		Code.putFalseJump(Code.ne, 0);
+		skipAND.push(Code.pc - 2);
+	}
+	@Override
+	public void visit(RelopCondFact relopCondFact) {
+		Code.putFalseJump(returnRelOp(relopCondFact.getRelop()), 0);
+		skipAND.push(Code.pc - 2);
+	}
+	
+	@Override
+	public void visit(CondTermHelp CondTermHelp) {
+		Code.putJump(0);
+		skipOR.push(Code.pc - 2);
+		while(!skipAND.empty()) {
+			Code.fixup(skipAND.pop());
+		}
+	}
+	@Override
+	public void visit(Condition condition) {
+		Code.putJump(0);
+		skipTrue.push(Code.pc - 2);
+		while(!skipOR.empty()) {
+			Code.fixup(skipOR.pop());
+		}		
+	}
+	@Override
+	public void visit(IfElseStatement_non_else ifElseStatement_non_else) {
+		Code.fixup(skipTrue.pop());
+	}
+	@Override
+	public void visit(Else else_) {
+		Code.putJump(0);
+		skipFalse.push(Code.pc - 2);
+		Code.fixup(skipTrue.pop());
+	}
+	@Override
+	public void visit(IfElseStatement ifElseStatement) {
+		Code.fixup(skipFalse.pop());
+	}
+	@Override
+	public void visit(IfElseStatement_else ifElseStatement_else) {
+		Code.fixup(skipFalse.pop());
+	}
+	
+	//////////////////////////   ternary operator  //////////////////////////
+	public void visit(TernaryExpression ternaryExpression) {
+		Code.fixup(skipFalse.pop());
+	}
+	public void visit(Colon colon) {
+		Code.putJump(0);
+		skipFalse.push(Code.pc - 2);
+		Code.fixup(skipTrue.pop());
 	}
 }

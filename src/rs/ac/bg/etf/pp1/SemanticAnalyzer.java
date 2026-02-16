@@ -563,8 +563,8 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 
 	@Override
 	public void visit(Condition_OR condition_or) {
-		Struct cond = condition_or.getCondition().struct;
-		Struct condTerm = condition_or.getCondTerm().struct;
+		Struct cond = condition_or.getConditionHelp().struct;
+		Struct condTerm = condition_or.getCondTermHelp().struct;
 
 		if (!condTerm.equals(boolType) || !cond.equals(boolType)) {
 			report_error("Operandi logičkih operatora moraju biti logičkog tipa", condition_or);
@@ -586,15 +586,25 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 		}
 		condTerm_and.struct = boolType;
 	}
+	
+	@Override
+	public void visit(Condition condition) {
+		condition.struct = condition.getConditionHelp().struct;
+	}
 
 	@Override
 	public void visit(Condition_e condition_e) {
-		condition_e.struct = condition_e.getCondTerm().struct;
+		condition_e.struct = condition_e.getCondTermHelp().struct;
 	}
 
 	@Override
 	public void visit(CondTerm_e condTerm_e) {
 		condTerm_e.struct = condTerm_e.getCondFact().struct;
+	}
+
+	@Override
+	public void visit(CondTermHelp condTermHelp) {
+		condTermHelp.struct = condTermHelp.getCondTerm().struct;
 	}
 
 	@Override
@@ -620,7 +630,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 		}
 		if (nte1.getKind() == Struct.Array) {
 			Relop relop = relopCondFact.getRelop();
-			if (!(relop instanceof EqRelop) && !(relop instanceof NeqRelop)) {
+			if (!(relop instanceof Relop_eq) && !(relop instanceof Relop_neq)) {
 				report_error("Nizove je moguće porediti samo operatorima '==' i '!='", relopCondFact);
 				relopCondFact.struct = Tab.noType;
 				return;

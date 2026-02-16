@@ -1,4 +1,4 @@
-"# Compiler-in-Java-for-microJava-faculty-simplified-Java-" 
+"# Compiler-in-Java-for-microJava-faculty-simplified-Java-"
 
 # MicroJava Compiler
 
@@ -16,7 +16,7 @@ The compiler is organized into the following phases:
 1. **Lexical Analysis**
 2. **Syntax Analysis**
 3. **Semantic Analysis**
-4. **Code Generation** *(not included in this version)*
+4. **Code Generation** _(not included in this version)_
 
 ---
 
@@ -26,13 +26,13 @@ The lexical analyzer (scanner) reads the source code and converts it into a sequ
 
 ### Responsibilities
 
-* Recognizing keywords, identifiers, constants, and operators.
-* Ignoring whitespace and comments.
-* Reporting lexical errors.
+- Recognizing keywords, identifiers, constants, and operators.
+- Ignoring whitespace and comments.
+- Reporting lexical errors.
 
 ### Tools
 
-* Implemented using **JFlex**.
+- Implemented using **JFlex**.
 
 ---
 
@@ -42,13 +42,13 @@ The syntax analyzer (parser) checks whether the token sequence follows the langu
 
 ### Responsibilities
 
-* Building the Abstract Syntax Tree (AST).
-* Detecting syntax errors.
-* Providing structured program representation for later phases.
+- Building the Abstract Syntax Tree (AST).
+- Detecting syntax errors.
+- Providing structured program representation for later phases.
 
 ### Tools
 
-* Implemented using **Java CUP**.
+- Implemented using **Java CUP**.
 
 ---
 
@@ -58,40 +58,39 @@ The semantic analyzer performs checks that cannot be expressed through grammar a
 
 ### Responsibilities
 
-* Symbol table management.
-* Type checking.
-* Scope resolution.
-* Validation of:
-
-  * Variable and constant declarations
-  * Method declarations and calls
-  * Expressions and assignments
-  * Control flow statements
+- Symbol table management.
+- Type checking.
+- Scope resolution.
+- Validation of:
+  - Variable and constant declarations
+  - Method declarations and calls
+  - Expressions and assignments
+  - Control flow statements
 
 ### Output
 
-* Decorated AST with semantic information.
-* Error reports for semantic violations.
+- Decorated AST with semantic information.
+- Error reports for semantic violations.
 
 ---
 
 ## Phase 4: Code Generation
 
-*This phase is not included in the current version of the project.*
+_This phase is not included in the current version of the project._
 
 Planned responsibilities:
 
-* Generating bytecode for the MicroJava virtual machine.
-* Translating AST nodes into executable instructions.
+- Generating bytecode for the MicroJava virtual machine.
+- Translating AST nodes into executable instructions.
 
 ---
 
 ## Technologies Used
 
-* **Java**
-* **JFlex** – lexical analyzer generator
-* **Java CUP** – parser generator
-* **MicroJava runtime and symbol table library**
+- **Java**
+- **JFlex** – lexical analyzer generator
+- **Java CUP** – parser generator
+- **MicroJava runtime and symbol table library**
 
 ---
 

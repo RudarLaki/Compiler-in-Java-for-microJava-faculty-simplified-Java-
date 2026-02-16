@@ -129,6 +129,8 @@ nonterminal Program,
 			Statement,
 			MatchedStatement,
 			UnmatchedStatement,
+			Else,
+			
 			DesignatorStatement,
 			SwitchWord,
 			SwitchCases,
@@ -150,11 +152,14 @@ nonterminal rs.etf.pp1.symboltable.concepts.Struct Type,
 												   Expression, 
 												   NonTernaryExpression,
 												   TernaryExpression, 
+												   Colon,
 												   TermList, 
 												   Term, 
 												   Factor,
 												   												   
 												   Condition,
+												   ConditionHelp,
+												   CondTermHelp,
 												   CondTerm,
 												   CondFact,
 												   
@@ -263,7 +268,7 @@ Statement ::= (MatchStatement) MatchedStatement
 
 MatchedStatement ::=  (DesigStatement) DesignatorStatement SEMICOLON
 					  |
-					  (IfElseStatement) IF LPAREN Condition RPAREN MatchedStatement ELSE MatchedStatement
+					  (IfElseStatement) IF LPAREN Condition RPAREN MatchedStatement Else MatchedStatement
 					  |
 					  (BreakStatement) BREAK SEMICOLON
 					  |
@@ -284,8 +289,10 @@ MatchedStatement ::=  (DesigStatement) DesignatorStatement SEMICOLON
 
 UnmatchedStatement ::= (IfElseStatement_non_else) IF LPAREN Condition RPAREN Statement
 					   |
-					   (IfElseStatement_else) IF LPAREN Condition RPAREN MatchedStatement ELSE UnmatchedStatement
+					   (IfElseStatement_else) IF LPAREN Condition RPAREN MatchedStatement Else UnmatchedStatement
 					   ;
+
+Else ::= (Else) ELSE;
 
 ReturnExpression ::= (ReturnExpression_expr) Expression
 					 |
@@ -335,18 +342,19 @@ ActPars ::= (ActPars_params) ActPars COMMA Expression
 			|
 			(ActPars_e) Expression
 			;	
+Condition ::= (Condition) ConditionHelp;
 
-Condition ::= (Condition_OR) CondTerm OR Condition
-			  |
-			  (Condition_e) CondTerm
-			  ;
-
+ConditionHelp ::= (Condition_OR) CondTermHelp OR ConditionHelp
+				  |
+				  (Condition_e) CondTermHelp
+				  ;
+			  
+CondTermHelp ::= (CondTermHelp) CondTerm;
 
 CondTerm ::= (CondTerm_AND) CondFact AND CondTerm
 			 |
 			 (CondTerm_e) CondFact
 			 ;
-
 
 CondFact ::= (NonRelopCondFact) NonTernaryExpression
 			 |
@@ -371,17 +379,17 @@ DotDesignatorOp ::= (IdentDesignatorOp) DOT IDENT
 
 Assignop ::= (Assignop) ASSIGN;
 
-Relop ::= (EqRelop) EQ
+Relop ::= (Relop_eq) EQ
 		  |
-		  (NeqRelop) NEQ
+		  (Relop_neq) NEQ
 		  |
-		  (GreaterRelop) GREATER
+		  (Relop_gr) GREATER
 		  |
-		  (GrEqRelop) GREATER_EQUAL
+		  (Relop_gr_eq) GREATER_EQUAL
 		  |
-		  (SmallerRelop) LESS
+		  (Relop_ls) LESS
 		  |
-		  (SmEqRelop) LESS_EQUAL
+		  (Relop_ls_eq) LESS_EQUAL
 		  ;
 
 Addop ::= (PlusAddop) PLUS
@@ -403,7 +411,9 @@ Expression ::= (NonTerExpression) NonTernaryExpression
 
 NonTernaryExpression ::= (NonTernaryExpression) TermList;
 
-TernaryExpression ::= (TernaryExpression) Condition QUESTION_MARK Expression COLON Expression;
+TernaryExpression ::= (TernaryExpression) Condition QUESTION_MARK Expression Colon Expression;
+
+Colon ::= (Colon) COLON;
 
 TermList ::= (TermList_array) TermList Addop Term
 			 |
