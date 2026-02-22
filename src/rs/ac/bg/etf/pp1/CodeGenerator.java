@@ -371,54 +371,102 @@ public class CodeGenerator extends VisitorAdaptor {
 
 ////////////////////////////switch statement //////////////////////////////
 
-	private Stack<HashMap<Integer, Integer>> switchCaseAddr = new Stack<>();
-	private Stack<List<Integer>> switchCaseOrder = new Stack<>();
-	private Stack<Integer> switchJumpToDispatch = new Stack<>();
+	// private Stack<HashMap<Integer, Integer>> switchCaseAddr = new Stack<>();
+	// private Stack<List<Integer>> switchCaseOrder = new Stack<>();
+	// private Stack<Integer> switchJumpToDispatch = new Stack<>();
+	
+	// private Stack<Stack<Integer>> switchBreakFlag = new Stack<>();
+
+	// @Override
+	// public void visit(SwitchWord ss) {
+	// 	breakTargetType.push(BreakTarget.SWITCH);
+	// 	switchCaseAddr.push(new HashMap<>());
+	// 	switchCaseOrder.push(new ArrayList<>());
+	// 	switchBreakFlag.push(new Stack<>());
+	// }
+
+	// @Override
+	// public void visit(CaseEnter caseEnter) {
+	// 	Code.putJump(0);
+	// 	switchJumpToDispatch.push(Code.pc - 2);
+	// }
+
+	// @Override
+	// public void visit(CaseLabel ln) {
+	// 	switchCaseAddr.peek().put(ln.getN1(), Code.pc);
+	// 	switchCaseOrder.peek().add(ln.getN1());
+	// }
+
+	// @Override
+	// public void visit(SwitchStatement ss) {
+	// 	Code.putJump(0);
+	// 	int jumpOverDispatchAddr = Code.pc - 2;
+
+	// 	Code.fixup(switchJumpToDispatch.pop());
+
+	// 	HashMap<Integer, Integer> map = switchCaseAddr.pop();
+	// 	List<Integer> order = switchCaseOrder.pop();
+
+	// 	for (Integer val : order) {
+	// 		Code.put(Code.dup);
+	// 		Code.loadConst(val);
+	// 		Code.putFalseJump(Code.eq, 0);
+	// 		int nextCmpFixup = Code.pc - 2;
+	// 		Code.put(Code.pop);
+	// 		Code.putJump(map.get(val));
+	// 		Code.fixup(nextCmpFixup);
+	// 	}
+
+	// 	Code.put(Code.pop);
+	// 	Code.fixup(jumpOverDispatchAddr);
+
+	// 	breakTargetType.pop();
+
+	// 	Stack<Integer> endJumps = switchBreakFlag.pop();
+	// 	while (!endJumps.isEmpty()) {
+	// 		Code.fixup(endJumps.pop());
+	// 	}
+	// }
 	
 	private Stack<Stack<Integer>> switchBreakFlag = new Stack<>();
+	private Stack<Integer> nextLabel = new Stack<>();
+	private Stack<Integer> skipLabel = new Stack<>();
+	boolean first = true;
 
 	@Override
 	public void visit(SwitchWord ss) {
+		switchBreakFlag.push(new Stack<Integer>());
 		breakTargetType.push(BreakTarget.SWITCH);
-		switchCaseAddr.push(new HashMap<>());
-		switchCaseOrder.push(new ArrayList<>());
-		switchBreakFlag.push(new Stack<>());
-	}
-
-	@Override
-	public void visit(CaseEnter caseEnter) {
-		Code.putJump(0);
-		switchJumpToDispatch.push(Code.pc - 2);
 	}
 
 	@Override
 	public void visit(CaseLabel ln) {
-		switchCaseAddr.peek().put(ln.getN1(), Code.pc);
-		switchCaseOrder.peek().add(ln.getN1());
+		if (first) {
+			Code.put(Code.dup);
+			Code.loadConst(ln.getN1());
+			Code.putFalseJump(Code.eq, 0);
+			skipLabel.push(Code.pc - 2);
+			first = false;
+		} else {
+			Code.fixup(skipLabel.pop());
+			Code.put(Code.dup);
+			Code.loadConst(ln.getN1());
+			Code.putFalseJump(Code.eq, 0);
+			skipLabel.push(Code.pc - 2);
+			Code.fixup(nextLabel.pop());
+		}
+	}
+
+	@Override
+	public void visit(SwitchStatementEnd switchStatementEnd) {
+		Code.putJump(0);
+		nextLabel.push(Code.pc - 2);
 	}
 
 	@Override
 	public void visit(SwitchStatement ss) {
-		Code.putJump(0);
-		int jumpOverDispatchAddr = Code.pc - 2;
-
-		Code.fixup(switchJumpToDispatch.pop());
-
-		HashMap<Integer, Integer> map = switchCaseAddr.pop();
-		List<Integer> order = switchCaseOrder.pop();
-
-		for (Integer val : order) {
-			Code.put(Code.dup);
-			Code.loadConst(val);
-			Code.putFalseJump(Code.eq, 0);
-			int nextCmpFixup = Code.pc - 2;
-			Code.put(Code.pop);
-			Code.putJump(map.get(val));
-			Code.fixup(nextCmpFixup);
-		}
-
-		Code.put(Code.pop);
-		Code.fixup(jumpOverDispatchAddr);
+		Code.fixup(skipLabel.pop());
+		Code.fixup(nextLabel.pop());
 
 		breakTargetType.pop();
 
@@ -426,58 +474,10 @@ public class CodeGenerator extends VisitorAdaptor {
 		while (!endJumps.isEmpty()) {
 			Code.fixup(endJumps.pop());
 		}
+		Code.put(Code.pop);
+
+		first = true;
 	}
-	
-//	private Stack<Stack<Integer>> switchBreakFlag = new Stack<>();
-//	private Stack<Integer> nextLabel = new Stack<>();
-//	private Stack<Integer> skipLabel = new Stack<>();
-//	boolean first = true;
-//
-//	@Override
-//	public void visit(SwitchWord ss) {
-//		switchBreakFlag.push(new Stack<Integer>());
-//		breakTargetType.push(BreakTarget.SWITCH);
-//	}
-//
-//	@Override
-//	public void visit(CaseLabel ln) {
-//		if (first) {
-//			Code.put(Code.dup);
-//			Code.loadConst(ln.getN1());
-//			Code.putFalseJump(Code.eq, 0);
-//			skipLabel.push(Code.pc - 2);
-//			first = false;
-//		} else {
-//			Code.fixup(skipLabel.pop());
-//			Code.put(Code.dup);
-//			Code.loadConst(ln.getN1());
-//			Code.putFalseJump(Code.eq, 0);
-//			skipLabel.push(Code.pc - 2);
-//			Code.fixup(nextLabel.pop());
-//		}
-//	}
-//
-//	@Override
-//	public void visit(SwitchStatementEnd switchStatementEnd) {
-//		Code.putJump(0);
-//		nextLabel.push(Code.pc - 2);
-//	}
-//
-//	@Override
-//	public void visit(SwitchStatement ss) {
-//		Code.fixup(skipLabel.pop());
-//		Code.fixup(nextLabel.pop());
-//
-//		breakTargetType.pop();
-//
-//		Stack<Integer> endJumps = switchBreakFlag.pop();
-//		while (!endJumps.isEmpty()) {
-//			Code.fixup(endJumps.pop());
-//		}
-//		Code.put(Code.pop);
-//
-//		first = true;
-//	}
 
 ///////////////////////// BREAK and CONTINUE ////////////////////////////////////
 
