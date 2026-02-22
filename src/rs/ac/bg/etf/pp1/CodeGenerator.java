@@ -365,7 +365,6 @@ public class CodeGenerator extends VisitorAdaptor {
 		while (!currentBreaks.isEmpty()) {
 			Code.fixup(currentBreaks.pop());
 		}
-		breakTargetType.pop();
 	}
 
 	//////////////////////////// switch statement //////////////////////////////
@@ -375,6 +374,7 @@ public class CodeGenerator extends VisitorAdaptor {
 	private Stack<HashMap<Integer, Integer>> switchCaseAddr = new Stack<>();
 	private Stack<List<Integer>> switchCaseOrder = new Stack<>();
 	private Stack<Integer> switchJumpToDispatch = new Stack<>();
+	
 	private Stack<Stack<Integer>> switchBreakFlag = new Stack<>();
 
 	@Override
@@ -427,6 +427,57 @@ public class CodeGenerator extends VisitorAdaptor {
 			Code.fixup(endJumps.pop());
 		}
 	}
+	
+//	private Stack<Stack<Integer>> switchBreakFlag = new Stack<>();
+//	private Stack<Integer> nextLabel = new Stack<>();
+//	private Stack<Integer> skipLabel = new Stack<>();
+//	boolean first = true;
+//
+//	@Override
+//	public void visit(SwitchWord ss) {
+//		switchBreakFlag.push(new Stack<Integer>());
+//		breakTargetType.push(BreakTarget.SWITCH);
+//	}
+//
+//	@Override
+//	public void visit(CaseLabel ln) {
+//		if (first) {
+//			Code.put(Code.dup);
+//			Code.loadConst(ln.getN1());
+//			Code.putFalseJump(Code.eq, 0);
+//			skipLabel.push(Code.pc - 2);
+//			first = false;
+//		} else {
+//			Code.fixup(skipLabel.pop());
+//			Code.put(Code.dup);
+//			Code.loadConst(ln.getN1());
+//			Code.putFalseJump(Code.eq, 0);
+//			skipLabel.push(Code.pc - 2);
+//			Code.fixup(nextLabel.pop());
+//		}
+//	}
+//
+//	@Override
+//	public void visit(SwitchStatementEnd switchStatementEnd) {
+//		Code.putJump(0);
+//		nextLabel.push(Code.pc - 2);
+//	}
+//
+//	@Override
+//	public void visit(SwitchStatement ss) {
+//		Code.fixup(skipLabel.pop());
+//		Code.fixup(nextLabel.pop());
+//
+//		breakTargetType.pop();
+//
+//		Stack<Integer> endJumps = switchBreakFlag.pop();
+//		while (!endJumps.isEmpty()) {
+//			Code.fixup(endJumps.pop());
+//		}
+//		Code.put(Code.pop);
+//
+//		first = true;
+//	}
 
 ///////////////////////// BREAK and CONTINUE ////////////////////////////////////
 
