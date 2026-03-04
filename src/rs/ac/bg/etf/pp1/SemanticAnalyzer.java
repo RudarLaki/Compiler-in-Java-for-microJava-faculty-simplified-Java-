@@ -272,6 +272,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 			return;
 		}
 		Obj con = Tab.insert(Obj.Con, name, Tab.intType);
+		enumValues.add(enumValueCounter);
 		con.setAdr(enumValueCounter);
 		enumValueCounter++;
 	}
@@ -290,6 +291,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 		}
 
 		Obj con = Tab.insert(Obj.Con, name, Tab.intType);
+		enumValues.add(enumValueCounter);
 		con.setAdr(value);
 		enumValueCounter = value + 1;
 	}
