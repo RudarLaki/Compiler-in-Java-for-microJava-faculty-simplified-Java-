@@ -131,8 +131,11 @@ nonterminal Program,
 			Else,
 			
 			DesignatorStatement,
+
 			SwitchWord,
 			SwitchCases,
+			SwitchStatementEnd
+			
 			CaseLabel,
 			ForExpression,
 			ForWord,
@@ -312,6 +315,7 @@ SwitchWord ::= (SwitchWord) SWITCH;
 SwitchCases ::= (SwitchCases_s) CaseLabel StatementList SwitchCases
               | (SwitchCases_e) /* epsilon */
               ;
+SwitchStatementEnd ::= (SwitchStatementEnd) /* epsilon */
 
 CaseLabel ::= (CaseLabel) CASE NUMBER COLON;
 
