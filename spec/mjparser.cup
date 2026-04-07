@@ -134,7 +134,7 @@ nonterminal Program,
 
 			SwitchWord,
 			SwitchCases,
-			SwitchStatementEnd
+			SwitchStatementEnd,
 			
 			CaseLabel,
 			ForExpression,
